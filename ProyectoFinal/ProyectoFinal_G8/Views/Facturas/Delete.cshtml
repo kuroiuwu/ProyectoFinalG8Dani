@@ -1,0 +1,29 @@
+﻿@model ProyectoFinal_G8.Models.Factura
+
+@{
+    ViewData["Title"] = "Eliminar Factura";
+}
+
+<div class="container mt-4">
+    <h1>Eliminar Factura</h1>
+
+    <h3>¿Está seguro de que desea eliminar esto?</h3>
+    <div>
+        <dl class="row">
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.FechaEmision)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.FechaEmision)</dd>
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Cliente)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Cliente.Nombre)</dd>
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.MontoTotal)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.MontoTotal)</dd>
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Estado)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Estado)</dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="IdFactura" />
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+        </form>
+    </div>
+</div>

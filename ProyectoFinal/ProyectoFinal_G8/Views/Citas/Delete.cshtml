@@ -1,0 +1,33 @@
+﻿@model ProyectoFinal_G8.Models.Cita
+
+@{
+    ViewData["Title"] = "Eliminar Cita";
+}
+
+<div class="container mt-4">
+    <h1>Eliminar Cita</h1>
+
+    <h3>¿Está seguro de que desea eliminar esto?</h3>
+    <div>
+        <dl class="row">
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.FechaHora)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.FechaHora)</dd>
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Mascota)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Mascota.Nombre)</dd>
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Veterinario)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Veterinario.Nombre)</dd>
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Motivo)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Motivo)</dd>
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Estado)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Estado)</dd>
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Notas)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Notas)</dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="IdCita" />
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+        </form>
+    </div>
+</div>

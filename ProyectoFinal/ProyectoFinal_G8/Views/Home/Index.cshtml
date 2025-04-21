@@ -1,0 +1,132 @@
+﻿@{
+    ViewData["Title"] = "Página de Inicio - Veterinaria"; // Título adaptado
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron jumbotron-fluid mb-5">
+    <div class="container text-center py-5">
+        <h1 class="text-primary display-3 mb-5">Veterinaria Patitas CR</h1>
+        <h1 class="text-white mb-5">Cuidado Experto Para Tu Mascota</h1>
+
+        </div>
+</div>
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 pb-4 pb-lg-0">
+                <img class="img-fluid w-100" src="assets/img/about.jpg" alt=""> <div class="bg-primary text-dark text-center p-4">
+                     <h3 class="m-0">Comprometidos con su Bienestar</h3>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                 <h4 class="text-primary text-uppercase font-weight-bold">Sobre Nosotros</h4>
+                <h1 class="mb-4">El Mejor Cuidado Para Tus Compañeros Fieles</h1>
+                 <p class="mb-4">En Patitas CR, nos dedicamos a ofrecer servicios médicos integrales y compasivos para asegurar la salud y felicidad de tu animal.</p>
+                <div class="d-flex align-items-center pt-2">
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-secondary my-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 py-5 py-lg-0">
+                 <h5 class="text-primary text-uppercase font-weight-bold">Contáctanos</h5>
+                 <h1 class="mb-4">Estamos Aquí para Ayudarte</h1>
+                 <p class="mb-4">¿Tienes preguntas o quieres agendar una cita? Contáctanos y te responderemos pronto.</p>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h1 class="text-primary mb-2" data-toggle="counter-up">+5000</h1> <h6 class="font-weight-bold mb-4">Mascotas Atendidas</h6> </div>
+                    <div class="col-sm-4">
+                        <h1 class="text-primary mb-2" data-toggle="counter-up">+15</h1> <h6 class="font-weight-bold mb-4">Años de Experiencia</h6> </div>
+                     <div class="col-sm-4"> <h1 class="text-primary mb-2" data-toggle="counter-up">+1200</h1> <h6 class="font-weight-bold mb-4">Clientes Felices</h6> </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="bg-primary py-5 px-4 px-sm-5 text-center">
+                    <br/>
+                    <br/>
+                     <p class="text-white font-weight-medium">Pulsa el botón para contactarnos mediante nuestro correo.</p>
+                    <br />
+                     <a href="mailto:contacto@patitascr.com?subject=Consulta%20Veterinaria&body=Hola%20[Nombre%20de%20Veterinaria]%2C%0A%0AEscribo%20para%20consultar%20sobre..."
+                       class="btn btn-dark py-3 px-4"><i class="fas fa-envelope text-white pr-3"></i>Contáctanos Ahora</a>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="text-center pb-2">
+            <h6 class="text-primary text-uppercase font-weight-bold">Nuestros Servicios</h6>
+             <h1 class="mb-4">Servicios Veterinarios Completos</h1>
+        </div>
+        <div class="row pb-3">
+            <div class="col-lg-3 col-md-6 text-center mb-5">
+                <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                    <i class="fa fa-2x fa-stethoscope text-dark pr-3"></i> <h6 class="text-white font-weight-medium m-0">Consultas Generales</h6> </div>
+                 <p>Chequeos de rutina y diagnóstico.</p>
+                </div>
+            <div class="col-lg-3 col-md-6 text-center mb-5">
+                <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                    <i class="fa fa-2x fa-syringe text-dark pr-3"></i> <h6 class="text-white font-weight-medium m-0">Vacunación</h6> </div>
+                 <p>Planes de vacunación personalizados.</p>
+                </div>
+            <div class="col-lg-3 col-md-6 text-center mb-5">
+                <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                     <i class="fa fa-2x fa-procedures text-dark pr-3"></i>
+                    <h6 class="text-white font-weight-medium m-0">Cirugías</h6> </div>
+                 <p>Procedimientos quirúrgicos seguros.</p>
+                </div>
+            <div class="col-lg-3 col-md-6 text-center mb-5">
+                <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                     <i class="fa fa-2x fa-shower text-dark pr-3"></i>
+                    <h6 class="text-white font-weight-medium m-0">Grooming / Baño</h6> </div>
+                 <p>Servicios de baño y estética.</p>
+                </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="text-center pb-4">
+             <h6 class="text-primary text-uppercase font-weight-bold">Nuestras Tarifas</h6>
+             <h1 class="mb-4">Planes de Salud Asequibles</h1>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <img class="img-fluid w-100 rounded" src="assets/img/feature.jpg" alt="Paquetes asequibles"> </div>
+            <div class="col-lg-5">
+                <div class="bg-secondary rounded-lg">
+                    <div class="text-center p-5">
+                        <h1 class="display-4 mb-0">
+                            <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;">Desde $</small>XX<small class="align-bottom text-muted font-weight-medium" style="font-size: 16px; line-height: 40px;">/consulta</small> </h1>
+                    </div>
+                    <div class="bg-primary text-center p-4">
+                         <h3 class="m-0">Consultas y Planes</h3>
+                    </div>
+                    <div class="d-flex flex-column align-items-center py-4">
+                         <p class="text-center px-3">Ofrecemos consultas individuales y planes preventivos. Contáctanos para conocer nuestras tarifas detalladas.</p> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

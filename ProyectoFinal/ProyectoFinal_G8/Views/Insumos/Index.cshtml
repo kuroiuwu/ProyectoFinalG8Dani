@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ProyectoFinal_G8.Models.Insumo>
+
+@{
+    ViewData["Title"] = "Insumos";
+}
+
+<div class="container mt-4">
+    <h1>Insumos</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Crear Nuevo Insumo</a>
+    </p>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                <th>@Html.DisplayNameFor(model => model.CantidadStock)</th>
+                <th>@Html.DisplayNameFor(model => model.UnidadMedida)</th>
+                <th>@Html.DisplayNameFor(model => model.PrecioVenta)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CantidadStock)</td>
+                    <td>@Html.DisplayFor(modelItem => item.UnidadMedida)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PrecioVenta)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdInsumo" class="btn btn-sm btn-warning">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.IdInsumo" class="btn btn-sm btn-info">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.IdInsumo" class="btn btn-sm btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

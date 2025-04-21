@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ProyectoFinal_G8.Models.HistorialMedico>
+
+@{
+    ViewData["Title"] = "Historial Médico";
+}
+
+<div class="container mt-4">
+    <h1>Historial Médico</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Crear Nuevo Registro</a>
+    </p>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.FechaRegistro)</th>
+                <th>@Html.DisplayNameFor(model => model.Mascota)</th>
+                <th>@Html.DisplayNameFor(model => model.Descripcion)</th>
+                <th>@Html.DisplayNameFor(model => model.Tratamiento)</th>
+                <th>@Html.DisplayNameFor(model => model.Notas)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.FechaRegistro)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Mascota.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Tratamiento)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Notas)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdHistorial" class="btn btn-sm btn-warning">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.IdHistorial" class="btn btn-sm btn-info">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.IdHistorial" class="btn btn-sm btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

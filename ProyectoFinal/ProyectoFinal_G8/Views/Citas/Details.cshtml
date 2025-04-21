@@ -1,0 +1,30 @@
+﻿@model ProyectoFinal_G8.Models.Cita
+
+@{
+    ViewData["Title"] = "Detalles Cita";
+}
+
+<div class="container mt-4">
+    <h1>Detalles Cita</h1>
+
+    <div>
+        <dl class="row">
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.FechaHora)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.FechaHora)</dd>
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Mascota)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Mascota.Nombre)</dd>
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Veterinario)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Veterinario.Nombre)</dd>
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Motivo)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Motivo)</dd>
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Estado)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Estado)</dd>
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Notas)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Notas)</dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.IdCita" class="btn btn-primary">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+    </div>
+</div>

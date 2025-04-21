@@ -1,0 +1,280 @@
+﻿@{
+    ViewData["Title"] = "Inicio Usuario - Veterinaria"; // Título adaptado
+    Layout = "~/Views/Shared/_LayoutUsuarios.cshtml"; // Layout sin cambios
+}
+<div class="jumbotron jumbotron-fluid mb-5">
+    <div class="container text-center py-5">
+        <h1 class="text-primary mb-4">Salud y Bienestar Animal</h1>
+        <h1 class="text-white display-3 mb-5">Veterinaria Patitas CR</h1>
+        <div class="mx-auto" style="width: 100%; max-width: 600px;">
+            <div class="input-group">
+                <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Buscar Cita por Código">
+                <div class="input-group-append">
+                    <button class="btn btn-primary px-3">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 pb-4 pb-lg-0">
+                <img class="img-fluid w-100" src="assets/img/about.jpg" alt=""> <div class="bg-primary text-dark text-center p-4">
+                    <h3 class="m-0">Comprometidos con su Bienestar</h3>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <h6 class="text-primary text-uppercase font-weight-bold">Sobre Nosotros</h6>
+                <h1 class="mb-4">El Mejor Cuidado Para Tus Compañeros Fieles</h1>
+                <p class="mb-4">En Patitas CR, nos dedicamos a ofrecer servicios médicos integrales y compasivos para asegurar la salud y felicidad de tu animal.</p>
+                <div class="d-flex align-items-center pt-2">
+                    <button type="button" class="btn-play" data-toggle="modal"
+                            data-src="https://www.instagram.com/reel/DA7G30VNSSL/?utm_source=ig_web_button_share_sheet" data-target="#videoModal">
+                        <span></span>
+                    </button>
+                    <h5 class="font-weight-bold m-0 ml-4">Ver Nuestro Video</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-secondary my-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 py-5 py-lg-0">
+                <h6 class="text-primary text-uppercase font-weight-bold">Agenda tu Cita o Consulta</h6>
+                <h1 class="mb-4">Contáctanos</h1>
+                <p class="mb-4">Completa el formulario para agendar tu cita o realizar una consulta. Nuestro equipo te responderá a la brevedad.</p>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h1 class="text-primary mb-2" data-toggle="counter-up">10</h1> <h6 class="font-weight-bold mb-4">Veterinarios Expertos</h6>
+                    </div>
+                    <div class="col-sm-4">
+                        <h1 class="text-primary mb-2" data-toggle="counter-up">+5000</h1> <h6 class="font-weight-bold mb-4">Mascotas Atendidas</h6>
+                    </div>
+                    <div class="col-sm-4">
+                        <h1 class="text-primary mb-2" data-toggle="counter-up">+15</h1> <h6 class="font-weight-bold mb-4">Años de Servicio</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="bg-primary py-5 px-4 px-sm-5">
+                    <form class="py-5">
+                        <div class="form-group">
+                            <input type="text" class="form-control border-0 p-4" placeholder="Nombre del Propietario" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control border-0 p-4" placeholder="Correo Electrónico" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <select class="custom-select border-0 px-4" style="height: 47px;">
+                                <option selected>Seleccione el Motivo</option>
+                                <option value="1">Consulta General / Chequeo</option>
+                                <option value="2">Cita de Vacunación</option>
+                                <option value="3">Cita Quirúrgica / Procedimiento</option>
+                                <option value="4">Grooming / Baño</option>
+                                <option value="5">Otra Consulta</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button class="btn btn-dark btn-block border-0 py-3" type="submit">Enviar Solicitud</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="text-center pb-2">
+            <h6 class="text-primary text-uppercase font-weight-bold">Nuestros Servicios</h6>
+            <h1 class="mb-4">Servicios Veterinarios Completos</h1>
+        </div>
+        <div class="row pb-3">
+            <div class="col-lg-3 col-md-6 text-center mb-5">
+                <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                    <i class="fa fa-2x fa-stethoscope text-dark pr-3"></i> <h6 class="text-white font-weight-medium m-0">Consultas Generales</h6>
+                </div>
+                <p>Chequeos de rutina, diagnóstico y prevención.</p>
+                <a class="border-bottom text-decoration-none" href="">Más Detalles</a>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center mb-5">
+                <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                    <i class="fa fa-2x fa-syringe text-dark pr-3"></i> <h6 class="text-white font-weight-medium m-0">Vacunación</h6>
+                </div>
+                <p>Planes de vacunación para proteger a tu mascota.</p>
+                <a class="border-bottom text-decoration-none" href="">Más Detalles</a>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center mb-5">
+                <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                    <i class="fa fa-2x fa-procedures text-dark pr-3"></i> <h6 class="text-white font-weight-medium m-0">Cirugías</h6>
+                </div>
+                <p>Procedimientos quirúrgicos con cuidado experto.</p>
+                <a class="border-bottom text-decoration-none" href="">Más Detalles</a>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center mb-5">
+                <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                    <i class="fa fa-2x fa-shower text-dark pr-3"></i> <h6 class="text-white font-weight-medium m-0">Grooming / Baño</h6>
+                </div>
+                <p>Servicios de estética e higiene para mascotas.</p>
+                <a class="border-bottom text-decoration-none" href="">Más Detalles</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="text-center pb-4">
+            <h6 class="text-primary text-uppercase font-weight-bold">Nuestras Tarifas</h6>
+            <h1 class="mb-4">Planes de Salud Asequibles</h1>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <img class="img-fluid w-100 rounded" src="assets/img/feature.jpg" alt="Paquetes asequibles">
+            </div>
+            <div class="col-lg-5">
+                <div class="bg-secondary rounded-lg">
+                    <div class="text-center p-5">
+                        <h1 class="display-4 mb-0">
+                            <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;">Desde $</small>XX<small class="align-bottom text-muted font-weight-medium" style="font-size: 16px; line-height: 40px;">/consulta</small>
+                        </h1>
+                    </div>
+                    <div class="bg-primary text-center p-4">
+                        <h3 class="m-0">Consulta Básica</h3>
+                    </div>
+                    <div class="d-flex flex-column align-items-center py-4">
+                        <p class="text-center px-3">Ofrecemos consultas y planes adaptados. Contáctanos para más detalles sobre nuestras tarifas.</p> <a href="" class="btn btn-primary py-2 px-4 my-2">Ver Tarifas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="text-center pb-2">
+            <h6 class="text-primary text-uppercase font-weight-bold">Nuestro Equipo</h6>
+            <h1 class="mb-4">Conoce a Nuestros Veterinarios</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="team card position-relative overflow-hidden border-0 mb-5">
+                    <img class="card-img-top" src="assets/img/team-1.jpg" alt=""> <div class="card-body text-center p-0">
+                        <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                            <h5 class="font-weight-bold">Dr. Nombre Apellido</h5>
+                            <span>Medicina General</span>
+                        </div>
+                        <div class="team-social d-flex align-items-center justify-content-center bg-primary">
+                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="team card position-relative overflow-hidden border-0 mb-5">
+                    <img class="card-img-top" src="assets/img/team-2.jpg" alt=""> <div class="card-body text-center p-0">
+                        <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                            <h5 class="font-weight-bold">Dra. Nombre Apellido</h5>
+                            <span>Cirugía</span>
+                        </div>
+                        <div class="team-social d-flex align-items-center justify-content-center bg-primary">
+                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="team card position-relative overflow-hidden border-0 mb-5">
+                    <img class="card-img-top" src="assets/img/team-3.jpg" alt=""> <div class="card-body text-center p-0">
+                        <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                            <h5 class="font-weight-bold">Nombre Apellido</h5>
+                            <span>Asistente Veterinario</span>
+                        </div>
+                        <div class="team-social d-flex align-items-center justify-content-center bg-primary">
+                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="team card position-relative overflow-hidden border-0 mb-5">
+                    <img class="card-img-top" src="assets/img/team-4.jpg" alt=""> <div class="card-body text-center p-0">
+                        <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                            <h5 class="font-weight-bold">Nombre Apellido</h5>
+                            <span>Groomer Profesional</span>
+                        </div>
+                        <div class="team-social d-flex align-items-center justify-content-center bg-primary">
+                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="text-center pb-2">
+            <h6 class="text-primary text-uppercase font-weight-bold">Testimonios</h6>
+            <h1 class="mb-4">Lo Que Dicen Nuestros Clientes</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel">
+            <div class="position-relative bg-secondary p-4">
+                <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="ml-3">
+                        <h6 class="font-weight-semi-bold m-0">Ana García</h6>
+                        <small>- Dueña de Max (Labrador)</small>
+                    </div>
+                </div>
+                <p class="m-0">"Excelente atención y profesionalismo. Siempre cuidan de Max como si fuera suyo. ¡Muy recomendados!"</p>
+            </div>
+            <div class="position-relative bg-secondary p-4">
+                <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="ml-3">
+                        <h6 class="font-weight-semi-bold m-0">Carlos Robles</h6>
+                        <small>- Dueño de Luna (Gata)</small>
+                    </div>
+                </div>
+                <p class="m-0">"El equipo es muy amable y se nota que aman a los animales. Luna siempre está tranquila cuando viene aquí."</p>
+            </div>
+            <div class="position-relative bg-secondary p-4">
+                <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="ml-3">
+                        <h6 class="font-weight-semi-bold m-0">Sofía Méndez</h6>
+                        <small>- Dueña de Rocky (Bulldog)</small>
+                    </div>
+                </div>
+                <p class="m-0">"Resolvieron el problema de piel de Rocky rápidamente. Muy agradecida con todo el personal por su dedicación."</p>
+            </div>
+            <div class="position-relative bg-secondary p-4">
+                <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="ml-3">
+                        <h6 class="font-weight-semi-bold m-0">Luis Jiménez</h6>
+                        <small>- Dueño de Nieve (Poodle)</small>
+                    </div>
+                </div>
+                <p class="m-0">"El servicio de grooming es fantástico. Nieve siempre queda hermosa y feliz después de su baño y corte."</p>
+            </div>
+        </div>
+    </div>
+</div>

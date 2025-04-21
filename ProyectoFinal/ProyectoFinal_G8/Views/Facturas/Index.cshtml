@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ProyectoFinal_G8.Models.Factura>
+
+@{
+    ViewData["Title"] = "Facturas";
+}
+
+<div class="container mt-4">
+    <h1>Facturas</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Crear Nueva Factura</a>
+    </p>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.FechaEmision)</th>
+                <th>@Html.DisplayNameFor(model => model.Cliente)</th>
+                <th>@Html.DisplayNameFor(model => model.MontoTotal)</th>
+                <th>@Html.DisplayNameFor(model => model.Estado)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.FechaEmision)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Cliente.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MontoTotal)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Estado)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdFactura" class="btn btn-sm btn-warning">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.IdFactura" class="btn btn-sm btn-info">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.IdFactura" class="btn btn-sm btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

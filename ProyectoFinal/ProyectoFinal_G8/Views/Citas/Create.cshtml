@@ -1,0 +1,55 @@
+﻿@model ProyectoFinal_G8.Models.Cita
+
+@{
+    ViewData["Title"] = "Crear Cita";
+}
+
+<div class="container mt-4">
+    <h1>Crear Cita</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="mb-3">
+                    <label asp-for="FechaHora" class="form-label"></label>
+                    <input asp-for="FechaHora" class="form-control" />
+                    <span asp-validation-for="FechaHora" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="IdMascota" class="form-label"></label>
+                    <select asp-for="IdMascota" class="form-select" asp-items="ViewBag.IdMascota"></select>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="IdUsuarioVeterinario" class="form-label"></label>
+                    <select asp-for="IdUsuarioVeterinario" class="form-select" asp-items="ViewBag.IdUsuarioVeterinario"></select>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Motivo" class="form-label"></label>
+                    <input asp-for="Motivo" class="form-control" />
+                    <span asp-validation-for="Motivo" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Estado" class="form-label"></label>
+                    <input asp-for="Estado" class="form-control" />
+                    <span asp-validation-for="Estado" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Notas" class="form-label"></label>
+                    <textarea asp-for="Notas" class="form-control"></textarea>
+                    <span asp-validation-for="Notas" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <input type="submit" value="Crear" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

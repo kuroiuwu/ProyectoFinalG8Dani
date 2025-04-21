@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ProyectoFinal_G8.Models.Mascota>
+
+@{
+    ViewData["Title"] = "Mascotas";
+}
+
+<div class="container mt-4">
+    <h1>Mascotas</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Crear Nueva Mascota</a>
+    </p>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                <th>@Html.DisplayNameFor(model => model.Especie)</th>
+                <th>@Html.DisplayNameFor(model => model.Raza)</th>
+                <th>@Html.DisplayNameFor(model => model.FechaNacimiento)</th>
+                <th>@Html.DisplayNameFor(model => model.Dueño)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Especie)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Raza)</td>
+                    <td>@Html.DisplayFor(modelItem => item.FechaNacimiento)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Dueño.Nombre)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdMascota" class="btn btn-sm btn-warning">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.IdMascota" class="btn btn-sm btn-info">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.IdMascota" class="btn btn-sm btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

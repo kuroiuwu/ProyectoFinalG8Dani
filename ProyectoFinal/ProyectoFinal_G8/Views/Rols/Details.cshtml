@@ -1,0 +1,22 @@
+﻿@model ProyectoFinal_G8.Models.Rol
+
+@{
+    ViewData["Title"] = "Detalles Rol";
+}
+
+<div class="container mt-4">
+    <h1>Detalles Rol</h1>
+
+    <div>
+        <dl class="row">
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.NombreRol)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.NombreRol)</dd>
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Descripcion)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Descripcion)</dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.IdRol" class="btn btn-primary">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+    </div>
+</div>
