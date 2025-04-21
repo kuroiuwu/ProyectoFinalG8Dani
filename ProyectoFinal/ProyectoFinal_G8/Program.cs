@@ -7,6 +7,7 @@ using ProyectoFinal_G8.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging; // Necesario para ILogger en el bloque de seeding
+using System.Linq; // Necesario para Select en logging de errores
 // -------------------------------------------------
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 // --- Add services to the container ---
 
 // 1. Configuración del DbContext
-var connectionString = builder.Configuration.GetConnectionString("PF_G8");
+var connectionString = builder.Configuration.GetConnectionString("PF_G8"); // Revisa que sea el nombre correcto en appsettings.Development.json
 builder.Services.AddDbContext<ProyectoFinal_G8Context>(options =>
     options.UseSqlServer(connectionString));
 
@@ -46,27 +47,30 @@ builder.Services.AddControllersWithViews();
 // --- Configure the HTTP request pipeline ---
 var app = builder.Build();
 
-// --- SEED DATA: Crear Roles Esenciales ---
+// --- SEED DATA: Crear Roles y Usuarios Esenciales ---
 // Se ejecuta después de construir la app, pero antes de que empiece a escuchar peticiones
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    var logger = services.GetRequiredService<ILogger<Program>>(); // Obtener logger
+    var logger = services.GetRequiredService<ILogger<Program>>();
     try
     {
-        logger.LogInformation("Iniciando seeding de roles...");
-        var roleManager = services.GetRequiredService<RoleManager<Rol>>();
-        await SeedRolesAsync(roleManager, logger); // Pasar logger a la función
-        logger.LogInformation("Seeding de roles completado.");
-        // Opcional: Podrías llamar aquí a una función para crear un usuario Admin inicial
-        // var userManager = services.GetRequiredService<UserManager<Usuario>>();
-        // await SeedAdminUserAsync(userManager, logger);
+        logger.LogInformation("Iniciando seeding de roles y usuarios...");
+        var userManager = services.GetRequiredService<UserManager<Usuario>>(); // Obtener UserManager
+        var roleManager = services.GetRequiredService<RoleManager<Rol>>();     // Obtener RoleManager
+
+        // 1. Crear Roles primero
+        await SeedRolesAsync(roleManager, logger);
+
+        // 2. Crear Usuarios después
+        await SeedUsersAsync(userManager, roleManager, logger);
+
+        logger.LogInformation("Seeding completado.");
     }
     catch (Exception ex)
     {
         logger.LogError(ex, "Ocurrió un error durante el seeding de la base de datos.");
-        // Dependiendo de la criticidad, podrías querer detener la aplicación aquí
-        // throw;
+        // Considera las implicaciones si el seeding falla
     }
 }
 
@@ -74,6 +78,7 @@ using (var scope = app.Services.CreateScope())
 async Task SeedRolesAsync(RoleManager<Rol> roleManager, ILogger<Program> logger)
 {
     string[] roleNames = { "Admin", "Veterinario", "Cliente" }; // Roles a crear
+    logger.LogInformation($"Verificando/creando roles: {string.Join(", ", roleNames)}");
     foreach (var roleName in roleNames)
     {
         var roleExist = await roleManager.RoleExistsAsync(roleName);
@@ -87,61 +92,78 @@ async Task SeedRolesAsync(RoleManager<Rol> roleManager, ILogger<Program> logger)
             }
             else
             {
-                // Loggear errores si la creación del rol falla
                 logger.LogError($"Error creando rol '{roleName}'. Errores: {string.Join(", ", result.Errors.Select(e => e.Description))}");
             }
         }
-        // else { logger.LogInformation($"Rol '{roleName}' ya existe."); } // Log opcional
+        // else { logger.LogDebug($"Rol '{roleName}' ya existe."); } // Log Debug opcional
     }
 }
 
-// Función opcional para crear usuario Admin (ejemplo básico)
-/*
-async Task SeedAdminUserAsync(UserManager<Usuario> userManager, ILogger<Program> logger)
+// Función asíncrona para crear usuarios esenciales si no existen
+async Task SeedUsersAsync(UserManager<Usuario> userManager, RoleManager<Rol> roleManager, ILogger<Program> logger)
 {
-    string adminEmail = "admin@miclinica.com"; // Email del admin
-    string adminPassword = "PasswordSuperSeguro123!"; // ¡Usa una contraseña segura y configúrala correctamente!
-    string adminNombre = "Administrador Principal"; // Nombre para el usuario admin
+    // --- Usuario Admin ---
+    string adminEmail = "admin@mail.com";
+    string adminNombre = "Admin Principal";
+    string adminPassword = "Admin.123"; // ¡Contraseña débil solo para pruebas!
+    string adminRoleName = "Admin";
 
-    // Verificar si el usuario admin ya existe
+    logger.LogInformation($"Verificando usuario Admin: {adminEmail}");
     if (await userManager.FindByEmailAsync(adminEmail) == null)
     {
+        var adminRole = await roleManager.FindByNameAsync(adminRoleName);
+        if (adminRole == null) { logger.LogError($"Rol '{adminRoleName}' no existe. No se puede crear usuario Admin."); return; }
+
         Usuario adminUser = new Usuario
         {
             UserName = adminEmail,
             Email = adminEmail,
-            Nombre = adminNombre, // Asignar el nombre
-            EmailConfirmed = true // Confirmarlo directamente
-            // IdRol se podría asignar aquí si buscas el ID del rol "Admin",
-            // pero es mejor confiar en la asignación de roles de Identity
+            Nombre = adminNombre,
+            IdRol = adminRole.Id,
+            EmailConfirmed = true
         };
-
-        // Crear el usuario admin
         IdentityResult result = await userManager.CreateAsync(adminUser, adminPassword);
-
         if (result.Succeeded)
         {
-            logger.LogInformation($"Usuario Admin '{adminEmail}' creado exitosamente.");
-            // Asignar el rol "Admin" al nuevo usuario
-            // Asegúrate que el rol "Admin" fue creado por SeedRolesAsync
-            var roleResult = await userManager.AddToRoleAsync(adminUser, "Admin");
-             if (roleResult.Succeeded)
-             {
-                 logger.LogInformation($"Rol 'Admin' asignado a '{adminEmail}'.");
-             }
-             else
-             {
-                  logger.LogError($"Error asignando rol 'Admin' a '{adminEmail}'. Errores: {string.Join(", ", roleResult.Errors.Select(e => e.Description))}");
-             }
+            logger.LogInformation($"Usuario '{adminUser.UserName}' creado.");
+            await userManager.AddToRoleAsync(adminUser, adminRoleName);
+            logger.LogInformation($"Usuario '{adminUser.UserName}' asignado al rol '{adminRoleName}'.");
         }
-        else
-        {
-            logger.LogError($"Error creando usuario Admin '{adminEmail}'. Errores: {string.Join(", ", result.Errors.Select(e => e.Description))}");
-        }
+        else { logger.LogError($"Error creando usuario '{adminUser.UserName}'. Errores: {string.Join(", ", result.Errors.Select(e => e.Description))}"); }
     }
-    // else { logger.LogInformation($"Usuario Admin '{adminEmail}' ya existe."); } // Log opcional
+    // else { logger.LogDebug($"Usuario Admin '{adminEmail}' ya existe."); } // Log Debug opcional
+
+    // --- Usuario Veterinario (Dani) ---
+    string vetEmail = "dani@mail.com";
+    string vetNombre = "Dani Veterinario";
+    string vetPassword = "Admin.123"; // ¡Contraseña débil solo para pruebas!
+    string vetRoleName = "Veterinario";
+
+    logger.LogInformation($"Verificando usuario Veterinario: {vetEmail}");
+    if (await userManager.FindByEmailAsync(vetEmail) == null)
+    {
+        var vetRole = await roleManager.FindByNameAsync(vetRoleName);
+        if (vetRole == null) { logger.LogError($"Rol '{vetRoleName}' no existe. No se puede crear usuario Veterinario."); return; }
+
+        Usuario vetUser = new Usuario
+        {
+            UserName = vetEmail,
+            Email = vetEmail,
+            Nombre = vetNombre,
+            IdRol = vetRole.Id,
+            EmailConfirmed = true
+        };
+        IdentityResult result = await userManager.CreateAsync(vetUser, vetPassword);
+        if (result.Succeeded)
+        {
+            logger.LogInformation($"Usuario '{vetUser.UserName}' creado.");
+            await userManager.AddToRoleAsync(vetUser, vetRoleName);
+            logger.LogInformation($"Usuario '{vetUser.UserName}' asignado al rol '{vetRoleName}'.");
+        }
+        else { logger.LogError($"Error creando usuario '{vetUser.UserName}'. Errores: {string.Join(", ", result.Errors.Select(e => e.Description))}"); }
+    }
+    // else { logger.LogDebug($"Usuario Veterinario '{vetEmail}' ya existe."); } // Log Debug opcional
 }
-*/
 // --- FIN SEED DATA ---
 
 
@@ -157,12 +179,13 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// Asegúrate que el orden sea correcto: Routing -> Authentication -> Authorization
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapRazorPages();
+app.MapRazorPages(); // Mapea las páginas de Identity (/Identity/Account/Login, etc.)
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}"); // Mapea tus controladores MVC
 
-app.Run(); // app.Run() debe ser la última línea ejecutable
+app.Run(); // Debe ser la última línea ejecutable
