@@ -1,25 +1,28 @@
-﻿@model ProyectoFinal_G8.Models.Rol
+﻿@* El modelo puede ser Rol si lo pasas directamente desde el controller *@
+@model ProyectoFinal_G8.Models.Rol
 
 @{
     ViewData["Title"] = "Eliminar Rol";
 }
 
 <div class="container mt-4">
-    <h1>Eliminar Rol</h1>
-
-    <h3>¿Está seguro de que desea eliminar esto?</h3>
+    <h1>@ViewData["Title"]</h1>
+    <hr />
+    <h3 class="text-danger">¿Está seguro de que desea eliminar este Rol?</h3>
+    <p class="text-danger">Esta acción no se puede deshacer.</p>
     <div>
         <dl class="row">
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.NombreRol)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.NombreRol)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Descripcion)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Descripcion)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Name)</dt> @* Usar Name *@
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Name)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Descripcion)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Descripcion)</dd>
         </dl>
 
         <form asp-action="Delete">
-            <input type="hidden" asp-for="IdRol" />
-            <input type="submit" value="Eliminar" class="btn btn-danger" />
-            <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+            @* Usar Id *@
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Eliminar Rol" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
         </form>
     </div>
 </div>

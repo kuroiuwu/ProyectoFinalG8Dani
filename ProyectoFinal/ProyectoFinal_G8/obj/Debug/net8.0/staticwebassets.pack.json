@@ -1,835 +1,835 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoFinal_G8.bundle.scp.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoFinal_G8.bundle.scp.css",
       "PackagePath": "staticwebassets\\ProyectoFinal_G8.ly7fmz7iak.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\cssPaqueteHistorial\\stylePaqueteHistorial.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\cssPaqueteHistorial\\stylePaqueteHistorial.css",
       "PackagePath": "staticwebassets\\assets\\cssPaqueteHistorial\\stylePaqueteHistorial.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\css\\style.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\css\\style.css",
       "PackagePath": "staticwebassets\\assets\\css\\style.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\css\\style.min.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\css\\style.min.css",
       "PackagePath": "staticwebassets\\assets\\css\\style.min.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\about.jpg",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\about.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\about.jpg"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\blog-1.jpg",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\blog-1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\blog-1.jpg"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\blog-2.jpg",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\blog-2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\blog-2.jpg"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\feature.jpg",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\feature.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\feature.jpg"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\header.jpg",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\header.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\header.jpg"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\icono.png",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\icono.png",
       "PackagePath": "staticwebassets\\assets\\img\\icono.png"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\icono_clinica.png",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\icono_clinica.png",
       "PackagePath": "staticwebassets\\assets\\img\\icono_clinica.png"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\icono_clinica2.png",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\icono_clinica2.png",
       "PackagePath": "staticwebassets\\assets\\img\\icono_clinica2.png"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\profile.jpg",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\profile.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\profile.jpg"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\team-1.jpg",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\team-1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\team-1.jpg"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\team-2.jpg",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\team-2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\team-2.jpg"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\team-3.jpg",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\team-3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\team-3.jpg"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\team-4.jpg",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\team-4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\team-4.jpg"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\testimonial-1.jpg",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\testimonial-1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\testimonial-1.jpg"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\testimonial-2.jpg",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\testimonial-2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\testimonial-2.jpg"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\testimonial-3.jpg",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\testimonial-3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\testimonial-3.jpg"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\testimonial-4.jpg",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\testimonial-4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\testimonial-4.jpg"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\img\\user.jpg",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\img\\user.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\user.jpg"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\js\\main.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\js\\main.js",
       "PackagePath": "staticwebassets\\assets\\js\\main.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\counterup\\counterup.min.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\counterup\\counterup.min.js",
       "PackagePath": "staticwebassets\\assets\\lib\\counterup\\counterup.min.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\easing\\easing.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\easing\\easing.js",
       "PackagePath": "staticwebassets\\assets\\lib\\easing\\easing.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\easing\\easing.min.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\easing\\easing.min.js",
       "PackagePath": "staticwebassets\\assets\\lib\\easing\\easing.min.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\LICENSE",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\LICENSE",
       "PackagePath": "staticwebassets\\assets\\lib\\owlcarousel"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\ajax-loader.gif",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\ajax-loader.gif",
       "PackagePath": "staticwebassets\\assets\\lib\\owlcarousel\\assets\\ajax-loader.gif"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\owl.carousel.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\owl.carousel.css",
       "PackagePath": "staticwebassets\\assets\\lib\\owlcarousel\\assets\\owl.carousel.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
       "PackagePath": "staticwebassets\\assets\\lib\\owlcarousel\\assets\\owl.carousel.min.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\owl.theme.default.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\owl.theme.default.css",
       "PackagePath": "staticwebassets\\assets\\lib\\owlcarousel\\assets\\owl.theme.default.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
       "PackagePath": "staticwebassets\\assets\\lib\\owlcarousel\\assets\\owl.theme.default.min.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\owl.theme.green.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\owl.theme.green.css",
       "PackagePath": "staticwebassets\\assets\\lib\\owlcarousel\\assets\\owl.theme.green.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
       "PackagePath": "staticwebassets\\assets\\lib\\owlcarousel\\assets\\owl.theme.green.min.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\owl.video.play.png",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\assets\\owl.video.play.png",
       "PackagePath": "staticwebassets\\assets\\lib\\owlcarousel\\assets\\owl.video.play.png"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\owl.carousel.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\owl.carousel.js",
       "PackagePath": "staticwebassets\\assets\\lib\\owlcarousel\\owl.carousel.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\owl.carousel.min.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\owlcarousel\\owl.carousel.min.js",
       "PackagePath": "staticwebassets\\assets\\lib\\owlcarousel\\owl.carousel.min.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\waypoints\\links.php",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\waypoints\\links.php",
       "PackagePath": "staticwebassets\\assets\\lib\\waypoints\\links.php"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\waypoints\\waypoints.min.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\lib\\waypoints\\waypoints.min.js",
       "PackagePath": "staticwebassets\\assets\\lib\\waypoints\\waypoints.min.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\mail\\contact.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\mail\\contact.js",
       "PackagePath": "staticwebassets\\assets\\mail\\contact.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\mail\\contact.php",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\mail\\contact.php",
       "PackagePath": "staticwebassets\\assets\\mail\\contact.php"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\mail\\jqBootstrapValidation.min.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\mail\\jqBootstrapValidation.min.js",
       "PackagePath": "staticwebassets\\assets\\mail\\jqBootstrapValidation.min.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_alert.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_alert.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_alert.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_badge.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_badge.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_badge.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_breadcrumb.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_breadcrumb.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_breadcrumb.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_button-group.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_button-group.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_button-group.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_buttons.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_buttons.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_buttons.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_card.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_card.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_card.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_carousel.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_carousel.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_carousel.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_close.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_close.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_close.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_code.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_code.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_code.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_custom-forms.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_custom-forms.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_custom-forms.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_dropdown.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_dropdown.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_dropdown.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_forms.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_forms.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_forms.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_functions.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_functions.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_functions.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_grid.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_grid.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_grid.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_images.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_images.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_images.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_input-group.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_input-group.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_input-group.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_jumbotron.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_jumbotron.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_jumbotron.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_list-group.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_list-group.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_list-group.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_media.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_media.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_media.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_mixins.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_mixins.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_mixins.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_modal.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_modal.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_modal.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_nav.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_nav.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_nav.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_navbar.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_navbar.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_navbar.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_pagination.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_pagination.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_pagination.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_popover.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_popover.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_popover.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_print.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_print.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_print.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_progress.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_progress.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_progress.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_reboot.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_reboot.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_reboot.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_root.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_root.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_root.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_spinners.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_spinners.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_spinners.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_tables.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_tables.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_tables.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_toasts.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_toasts.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_toasts.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_tooltip.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_tooltip.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_tooltip.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_transitions.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_transitions.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_transitions.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_type.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_type.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_type.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_utilities.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_utilities.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_utilities.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_variables.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\_variables.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\_variables.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\bootstrap-grid.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\bootstrap-reboot.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\bootstrap.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\bootstrap.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\bootstrap.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_alert.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_background-variant.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_background-variant.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_background-variant.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_badge.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_badge.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_badge.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_buttons.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_caret.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_float.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_float.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_float.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_forms.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_gradients.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_grid-framework.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_grid-framework.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_grid-framework.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_grid.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_hover.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_hover.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_hover.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_image.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_image.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_image.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_list-group.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_lists.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_nav-divider.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_nav-divider.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_nav-divider.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_pagination.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_resize.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_screen-reader.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_screen-reader.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_screen-reader.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_size.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_size.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_size.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_table-row.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_table-row.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_table-row.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_text-emphasis.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_text-emphasis.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_text-emphasis.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_text-hide.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_text-hide.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_text-hide.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_transition.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_visibility.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\mixins\\_visibility.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\mixins\\_visibility.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_align.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_align.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_align.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_background.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_background.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_background.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_borders.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_borders.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_borders.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_clearfix.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_clearfix.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_clearfix.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_display.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_display.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_display.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_embed.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_embed.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_embed.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_flex.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_flex.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_flex.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_float.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_float.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_float.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_interactions.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_interactions.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_interactions.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_overflow.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_overflow.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_overflow.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_position.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_position.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_position.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_screenreaders.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_screenreaders.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_screenreaders.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_shadows.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_shadows.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_shadows.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_sizing.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_sizing.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_sizing.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_spacing.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_spacing.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_spacing.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_stretched-link.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_stretched-link.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_stretched-link.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_text.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_text.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_text.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_visibility.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\utilities\\_visibility.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\utilities\\_visibility.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\style.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\assets\\scss\\style.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\style.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\css\\bootstrap.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\css\\responsive.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\css\\responsive.css",
       "PackagePath": "staticwebassets\\css\\responsive.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\css\\style.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\css\\style.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\css\\style.css.map",
       "PackagePath": "staticwebassets\\css\\style.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\css\\style.scss",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\css\\style.scss",
       "PackagePath": "staticwebassets\\css\\style.scss"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\js\\bootstrap.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\js\\jquery-3.4.1.min.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\js\\jquery-3.4.1.min.js",
       "PackagePath": "staticwebassets\\js\\jquery-3.4.1.min.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\jquery-3.4.1.min.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\bootstrap\\dist\\js\\jquery-3.4.1.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\jquery-3.4.1.min.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\vistassincontroller\\about.html",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\vistassincontroller\\about.html",
       "PackagePath": "staticwebassets\\vistassincontroller\\about.html"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\vistassincontroller\\blog.html",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\vistassincontroller\\blog.html",
       "PackagePath": "staticwebassets\\vistassincontroller\\blog.html"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\vistassincontroller\\contact.html",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\vistassincontroller\\contact.html",
       "PackagePath": "staticwebassets\\vistassincontroller\\contact.html"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\vistassincontroller\\index.html",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\vistassincontroller\\index.html",
       "PackagePath": "staticwebassets\\vistassincontroller\\index.html"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\vistassincontroller\\price.html",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\vistassincontroller\\price.html",
       "PackagePath": "staticwebassets\\vistassincontroller\\price.html"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\vistassincontroller\\service.html",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\vistassincontroller\\service.html",
       "PackagePath": "staticwebassets\\vistassincontroller\\service.html"
     },
     {
-      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\wwwroot\\vistassincontroller\\single.html",
+      "Id": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\wwwroot\\vistassincontroller\\single.html",
       "PackagePath": "staticwebassets\\vistassincontroller\\single.html"
     },
     {

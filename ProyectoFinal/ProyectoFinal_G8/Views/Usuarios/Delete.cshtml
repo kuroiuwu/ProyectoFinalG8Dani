@@ -5,27 +5,36 @@
 }
 
 <div class="container mt-4">
-    <h1>Eliminar Usuario</h1>
-
-    <h3>¿Está seguro de que desea eliminar esto?</h3>
+    <h1>@ViewData["Title"]</h1>
+    <hr />
+    <h3 class="text-danger">¿Está seguro de que desea eliminar este Usuario?</h3>
+    <p class="text-danger">Esta acción no se puede deshacer.</p>
     <div>
         <dl class="row">
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Nombre)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Nombre)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Correo)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Correo)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Rol)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Rol.NombreRol)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Telefono)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Telefono)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Direccion)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Direccion)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Nombre)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Nombre)</dd>
+
+            @* Cambiado a Email *@
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Email)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt class="col-sm-3">Rol Principal</dt>
+            @* Cambiado a Rol.Name *@
+            <dd class="col-sm-9">@(Model.Rol != null ? Model.Rol.Name : "N/A")</dd>
+
+            @* Cambiado a PhoneNumber *@
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PhoneNumber)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.PhoneNumber)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Direccion)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Direccion)</dd>
         </dl>
 
         <form asp-action="Delete">
-            <input type="hidden" asp-for="IdUsuario" />
-            <input type="submit" value="Eliminar" class="btn btn-danger" />
-            <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+            @* Cambiado a Id *@
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Eliminar Usuario" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
         </form>
     </div>
 </div>

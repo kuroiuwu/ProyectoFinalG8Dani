@@ -1,29 +1,32 @@
-﻿@model ProyectoFinal_G8.Models.Rol
+﻿@* Cambiar modelo a ViewModel *@
+@model ProyectoFinal_G8.ViewModels.RolCreateViewModel
 
 @{
-    ViewData["Title"] = "Crear Rol";
+    ViewData["Title"] = "Crear Nuevo Rol";
 }
 
 <div class="container mt-4">
-    <h1>Crear Rol</h1>
-
+    <h1>@ViewData["Title"]</h1>
+    <hr />
     <div class="row">
         <div class="col-md-6">
             <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
                 <div class="mb-3">
-                    <label asp-for="NombreRol" class="form-label"></label>
-                    <input asp-for="NombreRol" class="form-control" />
-                    <span asp-validation-for="NombreRol" class="text-danger"></span>
+                    @* Usar Name *@
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
                     <label asp-for="Descripcion" class="form-label"></label>
-                    <input asp-for="Descripcion" class="form-control" />
+                    <textarea asp-for="Descripcion" class="form-control" rows="3"></textarea> @* Usar textarea para descripción *@
                     <span asp-validation-for="Descripcion" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
-                    <input type="submit" value="Crear" class="btn btn-primary" />
-                    <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+                    <input type="submit" value="Crear Rol" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
                 </div>
             </form>
         </div>

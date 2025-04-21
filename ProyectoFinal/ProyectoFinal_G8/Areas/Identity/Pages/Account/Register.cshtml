@@ -1,0 +1,62 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Registrar Nueva Cuenta";
+    // Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+                    <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        <hr />
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3" role="alert"></div>
+
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Nombre" class="form-control" autocomplete="name" aria-required="true" placeholder="Nombre Completo" />
+                            <label asp-for="Input.Nombre"></label>
+                            <span asp-validation-for="Input.Nombre" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                            <label asp-for="Input.Email">Correo Electrónico</label>
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Contraseña" />
+                            <label asp-for="Input.Password">Contraseña</label>
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Confirmar Contraseña" />
+                            <label asp-for="Input.ConfirmPassword">Confirmar Contraseña</label>
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+                        @* --- ELIMINAR CAMPO IdRol (Dropdown) --- *@
+                        @*<div class="form-floating mb-3">
+                              <select asp-for="Input.IdRol" class="form-select" asp-items="Model.RoleList" aria-required="true">
+                                  <option value="">-- Seleccione Tipo Cuenta --</option>
+                              </select>
+                              <label asp-for="Input.IdRol"></label>
+                              <span asp-validation-for="Input.IdRol" class="text-danger"></span>
+                         </div>*@
+                        @* --------------------------------------- *@
+
+                        <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Registrar</button>
+                    </form>
+                    @* ... (resto del archivo sin cambios) ... *@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

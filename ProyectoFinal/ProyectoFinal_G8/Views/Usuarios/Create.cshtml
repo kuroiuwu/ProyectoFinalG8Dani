@@ -1,47 +1,71 @@
-﻿@model ProyectoFinal_G8.Models.Usuario
+﻿@* Cambiar el modelo al ViewModel *@
+@model ProyectoFinal_G8.ViewModels.UsuarioCreateViewModel
 
 @{
     ViewData["Title"] = "Crear Usuario";
+    // Asume que usas un layout específico para áreas de administración/usuarios
+    // Layout = "~/Views/Shared/_LayoutUsuarios.cshtml";
 }
 
 <div class="container mt-4">
-    <h1>Crear Usuario</h1>
-
+    <h1>Crear Nuevo Usuario</h1>
+    <hr />
     <div class="row">
         <div class="col-md-6">
             <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
                 <div class="mb-3">
                     <label asp-for="Nombre" class="form-label"></label>
                     <input asp-for="Nombre" class="form-control" />
                     <span asp-validation-for="Nombre" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
-                    <label asp-for="Correo" class="form-label"></label>
-                    <input asp-for="Correo" class="form-control" />
-                    <span asp-validation-for="Correo" class="text-danger"></span>
+                    @* Cambiado a Email *@
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
-                    <label asp-for="Contraseña" class="form-label"></label>
-                    <input asp-for="Contraseña" class="form-control" />
-                    <span asp-validation-for="Contraseña" class="text-danger"></span>
+                    @* Cambiado a Password (del ViewModel) *@
+                    <label asp-for="Password" class="form-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
+
+                <div class="mb-3">
+                    @* Añadido ConfirmPassword (del ViewModel) *@
+                    <label asp-for="ConfirmPassword" class="form-label"></label>
+                    <input asp-for="ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+
                 <div class="mb-3">
                     <label asp-for="IdRol" class="form-label"></label>
-                    <select asp-for="IdRol" class="form-select" asp-items="ViewBag.IdRol"></select>
+                    @* Asegúrate que ViewBag.IdRol contenga un SelectList *@
+                    <select asp-for="IdRol" class="form-select" asp-items="ViewBag.ListaRoles">
+                        <option value="">-- Seleccione un Rol --</option>
+                    </select>
+                    <span asp-validation-for="IdRol" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
-                    <label asp-for="Telefono" class="form-label"></label>
-                    <input asp-for="Telefono" class="form-control" />
-                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                    @* Cambiado a PhoneNumber *@
+                    <label asp-for="PhoneNumber" class="form-label"></label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
                     <label asp-for="Direccion" class="form-label"></label>
                     <input asp-for="Direccion" class="form-control" />
                     <span asp-validation-for="Direccion" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
-                    <input type="submit" value="Crear" class="btn btn-primary" />
+                    <input type="submit" value="Crear Usuario" class="btn btn-primary" />
                     <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
                 </div>
             </form>

@@ -5,23 +5,31 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProyectoFinal_G8.Models;
+using Microsoft.AspNetCore.Identity;      // <-- Añadir using para Identity
+using Microsoft.AspNetCore.Authorization;  // <-- Añadir using para Autorización
 
 namespace ProyectoFinal_G8.Controllers
 {
+    [Authorize] // <-- Proteger controlador (ajusta roles si es necesario, ej. [Authorize(Roles="Admin,Veterinario")])
     public class CitasController : Controller
     {
         private readonly ProyectoFinal_G8Context _context;
+        private readonly UserManager<Usuario> _userManager; // <-- Inyectar UserManager
 
-        public CitasController(ProyectoFinal_G8Context context)
+        public CitasController(ProyectoFinal_G8Context context, UserManager<Usuario> userManager) // <-- Modificar constructor
         {
             _context = context;
+            _userManager = userManager; // <-- Asignar UserManager
         }
 
         // GET: Citas
         public async Task<IActionResult> Index()
         {
-            var proyectoFinal_G8Context = _context.Citas.Include(c => c.Mascota).Include(c => c.Veterinario);
-            return View(await proyectoFinal_G8Context.ToListAsync());
+            // Incluir Mascota y Veterinario (Usuario) usando la navegación definida
+            var citas = _context.Citas
+                                .Include(c => c.Mascota)
+                                .Include(c => c.Veterinario); // Asume que 'Veterinario' es la prop. de navegación para IdUsuarioVeterinario
+            return View(await citas.ToListAsync());
         }
 
         // GET: Citas/Details/5
@@ -45,10 +53,10 @@ namespace ProyectoFinal_G8.Controllers
         }
 
         // GET: Citas/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create() // <-- Cambiar a async Task
         {
-            ViewData["IdMascota"] = new SelectList(_context.Mascotas, "IdMascota", "Nombre");
-            ViewData["IdUsuarioVeterinario"] = new SelectList(_context.Usuarios.Where(u => u.IdRol == 2), "IdUsuario", "Nombre"); // Asumiendo Rol 2 es Veterinario
+            await LoadVeterinariosAsync(); // Cargar lista de veterinarios
+            ViewData["IdMascota"] = new SelectList(await _context.Mascotas.OrderBy(m => m.Nombre).ToListAsync(), "IdMascota", "Nombre"); // Cargar mascotas
             return View();
         }
 
@@ -57,19 +65,25 @@ namespace ProyectoFinal_G8.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdCita,FechaHora,IdMascota,IdUsuarioVeterinario,Motivo,Estado,Notas")] Cita cita)
         {
+            // Remover validación de navegación si causa problemas con ModelState
+            ModelState.Remove("Mascota");
+            ModelState.Remove("Veterinario");
+
             if (ModelState.IsValid)
             {
                 _context.Add(cita);
                 await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Cita creada exitosamente.";
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdMascota"] = new SelectList(_context.Mascotas, "IdMascota", "Nombre", cita.IdMascota);
-            ViewData["IdUsuarioVeterinario"] = new SelectList(_context.Usuarios.Where(u => u.IdRol == 2), "IdUsuario", "Nombre", cita.IdUsuarioVeterinario);
+            // Si falla, recargar listas
+            await LoadVeterinariosAsync(cita.IdUsuarioVeterinario);
+            ViewData["IdMascota"] = new SelectList(await _context.Mascotas.OrderBy(m => m.Nombre).ToListAsync(), "IdMascota", "Nombre", cita.IdMascota);
             return View(cita);
         }
 
         // GET: Citas/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? id) // <-- Cambiar a async Task
         {
             if (id == null)
             {
@@ -81,8 +95,9 @@ namespace ProyectoFinal_G8.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdMascota"] = new SelectList(_context.Mascotas, "IdMascota", "Nombre", cita.IdMascota);
-            ViewData["IdUsuarioVeterinario"] = new SelectList(_context.Usuarios.Where(u => u.IdRol == 2), "IdUsuario", "Nombre", cita.IdUsuarioVeterinario);
+            // Cargar listas
+            await LoadVeterinariosAsync(cita.IdUsuarioVeterinario);
+            ViewData["IdMascota"] = new SelectList(await _context.Mascotas.OrderBy(m => m.Nombre).ToListAsync(), "IdMascota", "Nombre", cita.IdMascota);
             return View(cita);
         }
 
@@ -96,16 +111,20 @@ namespace ProyectoFinal_G8.Controllers
                 return NotFound();
             }
 
+            ModelState.Remove("Mascota");
+            ModelState.Remove("Veterinario");
+
             if (ModelState.IsValid)
             {
                 try
                 {
                     _context.Update(cita);
                     await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Cita actualizada exitosamente.";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CitaExists(cita.IdCita))
+                    if (!await CitaExists(cita.IdCita)) // <-- Usar await
                     {
                         return NotFound();
                     }
@@ -116,8 +135,9 @@ namespace ProyectoFinal_G8.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdMascota"] = new SelectList(_context.Mascotas, "IdMascota", "Nombre", cita.IdMascota);
-            ViewData["IdUsuarioVeterinario"] = new SelectList(_context.Usuarios.Where(u => u.IdRol == 2), "IdUsuario", "Nombre", cita.IdUsuarioVeterinario);
+            // Si falla, recargar listas
+            await LoadVeterinariosAsync(cita.IdUsuarioVeterinario);
+            ViewData["IdMascota"] = new SelectList(await _context.Mascotas.OrderBy(m => m.Nombre).ToListAsync(), "IdMascota", "Nombre", cita.IdMascota);
             return View(cita);
         }
 
@@ -147,14 +167,32 @@ namespace ProyectoFinal_G8.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var cita = await _context.Citas.FindAsync(id);
-            _context.Citas.Remove(cita);
-            await _context.SaveChangesAsync();
+            if (cita != null) // Verificar si se encontró la cita
+            {
+                _context.Citas.Remove(cita);
+                await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Cita eliminada exitosamente.";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Cita no encontrada.";
+            }
+
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CitaExists(int id)
+        // Método auxiliar para cargar Veterinarios
+        private async Task LoadVeterinariosAsync(object? selectedVeterinario = null)
         {
-            return _context.Citas.Any(e => e.IdCita == id);
+            // ¡Asegúrate que el rol "Veterinario" existe!
+            var veterinarios = await _userManager.GetUsersInRoleAsync("Veterinario");
+            // Usar Id (PK de Usuario/IdentityUser) y Nombre (propiedad personalizada)
+            ViewData["IdUsuarioVeterinario"] = new SelectList(veterinarios.OrderBy(u => u.Nombre), "Id", "Nombre", selectedVeterinario);
+        }
+
+        private async Task<bool> CitaExists(int id) // <-- Cambiar a async Task
+        {
+            return await _context.Citas.AnyAsync(e => e.IdCita == id); // <-- Usar AnyAsync
         }
     }
 }
