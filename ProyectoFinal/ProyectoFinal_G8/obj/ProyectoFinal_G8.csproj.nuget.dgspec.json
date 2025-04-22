@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj": {}
+    "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj": {}
   },
   "projects": {
-    "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj": {
+    "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj",
+        "projectUniqueName": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj",
         "projectName": "ProyectoFinal_G8",
-        "projectPath": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj",
+        "projectPath": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj",
         "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\obj\\",
+        "outputPath": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
