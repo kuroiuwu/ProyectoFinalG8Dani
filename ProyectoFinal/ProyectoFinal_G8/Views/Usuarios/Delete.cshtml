@@ -14,15 +14,15 @@
             <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Nombre)</dt>
             <dd class="col-sm-9">@Html.DisplayFor(model => model.Nombre)</dd>
 
-            @* Cambiado a Email *@
+            
             <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Email)</dt>
             <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
 
             <dt class="col-sm-3">Rol Principal</dt>
-            @* Cambiado a Rol.Name *@
+            
             <dd class="col-sm-9">@(Model.Rol != null ? Model.Rol.Name : "N/A")</dd>
 
-            @* Cambiado a PhoneNumber *@
+            
             <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PhoneNumber)</dt>
             <dd class="col-sm-9">@Html.DisplayFor(model => model.PhoneNumber)</dd>
 
@@ -31,7 +31,6 @@
         </dl>
 
         <form asp-action="Delete">
-            @* Cambiado a Id *@
             <input type="hidden" asp-for="Id" />
             <input type="submit" value="Eliminar Usuario" class="btn btn-danger" />
             <a asp-action="Index" class="btn btn-secondary">Cancelar</a>

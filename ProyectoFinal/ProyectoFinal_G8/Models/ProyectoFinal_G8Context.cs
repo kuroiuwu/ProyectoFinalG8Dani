@@ -11,7 +11,7 @@ namespace ProyectoFinal_G8.Models
         {
         }
 
-        // DbSets existentes
+        
         public DbSet<Mascota> Mascotas { get; set; } = default!;
         public DbSet<Cita> Citas { get; set; } = default!;
         public DbSet<HistorialMedico> HistorialMedicos { get; set; } = default!;
@@ -28,7 +28,7 @@ namespace ProyectoFinal_G8.Models
         {
             base.OnModelCreating(modelBuilder); // Mantener al principio
 
-            // --- Renombrar tablas Identity (tu código existente) ---
+            // --- Renombrar tablas Identity  ---
             modelBuilder.Entity<Usuario>(b => { b.ToTable("Usuarios"); });
             modelBuilder.Entity<Rol>(b => { b.ToTable("Roles"); });
             modelBuilder.Entity<IdentityUserRole<int>>(b => { b.ToTable("UsuarioRoles"); });
@@ -38,7 +38,7 @@ namespace ProyectoFinal_G8.Models
             modelBuilder.Entity<IdentityUserToken<int>>(b => { b.ToTable("UsuarioTokens"); });
             // ----------------------------------------------------
 
-            // --- Relaciones existentes (tu código) ---
+            
             modelBuilder.Entity<Usuario>()
                 .HasOne(u => u.Rol)
                 .WithMany(r => r.Usuarios)
@@ -82,7 +82,7 @@ namespace ProyectoFinal_G8.Models
                .OnDelete(DeleteBehavior.Restrict);
             // ---------------------------------------
 
-            // --- Relaciones de Cita (ACTUALIZADO) ---
+           
             modelBuilder.Entity<Cita>(entity =>
             {
                 // Relación con Mascota

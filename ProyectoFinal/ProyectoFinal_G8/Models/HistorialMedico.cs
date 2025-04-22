@@ -32,10 +32,6 @@ namespace ProyectoFinal_G8.Models
         [DisplayName("Notas Adicionales")]
         public string? Notas { get; set; }
 
-        // Opcional: Relacionar con el veterinario que hizo el registro
-        // [DisplayName("Veterinario")]
-        // public int? IdUsuarioVeterinario { get; set; }
-        // [ForeignKey("IdUsuarioVeterinario")]
-        // public virtual Usuario Veterinario { get; set; }
+        
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using ProyectoFinal_G8.Models; // Para EstadoCita y validaciones
+using ProyectoFinal_G8.Models; 
 
 namespace ProyectoFinal_G8.Models.ViewModels
 {
@@ -78,7 +78,7 @@ namespace ProyectoFinal_G8.Models.ViewModels
                 {
                     yield return new ValidationResult("La especie de la nueva mascota es obligatoria.", new[] { nameof(NuevaEspecie) });
                 }
-                // Puedes añadir más validaciones aquí si es necesario (ej: FechaNacimiento no futura)
+                // Se podrían añadir más validaciones aquí si es necesario (ej: FechaNacimiento no futura)
                 if (NuevaFechaNacimiento.HasValue && NuevaFechaNacimiento.Value.Date > DateTime.Today)
                 {
                     yield return new ValidationResult("La fecha de nacimiento no puede ser futura.", new[] { nameof(NuevaFechaNacimiento) });

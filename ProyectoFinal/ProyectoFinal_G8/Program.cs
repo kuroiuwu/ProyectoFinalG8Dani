@@ -1,15 +1,13 @@
-using Microsoft.EntityFrameworkCore; // <-- AÑADIDO para AnyAsync, etc.
+using Microsoft.EntityFrameworkCore;
 using ProyectoFinal_G8.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
-using ProyectoFinal_G8.Services;         // <-- AÑADIDO para DummyEmailSender
-// --- Añadir estos usings para Seeding y Logging ---
+using ProyectoFinal_G8.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System.Linq;
-// using ProyectoFinal_G8.Repositories; // <-- COMENTADO/ELIMINADO HASTA QUE SE CREE
-// -------------------------------------------------
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,9 +18,9 @@ var connectionString = builder.Configuration.GetConnectionString("PF_G8"); // Re
 builder.Services.AddDbContext<ProyectoFinal_G8Context>(options =>
     options.UseSqlServer(connectionString));
 
-// 2. Configuración de ASP.NET Core Identity (SOLO UNA LLAMADA)
+// 2. Configuración de ASP.NET Core Identity
 builder.Services.AddIdentity<Usuario, Rol>(options => {
-    // Configura aquí las políticas de contraseña, bloqueo, etc. si lo deseas
+    // Configuración de políticas de contraseña, bloqueo, etc.
     options.Password.RequireDigit = false; // Ejemplo: No requerir dígitos
     options.Password.RequireLowercase = true;
     options.Password.RequireUppercase = false;
@@ -30,7 +28,6 @@ builder.Services.AddIdentity<Usuario, Rol>(options => {
     options.Password.RequiredLength = 6;
 
     options.User.RequireUniqueEmail = true; // Requerir email único
-    // options.SignIn.RequireConfirmedAccount = false; // Opcional: Requerir confirmación de email
 })
     .AddEntityFrameworkStores<ProyectoFinal_G8Context>() // Vincula Identity con tu DbContext
     .AddDefaultTokenProviders(); // Para funciones como reseteo de contraseña
@@ -58,7 +55,7 @@ using (var scope = app.Services.CreateScope())
     {
         logger.LogInformation("Iniciando seeding de roles, usuarios y tipos de cita...");
         var userManager = services.GetRequiredService<UserManager<Usuario>>(); // Obtener UserManager
-        var roleManager = services.GetRequiredService<RoleManager<Rol>>();      // Obtener RoleManager
+        var roleManager = services.GetRequiredService<RoleManager<Rol>>();     // Obtener RoleManager
         var dbContext = services.GetRequiredService<ProyectoFinal_G8Context>(); // Obtener DbContext
 
         // 1. Crear Roles primero
@@ -68,14 +65,13 @@ using (var scope = app.Services.CreateScope())
         await SeedUsersAsync(userManager, roleManager, logger);
 
         // 3. Crear Tipos de Cita
-        await SeedTiposCitaAsync(dbContext, logger); // Ahora AnyAsync funcionará
+        await SeedTiposCitaAsync(dbContext, logger);
 
         logger.LogInformation("Seeding completado.");
     }
     catch (Exception ex)
     {
         logger.LogError(ex, "Ocurrió un error durante el seeding de la base de datos.");
-        // Considera las implicaciones si el seeding falla
     }
 }
 
@@ -100,7 +96,6 @@ async Task SeedRolesAsync(RoleManager<Rol> roleManager, ILogger<Program> logger)
                 logger.LogError($"Error creando rol '{roleName}'. Errores: {string.Join(", ", result.Errors.Select(e => e.Description))}");
             }
         }
-        // else { logger.LogDebug($"Rol '{roleName}' ya existe."); } // Log Debug opcional
     }
 }
 
@@ -110,7 +105,7 @@ async Task SeedUsersAsync(UserManager<Usuario> userManager, RoleManager<Rol> rol
     // --- Usuario Admin ---
     string adminEmail = "admin@mail.com";
     string adminNombre = "Admin Principal";
-    string adminPassword = "Admin.123"; // ¡Contraseña débil solo para pruebas!
+    string adminPassword = "Admin.123"; 
     string adminRoleName = "Admin";
 
     logger.LogInformation($"Verificando usuario Admin: {adminEmail}");
@@ -136,12 +131,11 @@ async Task SeedUsersAsync(UserManager<Usuario> userManager, RoleManager<Rol> rol
         }
         else { logger.LogError($"Error creando usuario '{adminUser.UserName}'. Errores: {string.Join(", ", result.Errors.Select(e => e.Description))}"); }
     }
-    // else { logger.LogDebug($"Usuario Admin '{adminEmail}' ya existe."); } // Log Debug opcional
 
     // --- Usuario Veterinario (Dani) ---
     string vetEmail = "dani@mail.com";
     string vetNombre = "Dani Veterinario";
-    string vetPassword = "Admin.123"; // ¡Contraseña débil solo para pruebas!
+    string vetPassword = "Admin.123"; 
     string vetRoleName = "Veterinario";
 
     logger.LogInformation($"Verificando usuario Veterinario: {vetEmail}");
@@ -167,14 +161,12 @@ async Task SeedUsersAsync(UserManager<Usuario> userManager, RoleManager<Rol> rol
         }
         else { logger.LogError($"Error creando usuario '{vetUser.UserName}'. Errores: {string.Join(", ", result.Errors.Select(e => e.Description))}"); }
     }
-    // else { logger.LogDebug($"Usuario Veterinario '{vetEmail}' ya existe."); } // Log Debug opcional
 }
 
-// Función SeedTiposCitaAsync (sin cambios, pero ahora AnyAsync funciona)
+// Función SeedTiposCitaAsync
 async Task SeedTiposCitaAsync(ProyectoFinal_G8Context context, ILogger<Program> logger)
 {
     logger.LogInformation("Verificando/creando Tipos de Cita...");
-    // AnyAsync ahora funciona gracias a 'using Microsoft.EntityFrameworkCore;'
     if (!await context.TiposCita.AnyAsync())
     {
         logger.LogInformation("Creando Tipos de Cita iniciales...");
@@ -206,7 +198,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// Asegúrate que el orden sea correcto: Routing -> Authentication -> Authorization
+// Middleware de autenticación y autorización
 app.UseAuthentication();
 app.UseAuthorization();
 

@@ -30,7 +30,7 @@ namespace ProyectoFinal_G8.Models
         public decimal MontoTotal { get; set; }
 
         [StringLength(50)]
-        [DisplayName("Estado")] // Ej: Pendiente, Pagada, Anulada
+        [DisplayName("Estado")] // Ej: Pendiente, Pagada, Anulada, habría que implementarlo
         public string Estado { get; set; } = "Pendiente";
 
         // Relación de Navegación

@@ -28,7 +28,5 @@ namespace ProyectoFinal_G8.Models
         // Relación de Navegación (si se usa en facturas)
         public virtual ICollection<DetalleFactura>? DetallesFactura { get; set; }
 
-        // Podría relacionarse con HistorialMedico si un tratamiento es una entidad fija
-        // public virtual ICollection<HistorialMedico> HistorialesMedicos { get; set; }
     }
 }

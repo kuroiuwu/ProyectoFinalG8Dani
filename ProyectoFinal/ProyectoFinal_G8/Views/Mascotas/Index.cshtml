@@ -4,8 +4,7 @@
 @inject UserManager<Usuario> UserManager
 
 @{
-    ViewData["Title"] = "Mis Mascotas"; // Título más personalizado si es para cliente? O "Mascotas" general.
-    // Obtener ID del usuario actual para comprobaciones de propiedad
+    ViewData["Title"] = "Mis Mascotas"; 
     string currentUserIdString = UserManager.GetUserId(User);
     int.TryParse(currentUserIdString, out int currentUserID); // Asume que IdUsuario es int
 }
@@ -76,12 +75,10 @@
                         // *** Usando IdUsuarioDueño ***
                         bool isOwner = User.IsInRole("Cliente") && item.IdUsuarioDueño == currentUserID;
 
-                        // Define quién puede EDITAR: Admin/Vet siempre, Cliente solo si es dueño
-                        bool canManage = isAdminOrVet || isOwner; // Clientes dueños pueden editar
-                        // Define quién puede ver el historial: Admin/Vet siempre, Cliente solo si es dueño
+                        
+                        bool canManage = isAdminOrVet || isOwner; 
                         bool canViewHistory = isAdminOrVet || isOwner;
-                        // Define quién puede ver detalles: Podría ser cualquiera que vea la fila
-                        bool canViewDetails = true; // O ajusta si hay restricciones
+                        bool canViewDetails = true;
 
                         <tr>
                             <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
@@ -109,7 +106,7 @@
                                     }
 
                                     @* --- Condición ELIMINAR: SOLO Admin o Vet --- *@
-                                    @if (isAdminOrVet) // <--- CAMBIO AQUÍ: Solo Admin/Vet pueden ver Eliminar
+                                    @if (isAdminOrVet) // <--- Solo Admin/Vet pueden ver Eliminar
                                     {
                                         <a asp-action="Delete" asp-route-id="@item.IdMascota" class="btn btn-danger" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
                                     }

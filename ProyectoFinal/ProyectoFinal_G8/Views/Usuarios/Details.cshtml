@@ -12,22 +12,18 @@
             <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Nombre)</dt>
             <dd class="col-sm-9">@Html.DisplayFor(model => model.Nombre)</dd>
 
-            @* Cambiado a Email *@
+            
             <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Email)</dt>
             <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
 
-            <dt class="col-sm-3">Rol Principal</dt> @* Etiqueta genérica o usa DisplayNameFor si creas ViewModel *@
-            @* Cambiado a Rol.Name *@
+            <dt class="col-sm-3">Rol Principal</dt>
             <dd class="col-sm-9">@(Model.Rol != null ? Model.Rol.Name : "N/A")</dd>
 
-            @* Cambiado a PhoneNumber *@
             <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PhoneNumber)</dt>
             <dd class="col-sm-9">@Html.DisplayFor(model => model.PhoneNumber)</dd>
 
             <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Direccion)</dt>
             <dd class="col-sm-9">@Html.DisplayFor(model => model.Direccion)</dd>
-
-            @* Puedes añadir más campos de Identity si son relevantes *@
             <dt class="col-sm-3">@Html.DisplayNameFor(model => model.UserName)</dt>
             <dd class="col-sm-9">@Html.DisplayFor(model => model.UserName)</dd>
             <dt class="col-sm-3">@Html.DisplayNameFor(model => model.EmailConfirmed)</dt>
@@ -36,7 +32,6 @@
         </dl>
     </div>
     <div>
-        @* Cambiado a Id *@
         <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
         <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
     </div>

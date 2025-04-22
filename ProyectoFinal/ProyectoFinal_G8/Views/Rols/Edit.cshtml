@@ -1,5 +1,4 @@
-﻿@* Cambiar modelo a ViewModel *@
-@model ProyectoFinal_G8.ViewModels.RolEditViewModel
+﻿@model ProyectoFinal_G8.ViewModels.RolEditViewModel
 
 @{
     ViewData["Title"] = "Editar Rol";
@@ -24,7 +23,7 @@
                 </div>
                 <div class="mb-3">
                     <label asp-for="Descripcion" class="form-label"></label>
-                    <textarea asp-for="Descripcion" class="form-control" rows="3"></textarea> @* Usar textarea para descripción *@
+                    <textarea asp-for="Descripcion" class="form-control" rows="3"></textarea> 
                     <span asp-validation-for="Descripcion" class="text-danger"></span>
                 </div>
                 <div class="mb-3">

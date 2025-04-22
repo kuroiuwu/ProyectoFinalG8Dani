@@ -1,15 +1,12 @@
-﻿@* El modelo sigue siendo IEnumerable<Usuario> ya que el controller pasa la lista *@
-@model IEnumerable<ProyectoFinal_G8.Models.Usuario>
+﻿@@model IEnumerable<ProyectoFinal_G8.Models.Usuario>
 
 @{
     ViewData["Title"] = "Administración de Usuarios";
-    // Layout = "~/Views/Shared/_LayoutUsuarios.cshtml"; // Descomenta si usas layout específico
 }
 
 <div class="container mt-4">
     <h1>@ViewData["Title"]</h1>
     <hr />
-    @* Mostrar mensajes TempData *@
     @if (TempData["SuccessMessage"] != null)
     {
         <div class="alert alert-success">@TempData["SuccessMessage"]</div>
@@ -27,10 +24,8 @@
         <thead>
             <tr>
                 <th>@Html.DisplayNameFor(model => model.Nombre)</th>
-                @* Cambiado a Email *@
                 <th>@Html.DisplayNameFor(model => model.Email)</th>
-                <th>Rol Principal</th> @* Cambiado el texto de la cabecera *@
-                @* Cambiado a PhoneNumber *@
+                <th>Rol Principal</th>
                 <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
                 <th>@Html.DisplayNameFor(model => model.Direccion)</th>
                 <th>Acciones</th>
@@ -41,15 +36,11 @@
             {
                 <tr>
                     <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
-                    @* Cambiado a Email *@
                     <td>@Html.DisplayFor(modelItem => item.Email)</td>
-                    @* Cambiado a Rol.Name (Asegúrate que 'Include(u => u.Rol)' esté en la consulta del controller) *@
                     <td>@(item.Rol != null ? Html.DisplayFor(modelItem => item.Rol.Name) : "N/A")</td>
-                    @* Cambiado a PhoneNumber *@
                     <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
                     <td>@Html.DisplayFor(modelItem => item.Direccion)</td>
                     <td>
-                        @* Cambiado a Id *@
                         <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning" title="Editar"><i class="fas fa-pencil-alt"></i></a>
                         <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info" title="Detalles"><i class="fas fa-info-circle"></i></a>
                         <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger" title="Eliminar"><i class="fas fa-trash-alt"></i></a>

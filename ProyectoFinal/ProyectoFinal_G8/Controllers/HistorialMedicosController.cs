@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using ProyectoFinal_G8.Models; // Asegúrate que Usuario está aquí
+using ProyectoFinal_G8.Models; 
 
 namespace ProyectoFinal_G8.Controllers
 {
@@ -17,12 +17,12 @@ namespace ProyectoFinal_G8.Controllers
     {
         private readonly ProyectoFinal_G8Context _context;
         private readonly ILogger<HistorialMedicosController> _logger;
-        private readonly UserManager<Usuario> _userManager; // Cambiado a Usuario
+        private readonly UserManager<Usuario> _userManager; 
 
         public HistorialMedicosController(
             ProyectoFinal_G8Context context,
             ILogger<HistorialMedicosController> logger,
-            UserManager<Usuario> userManager) // Cambiado a Usuario
+            UserManager<Usuario> userManager) 
         {
             _context = context;
             _logger = logger;

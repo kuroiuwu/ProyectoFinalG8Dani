@@ -1,10 +1,8 @@
-﻿@* Cambiar el modelo al ViewModel *@
-@model ProyectoFinal_G8.ViewModels.UsuarioCreateViewModel
+﻿@model ProyectoFinal_G8.ViewModels.UsuarioCreateViewModel
 
 @{
     ViewData["Title"] = "Crear Usuario";
-    // Asume que usas un layout específico para áreas de administración/usuarios
-    // Layout = "~/Views/Shared/_LayoutUsuarios.cshtml";
+    
 }
 
 <div class="container mt-4">
@@ -22,21 +20,18 @@
                 </div>
 
                 <div class="mb-3">
-                    @* Cambiado a Email *@
                     <label asp-for="Email" class="form-label"></label>
                     <input asp-for="Email" class="form-control" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
 
                 <div class="mb-3">
-                    @* Cambiado a Password (del ViewModel) *@
                     <label asp-for="Password" class="form-label"></label>
                     <input asp-for="Password" class="form-control" />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
 
                 <div class="mb-3">
-                    @* Añadido ConfirmPassword (del ViewModel) *@
                     <label asp-for="ConfirmPassword" class="form-label"></label>
                     <input asp-for="ConfirmPassword" class="form-control" />
                     <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
@@ -44,7 +39,6 @@
 
                 <div class="mb-3">
                     <label asp-for="IdRol" class="form-label"></label>
-                    @* Asegúrate que ViewBag.IdRol contenga un SelectList *@
                     <select asp-for="IdRol" class="form-select" asp-items="ViewBag.ListaRoles">
                         <option value="">-- Seleccione un Rol --</option>
                     </select>
@@ -52,7 +46,6 @@
                 </div>
 
                 <div class="mb-3">
-                    @* Cambiado a PhoneNumber *@
                     <label asp-for="PhoneNumber" class="form-label"></label>
                     <input asp-for="PhoneNumber" class="form-control" />
                     <span asp-validation-for="PhoneNumber" class="text-danger"></span>

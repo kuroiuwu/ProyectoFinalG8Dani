@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using ProyectoFinal_G8.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.Extensions.Logging; // Añadido para Logging
+using Microsoft.Extensions.Logging; 
 
 namespace ProyectoFinal_G8.Controllers
 {

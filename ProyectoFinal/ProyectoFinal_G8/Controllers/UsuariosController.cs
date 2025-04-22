@@ -5,23 +5,20 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProyectoFinal_G8.Models;
-using ProyectoFinal_G8.ViewModels; // <-- Añadir using para ViewModels
-using Microsoft.AspNetCore.Identity; // <-- Añadir using para Identity
-using Microsoft.AspNetCore.Authorization; // <-- Añadir using para Autorización
+using ProyectoFinal_G8.ViewModels; 
+using Microsoft.AspNetCore.Identity; 
+using Microsoft.AspNetCore.Authorization; 
 
 namespace ProyectoFinal_G8.Controllers
 {
     // Proteger todo el controlador para que solo usuarios con el rol "Admin" (o el que definas) puedan acceder
-    // Asegúrate de que el rol "Admin" exista en tu base de datos (tabla Roles/AspNetRoles)
     [Authorize(Roles = "Admin")]
     public class UsuariosController : Controller
     {
         // Inyectar UserManager y RoleManager en lugar del DbContext directo para usuarios/roles
         private readonly UserManager<Usuario> _userManager;
         private readonly RoleManager<Rol> _roleManager;
-        // Podrías mantener el _context si necesitas acceder a otras tablas que no sean usuarios/roles directamente aquí,
-        // pero idealmente eso estaría en otros controladores o servicios/repositorios.
-        // private readonly ProyectoFinal_G8Context _context;
+     
 
         public UsuariosController(UserManager<Usuario> userManager, RoleManager<Rol> roleManager)
         {
@@ -185,10 +182,10 @@ namespace ProyectoFinal_G8.Controllers
                 // NO actualizar contraseña aquí
                 usuario.Nombre = viewModel.Nombre;
                 usuario.Email = viewModel.Email;
-                usuario.UserName = viewModel.Email; // Mantener UserName sincronizado con Email
+                usuario.UserName = viewModel.Email; 
                 usuario.PhoneNumber = viewModel.PhoneNumber;
                 usuario.Direccion = viewModel.Direccion;
-                usuario.IdRol = viewModel.IdRol; // Actualizar el IdRol principal
+                usuario.IdRol = viewModel.IdRol; 
 
                 // Guardar cambios usando UserManager
                 var result = await _userManager.UpdateAsync(usuario);
@@ -294,11 +291,6 @@ namespace ProyectoFinal_G8.Controllers
             ViewBag.ListaRoles = new SelectList(await _roleManager.Roles.OrderBy(r => r.Name).ToListAsync(), "Id", "Name", selectedRole);
         }
 
-        // Ya no es necesario UsuarioExists si confías en los FindAsync de UserManager
-        // private bool UsuarioExists(int id)
-        // {
-        //     // Adaptar para usar UserManager si es necesario, aunque FindByIdAsync ya lo valida
-        //     return _userManager.Users.Any(e => e.Id == id);
-        // }
+        
     }
 }

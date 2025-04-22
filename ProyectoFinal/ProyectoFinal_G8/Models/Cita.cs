@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Collections.Generic; // Necesario para ICollection
+using System.Collections.Generic; 
 
 namespace ProyectoFinal_G8.Models
 {
@@ -16,7 +16,6 @@ namespace ProyectoFinal_G8.Models
         public const string CanceladaStaff = "Cancelada por Staff"; // O solo "Cancelada" si el staff la cancela/elimina
         public const string NoAsistio = "No Asistió";
 
-        // Puedes añadir más estados si es necesario
 
         // Helper para obtener una lista de estados para dropdowns (útil para Admins/Vets)
         public static List<string> GetEstadosEditables()
@@ -41,8 +40,7 @@ namespace ProyectoFinal_G8.Models
         [Required(ErrorMessage = "La fecha y hora de la cita son obligatorias.")]
         [DisplayName("Fecha y Hora")]
         [DataType(DataType.DateTime)]
-        // Podrías añadir validación para que la fecha sea futura si es necesario en el modelo
-        // [FutureDate(ErrorMessage = "La fecha de la cita debe ser en el futuro.")] // Requeriría un ValidationAttribute personalizado
+        
         public DateTime FechaHora { get; set; }
 
         [Required(ErrorMessage = "Debe seleccionar una mascota.")]

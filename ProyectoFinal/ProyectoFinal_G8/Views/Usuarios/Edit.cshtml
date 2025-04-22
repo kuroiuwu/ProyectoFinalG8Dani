@@ -15,7 +15,6 @@
             <form asp-action="Edit">
                 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-                @* Cambiado a Id *@
                 <input type="hidden" asp-for="Id" />
 
                 <div class="mb-3">
@@ -25,17 +24,13 @@
                 </div>
 
                 <div class="mb-3">
-                    @* Cambiado a Email *@
                     <label asp-for="Email" class="form-label"></label>
                     <input asp-for="Email" class="form-control" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
 
-                @* ELIMINADO: Campo de Contraseña. No se edita directamente aquí. *@
-
                 <div class="mb-3">
                     <label asp-for="IdRol" class="form-label"></label>
-                    @* Asegúrate que ViewBag.IdRol contenga un SelectList *@
                     <select asp-for="IdRol" class="form-select" asp-items="ViewBag.ListaRoles">
                         <option value="">-- Seleccione un Rol --</option>
                     </select>
@@ -43,7 +38,6 @@
                 </div>
 
                 <div class="mb-3">
-                    @* Cambiado a PhoneNumber *@
                     <label asp-for="PhoneNumber" class="form-label"></label>
                     <input asp-for="PhoneNumber" class="form-control" />
                     <span asp-validation-for="PhoneNumber" class="text-danger"></span>

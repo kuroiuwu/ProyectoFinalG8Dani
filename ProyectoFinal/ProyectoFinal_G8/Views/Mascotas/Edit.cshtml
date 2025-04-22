@@ -42,7 +42,7 @@
                 @if (!User.IsInRole("Cliente"))
                 {
                     <div class="mb-3">
-                        <label asp-for="IdUsuarioDueño" class="form-label">Dueño</label> @* Puedes usar DisplayName si lo tienes en el modelo *@
+                        <label asp-for="IdUsuarioDueño" class="form-label">Dueño</label> 
                         <select asp-for="IdUsuarioDueño" class="form-select" asp-items="ViewBag.IdUsuarioDueño"></select>
                         <span asp-validation-for="IdUsuarioDueño" class="text-danger"></span> @* Mostrar validación solo si el campo es visible *@
                     </div>

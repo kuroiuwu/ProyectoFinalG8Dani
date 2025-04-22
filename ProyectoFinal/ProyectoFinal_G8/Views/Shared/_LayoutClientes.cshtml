@@ -5,7 +5,7 @@
     <title>Portal Propietario - Veterinaria Patitas CR</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    @* Referencias CSS (sin cambios) *@
+    
     <link href="@Url.Content("~/assets/img/favicon.ico")" rel="icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    @* Topbar (sin cambios) *@
+    
     <div class="container-fluid bg-dark">
         <div class="row py-2 px-lg-5">
             <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    @* Navbar - SECCIÓN MODIFICADA *@
+    
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
             <a class="navbar-brand d-flex align-items-center ml-lg-3" asp-area="" asp-controller="Propietario" asp-action="Dashboard">
@@ -46,19 +46,19 @@
                     <a class="nav-item nav-link" asp-area="" asp-controller="Propietario" asp-action="Pagos">Mis Pagos</a>
                     <a class="nav-item nav-link" asp-area="" asp-controller="Notificacion" asp-action="Notificaciones">Notificaciones</a>
 
-                    @* --- NUEVO: Enlace Mis Mascotas --- *@
+                    
                     <a class="nav-item nav-link" asp-area="" asp-controller="Mascotas" asp-action="Index">Mis Mascotas</a>
-                    @* ----------------------------------- *@
+                    
 
-                    @* --- MODIFICADO: Dropdown Citas --- *@
+                    
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Citas</a> @* Texto cambiado *@
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Citas</a> 
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a class="dropdown-item" asp-area="" asp-controller="Citas" asp-action="Index">Ver Mis Citas</a> @* Controlador cambiado *@
-                            <a class="dropdown-item" asp-area="" asp-controller="Citas" asp-action="Create">Solicitar Nueva Cita</a> @* Nuevo enlace *@
+                            <a class="dropdown-item" asp-area="" asp-controller="Citas" asp-action="Index">Ver Mis Citas</a> 
+                            <a class="dropdown-item" asp-area="" asp-controller="Citas" asp-action="Create">Solicitar Nueva Cita</a> 
                         </div>
                     </div>
-                    @* ---------------------------------- *@
+                    
 
                     <a class="nav-item nav-link" asp-area="" asp-controller="Propietario" asp-action="Configuracion">Configuración</a>
                 </div>
@@ -66,13 +66,13 @@
             </div>
         </nav>
     </div>
-    @* --- FIN SECCIÓN MODIFICADA --- *@
+    
 
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
 
-    @* Footer (sin cambios) *@
+    
     <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
         <div class="row pt-5">
             <div class="col-lg-7 col-md-6">
@@ -88,9 +88,8 @@
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-white mb-2" asp-area="" asp-controller="Propietario" asp-action="Dashboard"><i class="fa fa-angle-right mr-2"></i>Mi Panel</a>
                             <a class="text-white mb-2" asp-area="" asp-controller="Propietario" asp-action="Pagos"><i class="fa fa-angle-right mr-2"></i>Mis Pagos</a>
-                            @* --- NUEVO: Enlace Mis Mascotas Footer --- *@
+                            
                             <a class="text-white mb-2" asp-area="" asp-controller="Mascotas" asp-action="Index"><i class="fa fa-angle-right mr-2"></i>Mis Mascotas</a>
-                            @* --------------------------------------- *@
                             <a class="text-white mb-2" asp-area="" asp-controller="Citas" asp-action="Index"><i class="fa fa-angle-right mr-2"></i>Mis Citas</a> @* Controlador cambiado *@
                             <a class="text-white mb-2" asp-area="" asp-controller="Notificacion" asp-action="Notificaciones"><i class="fa fa-angle-right mr-2"></i>Notificaciones</a>
                             <a class="text-white mb-2" asp-area="" asp-controller="Propietario" asp-action="Configuracion"><i class="fa fa-angle-right mr-2"></i>Configuración</a>
@@ -114,7 +113,6 @@
     </div>
     <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
-    @* Scripts (sin cambios) *@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="@Url.Content("~/assets/lib/easing/easing.min.js")"></script>
