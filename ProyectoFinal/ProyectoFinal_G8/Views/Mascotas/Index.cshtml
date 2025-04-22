@@ -4,16 +4,34 @@
 @inject UserManager<Usuario> UserManager
 
 @{
-    ViewData["Title"] = "Mis Mascotas"; 
+    // Usa el ViewData establecido en el controlador
+    ViewData["Title"] = ViewData["VistaTitulo"]?.ToString() ?? "Mascotas";
+    bool isAdminOrVet = User.IsInRole("Admin") || User.IsInRole("Veterinario");
     string currentUserIdString = UserManager.GetUserId(User);
-    int.TryParse(currentUserIdString, out int currentUserID); // Asume que IdUsuario es int
+    int.TryParse(currentUserIdString, out int currentUserID);
 }
 
-<div class="container mt-4">
-    <h1>@ViewData["Title"]</h1>
-    <hr />
+@* Iconos (ejemplo con Font Awesome, puedes usar Bootstrap Icons) *@
+@* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> *@
+@* O usa Bootstrap Icons: *@
+@* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> *@
 
-    @* Mostrar mensajes TempData si existen *@
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+        <h1><i class="fas fa-paw me-2"></i>@ViewData["Title"]</h1>
+
+        @* Botón Crear: Ajustado texto según rol *@
+        @if (User.IsInRole("Admin") || User.IsInRole("Cliente") || User.IsInRole("Veterinario"))
+        {
+            <div>
+                <a asp-action="Create" class="btn btn-primary">
+                    <i class="fas fa-plus me-1"></i> @(User.IsInRole("Cliente") ? "Registrar Mascota" : "Crear Mascota")
+                </a>
+            </div>
+        }
+    </div>
+
+    @* Mostrar mensajes TempData *@
     @if (TempData["SuccessMessage"] != null)
     {
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -29,40 +47,60 @@
         </div>
     }
 
-
-    @* Botón Crear: Visible para todos los roles? O solo Admin? Ajusta User.IsInRole si es necesario *@
-    @if (User.IsInRole("Admin") || User.IsInRole("Cliente") || User.IsInRole("Veterinario")) // Ejemplo: Todos pueden crear
+    @* ***** NUEVO: Formulario de Búsqueda (SOLO para Admin/Vet) ***** *@
+    @if (isAdminOrVet)
     {
-        <p>
-            <a asp-action="Create" class="btn btn-primary">
-                <i class="fas fa-plus mr-1"></i> @(User.IsInRole("Cliente") ? "Registrar Nueva Mascota" : "Crear Nueva Mascota")
-            </a>
-        </p>
+        <div class="card card-body bg-light mb-3 p-3">
+            <form asp-action="Index" method="get" class="row g-2 align-items-end">
+                <div class="col-md">
+                    <label for="searchStringInputMascota" class="form-label small mb-1">Buscar por Nombre de Mascota o Dueño:</label>
+                    <div class="input-group">
+                        <input type="text" id="searchStringInputMascota" name="SearchString" value="@ViewData["CurrentFilter"]" class="form-control form-control-sm" placeholder="Ingrese nombre...">
+                        <button class="btn btn-sm btn-outline-secondary" type="submit" title="Buscar"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <a asp-action="Index" class="btn btn-sm btn-outline-secondary" title="Limpiar Búsqueda"><i class="fas fa-eraser"></i> Limpiar</a>
+                </div>
+            </form>
+        </div>
     }
+    @* ***** FIN: Formulario de Búsqueda ***** *@
 
 
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover">
-            <thead class="thead-light">
+    <div class="table-responsive shadow-sm rounded">
+        <table class="table table-striped table-bordered table-hover mb-0">
+            <thead class="table-light">
                 <tr>
                     <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Nombre)</th>
                     <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Especie)</th>
                     <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Raza)</th>
                     <th>@Html.DisplayNameFor(model => model.FirstOrDefault().FechaNacimiento)</th>
-                    @* Mostrar dueño solo si es Admin/Vet (Cliente ya sabe que son suyas) *@
-                    @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+                    @if (isAdminOrVet) // Solo Admin/Vet ven columna Dueño
                     {
                         <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Dueño)</th>
                     }
-                    <th>Acciones</th>
+                    <th class="text-center">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 @if (!Model.Any())
                 {
                     <tr>
-                        <td colspan="@(User.IsInRole("Admin") || User.IsInRole("Veterinario") ? "6" : "5")" class="text-center">
-                            @(User.IsInRole("Cliente") ? "No tienes mascotas registradas." : "No hay mascotas para mostrar.")
+                        @* Ajustar colspan basado en si se muestra la columna Dueño *@
+                        <td colspan="@(isAdminOrVet ? "6" : "5")" class="text-center">
+                            @if (!string.IsNullOrEmpty(ViewData["CurrentFilter"] as string))
+                            {
+                                @:No se encontraron mascotas que coincidan con la búsqueda.
+                            }
+                            else if (User.IsInRole("Cliente"))
+                            {
+                                @:Aún no has registrado ninguna mascota.
+                            }
+                            else
+                            {
+                                @:No hay mascotas registradas en el sistema.
+                            }
                         </td>
                     </tr>
                 }
@@ -70,53 +108,41 @@
                 {
                     @foreach (var item in Model)
                     {
-                        // Determinar permisos para esta fila específica
-                        bool isAdminOrVet = User.IsInRole("Admin") || User.IsInRole("Veterinario");
-                        // *** Usando IdUsuarioDueño ***
+                        // Permisos para esta fila
                         bool isOwner = User.IsInRole("Cliente") && item.IdUsuarioDueño == currentUserID;
-
-                        
-                        bool canManage = isAdminOrVet || isOwner; 
+                        bool canEdit = isAdminOrVet || isOwner;
+                        bool canDelete = isAdminOrVet; // Solo Admin/Vet pueden borrar
                         bool canViewHistory = isAdminOrVet || isOwner;
-                        bool canViewDetails = true;
 
                         <tr>
                             <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
                             <td>@Html.DisplayFor(modelItem => item.Especie)</td>
-                            <td>@Html.DisplayFor(modelItem => item.Raza)</td>
-                            <td>@(item.FechaNacimiento?.ToString("d") ?? "N/A")</td> @* Formato corto fecha - CORREGIDO *@
+                            <td>@(item.Raza ?? "N/A")</td>
+                            <td>@(item.FechaNacimiento?.ToString("dd/MM/yyyy") ?? "N/A")</td>
 
-                            @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+                            @if (isAdminOrVet)
                             {
-                                <td>@(item.Dueño?.Nombre ?? "N/A")</td> @* Asume Dueño cargado *@
+                                // Mostrar Nombre o UserName si Nombre es null
+                                <td>@(item.Dueño?.Nombre ?? item.Dueño?.UserName ?? "N/A")</td>
                             }
 
-                            <td>
-                                <div class="btn-group" role="group" aria-label="Acciones Mascota">
-
-                                    @if (canViewDetails)
+                            <td class="text-center">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Acciones Mascota">
+                                    <a asp-action="Details" asp-route-id="@item.IdMascota" class="btn btn-outline-info" title="Ver Detalles"><i class="fas fa-info-circle"></i></a>
+                                    @if (canEdit)
                                     {
-                                        <a asp-action="Details" asp-route-id="@item.IdMascota" class="btn btn-info" title="Ver Detalles"><i class="fas fa-info-circle"></i></a>
+                                        <a asp-action="Edit" asp-route-id="@item.IdMascota" class="btn btn-outline-warning" title="Editar"><i class="fas fa-pencil-alt"></i></a>
                                     }
-
-                                    @* --- Condición EDITAR: Admin, Vet o Cliente dueño --- *@
-                                    @if (canManage)
+                                    @if (canDelete)
                                     {
-                                        <a asp-action="Edit" asp-route-id="@item.IdMascota" class="btn btn-warning" title="Editar"><i class="fas fa-pencil-alt"></i></a>
+                                        <a asp-action="Delete" asp-route-id="@item.IdMascota" class="btn btn-outline-danger" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
                                     }
-
-                                    @* --- Condición ELIMINAR: SOLO Admin o Vet --- *@
-                                    @if (isAdminOrVet) // <--- Solo Admin/Vet pueden ver Eliminar
-                                    {
-                                        <a asp-action="Delete" asp-route-id="@item.IdMascota" class="btn btn-danger" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
-                                    }
-
                                     @if (canViewHistory)
                                     {
                                         <a asp-controller="HistorialMedicos"
                                            asp-action="Index"
                                            asp-route-mascotaId="@item.IdMascota"
-                                           class="btn btn-secondary"
+                                           class="btn btn-outline-secondary"
                                            title="Ver Historial Médico"><i class="fas fa-notes-medical"></i></a>
                                     }
                                 </div>
@@ -134,7 +160,7 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
     <script>
-        // Script para cerrar alerts de Bootstrap 5 (si lo usas)
+        // Script para cerrar alerts de Bootstrap 5
         var alertList = document.querySelectorAll('.alert');
         alertList.forEach(function (alert) {
           new bootstrap.Alert(alert);

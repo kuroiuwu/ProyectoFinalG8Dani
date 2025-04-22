@@ -1,95 +1,170 @@
 ﻿@model IEnumerable<ProyectoFinal_G8.Models.HistorialMedico>
 @using Microsoft.AspNetCore.Identity
-@using ProyectoFinal_G8.Models 
-@inject UserManager<Usuario> UserManager 
+@using ProyectoFinal_G8.Models
+@inject UserManager<Usuario> UserManager
 
 @{
     ViewData["Title"] = ViewData["TituloHistorial"]?.ToString() ?? "Historial Médico";
-    // Recuperar ID pasado desde el controller (como en tu ejemplo Citas)
     var currentUserID = ViewData["CurrentUserID"] != null ? (int)ViewData["CurrentUserID"] : 0;
+    var mascotaIdFiltrada = ViewData["MascotaIdFiltrada"] as int?; // Para saber si estamos viendo una mascota específica
+    bool isCliente = User.IsInRole("Cliente");
 }
 
+@* ************************************************** *@
+@* Asegúrate de tener Font Awesome si usas fas fa-* *@
+@* O cambia a Bootstrap Icons si las prefieres      *@
+@* ************************************************** *@
+@* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> *@
+@* O usa Bootstrap Icons: *@
+@* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> *@
+
+
 <div class="container mt-4">
-    <h1>@ViewData["Title"]</h1>
+    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+        <h1><i class="fas fa-notes-medical me-2"></i>@ViewData["Title"]</h1>
+
+        @* Botón Crear: Solo para Admin/Vet *@
+        @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+        {
+            <div>
+                @* Div para agrupar botón *@
+                @{
+                    var createRouteValues = new Dictionary<string, string>();
+                    if (mascotaIdFiltrada != null) { createRouteValues.Add("mascotaId", mascotaIdFiltrada.ToString()); }
+                }
+                <a asp-action="Create" asp-all-route-data="createRouteValues" class="btn btn-primary">
+                    <i class="fas fa-plus me-1"></i> Crear Nuevo Registro
+                </a>
+            </div>
+        }
+    </div>
 
     @* Mensajes TempData *@
     @if (TempData["SuccessMessage"] != null)
     {
-        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     }
     @if (TempData["ErrorMessage"] != null)
     {
-        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
-    }
-
-    @* Botón Crear: Solo para Admin/Veterinario *@
-    @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
-    {
-        <p>
-            @{
-                var createRouteValues = new Dictionary<string, string>();
-                if (ViewData["MascotaIdFiltrada"] != null) { createRouteValues.Add("mascotaId", ViewData["MascotaIdFiltrada"].ToString()); }
-            }
-            <a asp-action="Create" asp-all-route-data="createRouteValues" class="btn btn-primary"><i class="fas fa-plus mr-1"></i> Crear Nuevo Registro</a>
-        </p>
-    }
-
-    @if (!Model.Any())
-    {
-        <div class="alert alert-info">
-            @(User.IsInRole("Cliente") ? "No hay registros en el historial médico para esta mascota." : ViewData["MascotaIdFiltrada"] != null ? "No hay registros para esta mascota." : "No hay registros en el historial médico.")
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
-    else
+
+    @* ***** NUEVO: Formulario de Búsqueda (Solo para Admin/Vet si no filtra por mascota) ***** *@
+    @if (!isCliente && !mascotaIdFiltrada.HasValue)
     {
-        <div class="table-responsive">
-            @* Añadido para móviles *@
-            <table class="table table-striped table-bordered table-hover">
-                @* Añadido hover *@
-                <thead class="thead-light">
-                    @* Mejor contraste encabezado *@
+        <div class="card card-body bg-light mb-3 p-3">
+            <form asp-action="Index" method="get" class="row g-2 align-items-end">
+                <div class="col-md">
+                    @* Ocupa el espacio disponible *@
+                    <label for="searchStringInput" class="form-label small mb-1">Buscar por Nombre de Mascota o Dueño:</label>
+                    <div class="input-group">
+                        <input type="text" id="searchStringInput" name="SearchString" value="@ViewData["CurrentFilter"]" class="form-control form-control-sm" placeholder="Ingrese nombre...">
+                        <button class="btn btn-sm btn-outline-secondary" type="submit" title="Buscar"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    @* Botón de limpiar *@
+                    <a asp-action="Index" class="btn btn-sm btn-outline-secondary" title="Limpiar Búsqueda"><i class="fas fa-eraser"></i> Limpiar</a>
+                </div>
+                @* Opcional: Añadir dropdown para seleccionar mascota directamente desde aquí *@
+                @if (ViewData["MascotasSearchList"] != null)
+                {
+                    <div class="col-md">
+                        <label for="mascotaIdSearch" class="form-label small mb-1">O filtrar por Mascota:</label>
+                        <select name="mascotaId" id="mascotaIdSearch" asp-items='(SelectList)ViewData["MascotasSearchList"]' class="form-select form-select-sm" onchange="this.form.submit()">
+                            <option value="">-- Todas las Mascotas --</option>
+                        </select>
+                    </div>
+                }
+            </form>
+        </div>
+    }
+    @* ***** FIN: Formulario de Búsqueda ***** *@
+
+    @* Para Cliente: Mostrar dropdown para seleccionar mascota si no hay una seleccionada *@
+    @if (isCliente && !mascotaIdFiltrada.HasValue && ViewData["MisMascotasList"] != null)
+    {
+        <div class="card card-body bg-light mb-3 p-3">
+            <form asp-action="Index" method="get">
+                <div class="mb-2">
+                    <label for="mascotaIdSelectCliente" class="form-label">Seleccione una mascota para ver su historial:</label>
+                    <select name="mascotaId" id="mascotaIdSelectCliente" asp-items='(SelectList)ViewData["MisMascotasList"]' class="form-select" onchange="this.form.submit()" required>
+                        <option value="">-- Mis Mascotas --</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    }
+
+
+    @if (!Model.Any() && !isCliente) // No mostrar tabla si no hay resultados (excepto para cliente sin mascota seleccionada)
+    {
+        @if (!string.IsNullOrEmpty(ViewData["CurrentFilter"] as string))
+        {
+            <div class="alert alert-warning">No se encontraron registros que coincidan con su búsqueda.</div>
+        }
+        else if (!mascotaIdFiltrada.HasValue) // Si no hay filtro ni búsqueda y está vacío (Admin/Vet)
+        {
+            <div class="alert alert-info">No hay registros en el historial médico general.</div>
+        }
+        else // Si hay filtro de mascota pero no resultados
+        {
+            <div class="alert alert-info">No hay registros para la mascota seleccionada.</div>
+        }
+
+    }
+    else if (Model.Any()) // Solo mostrar tabla si hay datos en el modelo
+    {
+        <div class="table-responsive shadow-sm rounded">
+            <table class="table table-striped table-bordered table-hover mb-0">
+                <thead class="table-light">
+                    @* Usar table-light para contraste moderno *@
                     <tr>
-                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().FechaRegistro)</th>
-                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Mascota.Nombre)</th>
-                        @* Mostrar Dueño solo si es Admin/Vet y no estamos filtrando por mascota (o decidir si mostrar siempre) *@
-                        @if ((User.IsInRole("Admin") || User.IsInRole("Veterinario")) && ViewData["MascotaIdFiltrada"] == null)
+                        <th scope="col">@Html.DisplayNameFor(model => model.FirstOrDefault().FechaRegistro)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.FirstOrDefault().Mascota.Nombre)</th>
+                        @* Mostrar Dueño solo si es Admin/Vet y no estamos filtrando por mascota específica *@
+                        @if (!isCliente && !mascotaIdFiltrada.HasValue)
                         {
-                            <th>Dueño</th>
+                            <th scope="col">Dueño</th>
                         }
-                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Descripcion)</th>
-                        <th>Acciones</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.FirstOrDefault().Descripcion)</th>
+                        <th scope="col" class="text-center">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>@item.FechaRegistro.ToString("g")</td> @* Formato corto *@
+                            <td>@item.FechaRegistro.ToString("dd/MM/yyyy HH:mm")</td> @* Formato más común *@
                             <td>
-                                @* Enlace al detalle de la mascota *@
-                                <a asp-controller="Mascotas" asp-action="Details" asp-route-id="@item.IdMascota">
+                                <a asp-controller="Mascotas" asp-action="Details" asp-route-id="@item.IdMascota" title="Ver detalles de @item.Mascota.Nombre">
                                     @Html.DisplayFor(modelItem => item.Mascota.Nombre)
                                 </a>
                             </td>
-                            @if ((User.IsInRole("Admin") || User.IsInRole("Veterinario")) && ViewData["MascotaIdFiltrada"] == null)
+                            @if (!isCliente && !mascotaIdFiltrada.HasValue)
                             {
-                                <td>@(item.Mascota?.Dueño?.Nombre ?? "N/A")</td> @* Asume navegación Dueño en Mascota *@
+                                <td>@(item.Mascota?.Dueño?.Nombre ?? item.Mascota?.Dueño?.UserName ?? "N/A")</td>
                             }
                             <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
-                            <td>
-                                <div class="btn-group" role="group">
-                                    @* Agrupar botones *@
+                            <td class="text-center">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Acciones Historial">
                                     @* Botón Editar: Solo Admin/Vet *@
                                     @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
                                     {
-                                        <a asp-action="Edit" asp-route-id="@item.IdHistorial" class="btn btn-sm btn-warning" title="Editar"><i class="fas fa-pencil-alt"></i></a>
+                                        <a asp-action="Edit" asp-route-id="@item.IdHistorial" class="btn btn-outline-warning" title="Editar"><i class="fas fa-pencil-alt"></i></a>
                                     }
-                                    @* Botón Detalles: Siempre visible para roles autorizados *@
-                                    <a asp-action="Details" asp-route-id="@item.IdHistorial" class="btn btn-sm btn-info" title="Detalles"><i class="fas fa-info-circle"></i></a>
+                                    @* Botón Detalles: Siempre visible *@
+                                    <a asp-action="Details" asp-route-id="@item.IdHistorial" class="btn btn-outline-info" title="Detalles"><i class="fas fa-info-circle"></i></a>
                                     @* Botón Eliminar: Solo Admin/Vet *@
                                     @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
                                     {
-                                        <a asp-action="Delete" asp-route-id="@item.IdHistorial" class="btn btn-sm btn-danger" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
+                                        <a asp-action="Delete" asp-route-id="@item.IdHistorial" class="btn btn-outline-danger" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
                                     }
                                 </div>
                             </td>
@@ -100,13 +175,27 @@
         </div>
     }
 
-    <div class="mt-3">
-        <a asp-controller="Mascotas" asp-action="Index" class="btn btn-outline-secondary"><i class="fas fa-arrow-left mr-1"></i> Volver a Mascotas</a>
-    </div>
+    @* Botón Volver a Mascotas (si aplica o siempre visible) *@
+    @if (!mascotaIdFiltrada.HasValue && (User.IsInRole("Admin") || User.IsInRole("Veterinario")))
+    {
+        <div class="mt-4">
+            <a asp-controller="Mascotas" asp-action="Index" class="btn btn-outline-secondary"><i class="fas fa-arrow-left me-1"></i> Ir a Mascotas</a>
+        </div>
+    }
+    else if (mascotaIdFiltrada.HasValue)
+    {
+        <div class="mt-4">
+            @* Volver a Detalles de la mascota actual *@
+            <a asp-controller="Mascotas" asp-action="Details" asp-route-id="@mascotaIdFiltrada" class="btn btn-outline-secondary"><i class="fas fa-arrow-left me-1"></i> Volver a Detalles de Mascota</a>
+        </div>
+    }
+
+
 </div>
 
 @section Scripts {
     <script>
+        // Script para manejar los alerts dismissible si los usas
         var alertList = document.querySelectorAll('.alert');
         alertList.forEach(function (alert) {
           new bootstrap.Alert(alert);

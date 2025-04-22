@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using ProyectoFinal_G8.Models; 
+using ProyectoFinal_G8.Models;
 
 namespace ProyectoFinal_G8.Controllers
 {
@@ -17,12 +17,15 @@ namespace ProyectoFinal_G8.Controllers
     {
         private readonly ProyectoFinal_G8Context _context;
         private readonly ILogger<HistorialMedicosController> _logger;
-        private readonly UserManager<Usuario> _userManager; 
+        private readonly UserManager<Usuario> _userManager;
+
+        // *** Añadido Helper para verificar roles ***
+        private bool IsAdminOrVet => User.IsInRole("Admin") || User.IsInRole("Veterinario");
 
         public HistorialMedicosController(
             ProyectoFinal_G8Context context,
             ILogger<HistorialMedicosController> logger,
-            UserManager<Usuario> userManager) 
+            UserManager<Usuario> userManager)
         {
             _context = context;
             _logger = logger;
@@ -30,48 +33,70 @@ namespace ProyectoFinal_G8.Controllers
         }
 
         [Authorize(Roles = "Admin,Veterinario,Cliente")]
-        public async Task<IActionResult> Index(int? mascotaId)
+        public async Task<IActionResult> Index(int? mascotaId, string? searchString) // Permitir searchString nulo
         {
-            _logger.LogInformation($"Accediendo al Index de HistorialMedico. Filtro Mascota ID: {mascotaId}");
+            // Procesar searchString *solo* si es Admin o Vet
+            string? effectiveSearchString = IsAdminOrVet ? searchString : null;
 
-            // Obtener ID usuario actual (como string primero)
+            _logger.LogInformation($"Accediendo HistorialMedico Index. Rol Admin/Vet: {IsAdminOrVet}. Mascota ID: {mascotaId}, Search: '{effectiveSearchString}'");
+
             string currentUserIdString = _userManager.GetUserId(User);
-            // Convertir a int (asumiendo que tu IdUsuario es int, ajusta si es necesario)
             int.TryParse(currentUserIdString, out int currentUserId);
+            bool isCliente = User.IsInRole("Cliente"); // Podemos usar !IsAdminOrVet si solo hay esos 3 roles
 
-            bool isCliente = User.IsInRole("Cliente");
+            // Guardar el filtro de búsqueda *solo* si es Admin/Vet y hay algo
+            if (IsAdminOrVet && !string.IsNullOrEmpty(effectiveSearchString))
+            {
+                ViewData["CurrentFilter"] = effectiveSearchString;
+            }
+            else
+            {
+                ViewData["CurrentFilter"] = ""; // Asegurarse que esté vacío si no aplica
+            }
 
+
+            // --- Lógica de Cliente ---
             if (isCliente)
             {
                 if (!mascotaId.HasValue)
                 {
-                    _logger.LogWarning($"Cliente {currentUserIdString} intentó acceder a historial sin especificar mascotaId.");
-                    TempData["ErrorMessage"] = "Debe seleccionar una mascota para ver su historial.";
-                    ViewData["TituloHistorial"] = "Seleccione una Mascota";
-                    return View(new List<HistorialMedico>());
+                    TempData["InfoMessage"] = "Seleccione una de sus mascotas para ver su historial."; // Mensaje más informativo
+                    ViewData["TituloHistorial"] = "Seleccione Mascota";
+                    await LoadMascotasClienteForViewAsync(currentUserId); // Cargar dropdown para cliente
+                    return View(new List<HistorialMedico>()); // Mostrar vista vacía con dropdown
                 }
 
-                // Verificar que la mascota pertenece al cliente actual usando IdUsuarioDueño
-                // *** ¡IMPORTANTE! Usando IdUsuarioDueño de Mascota ***
                 bool mascotaPerteneceAlCliente = await _context.Mascotas
-                    .AnyAsync(m => m.IdMascota == mascotaId.Value && m.IdUsuarioDueño == currentUserId); // CORREGIDO aquí
+                    .AnyAsync(m => m.IdMascota == mascotaId.Value && m.IdUsuarioDueño == currentUserId);
 
                 if (!mascotaPerteneceAlCliente)
                 {
-                    _logger.LogWarning($"Cliente {currentUserIdString} intentó acceder al historial de mascotaId {mascotaId.Value} que no le pertenece.");
                     TempData["ErrorMessage"] = "No tiene permiso para ver el historial de esta mascota.";
                     ViewData["TituloHistorial"] = "Acceso Denegado";
+                    await LoadMascotasClienteForViewAsync(currentUserId); // Cargar dropdown
                     return View(new List<HistorialMedico>());
                 }
-                _logger.LogInformation($"Cliente {currentUserIdString} autorizado para ver historial de mascotaId {mascotaId.Value}.");
+                _logger.LogInformation($"Cliente {currentUserIdString} autorizado para ver historial mascotaId {mascotaId.Value}.");
+            }
+            // --- Lógica de Admin/Vet ---
+            else // Si es Admin o Vet
+            {
+                // Cargar dropdown de *todas* las mascotas para el filtro si no hay mascotaId específica
+                if (!mascotaId.HasValue)
+                {
+                    ViewData["MascotasSearchList"] = await GetMascotasSelectListAsync();
+                }
             }
 
-            // --- Lógica de consulta ---
+            // --- Query Base ---
             var historialesQuery = _context.HistorialMedicos
-                                           .Include(h => h.Mascota)
-                                               .ThenInclude(m => m.Dueño) // Asume que Dueño es la prop de navegación a Usuario
-                                           .AsQueryable();
+                                            .Include(h => h.Mascota)
+                                                .ThenInclude(m => m.Dueño)
+                                            .AsQueryable();
 
+            // --- Aplicar Filtros ---
+
+            // 1. Filtro por Mascota Específica (para cualquier rol autorizado)
             if (mascotaId.HasValue)
             {
                 var mascota = await _context.Mascotas
@@ -80,27 +105,50 @@ namespace ProyectoFinal_G8.Controllers
 
                 if (mascota != null)
                 {
-                    // El filtro Where se aplica para todos los roles si mascotaId tiene valor
                     historialesQuery = historialesQuery.Where(h => h.IdMascota == mascotaId.Value);
                     ViewData["TituloHistorial"] = $"Historial Médico de {mascota.Nombre}";
                     ViewData["MascotaIdFiltrada"] = mascotaId.Value;
+
+                    // Aplicar búsqueda de texto DENTRO del historial de la mascota, *solo si es Admin/Vet*
+                    if (IsAdminOrVet && !string.IsNullOrEmpty(effectiveSearchString))
+                    {
+                        historialesQuery = historialesQuery.Where(h => h.Descripcion.Contains(effectiveSearchString) ||
+                                                                      (h.Tratamiento != null && h.Tratamiento.Contains(effectiveSearchString)) ||
+                                                                      (h.Notas != null && h.Notas.Contains(effectiveSearchString)));
+                        ViewData["TituloHistorial"] += $" (filtrado por '{effectiveSearchString}')";
+                    }
                 }
                 else
                 {
-                    _logger.LogWarning($"Index GET: No se encontró mascota con ID {mascotaId.Value}.");
+                    // Mascota no encontrada (puede pasar si se manipula la URL)
                     TempData["ErrorMessage"] = $"No se encontró la mascota con ID {mascotaId.Value}.";
                     ViewData["TituloHistorial"] = "Mascota no encontrada";
-                    historialesQuery = historialesQuery.Where(h => false);
+                    historialesQuery = historialesQuery.Where(h => false); // No devolver resultados
+                    if (isCliente) await LoadMascotasClienteForViewAsync(currentUserId); // Recargar dropdown cliente
+                    else await GetMascotasSelectListAsync(); // Recargar dropdown admin/vet
                 }
             }
-            else
+            // 2. Filtro por SearchString (Solo para Admin/Vet y si NO se filtra por mascotaId)
+            else if (IsAdminOrVet && !string.IsNullOrEmpty(effectiveSearchString))
             {
-                if (isCliente) { return View(new List<HistorialMedico>()); } // Cliente siempre necesita mascotaId
+                historialesQuery = historialesQuery.Where(h => h.Mascota.Nombre.Contains(effectiveSearchString) ||
+                                                               (h.Mascota.Dueño != null && h.Mascota.Dueño.Nombre.Contains(effectiveSearchString))); // Asume que Dueños tienen Nombre
+                ViewData["TituloHistorial"] = $"Historial Médico (Resultados para '{effectiveSearchString}')";
+            }
+            // 3. Vista General (Solo Admin/Vet sin filtros)
+            else if (IsAdminOrVet)
+            {
                 ViewData["TituloHistorial"] = "Historial Médico General";
             }
+            // 4. Caso Cliente sin mascotaId (ya manejado al inicio, pero por seguridad)
+            else if (isCliente)
+            {
+                ViewData["TituloHistorial"] = "Seleccione Mascota";
+                historialesQuery = historialesQuery.Where(h => false); // Asegurar que no muestre nada
+                await LoadMascotasClienteForViewAsync(currentUserId); // Cargar dropdown
+            }
 
-            // Pasar el ID del usuario actual a la vista si se necesita (como en tu ejemplo de Citas)
-            ViewData["CurrentUserID"] = currentUserId;
+            ViewData["CurrentUserID"] = currentUserId; // Pasar ID actual a la vista
 
             var historiales = await historialesQuery
                                     .OrderByDescending(h => h.FechaRegistro)
@@ -109,55 +157,45 @@ namespace ProyectoFinal_G8.Controllers
             return View(historiales);
         }
 
+        // --- Método Details (sin cambios) ---
         [Authorize(Roles = "Admin,Veterinario,Cliente")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null) { return NotFound(); }
-
             var historialMedico = await _context.HistorialMedicos
                 .Include(h => h.Mascota)
-                    .ThenInclude(m => m.Dueño) // Incluye el Usuario dueño a través de Mascota
+                    .ThenInclude(m => m.Dueño)
                 .FirstOrDefaultAsync(m => m.IdHistorial == id);
-
             if (historialMedico == null) { return NotFound(); }
-
             if (User.IsInRole("Cliente"))
             {
                 string currentUserIdString = _userManager.GetUserId(User);
                 int.TryParse(currentUserIdString, out int currentUserId);
-                // *** ¡IMPORTANTE! Usando IdUsuarioDueño de Mascota ***
-                if (historialMedico.Mascota?.IdUsuarioDueño != currentUserId) // CORREGIDO aquí
-                {
-                    _logger.LogWarning($"Cliente {currentUserIdString} intentó ver Details del historial {id} que no le pertenece.");
-                    return Forbid();
-                }
-                _logger.LogInformation($"Cliente {currentUserIdString} autorizado para ver Details del historial {id}.");
+                if (historialMedico.Mascota?.IdUsuarioDueño != currentUserId) { return Forbid(); }
             }
-
             ViewData["MascotaIdOriginal"] = historialMedico.IdMascota;
-            // Pasar ID de usuario si fuera necesario en la vista Details
             string currentUserIdStr = _userManager.GetUserId(User);
             int.TryParse(currentUserIdStr, out int currentUsrId);
             ViewData["CurrentUserID"] = currentUsrId;
-
             return View(historialMedico);
         }
 
-        // --- Métodos Create, Edit, Delete (sin cambios en la lógica interna, solo verificar Authorize) ---
-
+        // --- Métodos Create (sin cambios) ---
         [Authorize(Roles = "Admin,Veterinario")]
         public async Task<IActionResult> Create(int? mascotaId)
         {
             var historial = new HistorialMedico { FechaRegistro = DateTime.Now };
             bool isMascotaPreselected = false;
+            string? mascotaNombre = null;
             if (mascotaId.HasValue)
             {
-                bool mascotaExiste = await _context.Mascotas.AnyAsync(m => m.IdMascota == mascotaId.Value);
-                if (mascotaExiste) { historial.IdMascota = mascotaId.Value; isMascotaPreselected = true; }
+                var mascota = await _context.Mascotas.FindAsync(mascotaId.Value);
+                if (mascota != null) { historial.IdMascota = mascotaId.Value; isMascotaPreselected = true; mascotaNombre = mascota.Nombre; }
                 else { TempData["ErrorMessage"] = $"Mascota ID {mascotaId.Value} no encontrada."; }
             }
             ViewData["IdMascota"] = await GetMascotasSelectListAsync(historial.IdMascota);
             ViewData["IsMascotaPreselected"] = isMascotaPreselected;
+            ViewData["MascotaNombre"] = mascotaNombre;
             return View(historial);
         }
 
@@ -174,14 +212,21 @@ namespace ProyectoFinal_G8.Controllers
                     _context.Add(historialMedico);
                     await _context.SaveChangesAsync();
                     TempData["SuccessMessage"] = "Registro creado exitosamente.";
-                    return RedirectToAction(nameof(Index), new { mascotaId = historialMedico.IdMascota }); // Redirigir a la lista filtrada
+                    return RedirectToAction(nameof(Index), new { mascotaId = historialMedico.IdMascota });
                 }
-                catch (Exception ex) { /*...*/ }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error al crear registro historial.");
+                    ModelState.AddModelError("", "Ocurrió un error al guardar.");
+                }
             }
             ViewData["IdMascota"] = await GetMascotasSelectListAsync(historialMedico.IdMascota);
+            ViewData["IsMascotaPreselected"] = await _context.Mascotas.AnyAsync(m => m.IdMascota == historialMedico.IdMascota); // Recheck
+            ViewData["MascotaNombre"] = await _context.Mascotas.Where(m => m.IdMascota == historialMedico.IdMascota).Select(m => m.Nombre).FirstOrDefaultAsync(); // Get name again
             return View(historialMedico);
         }
 
+        // --- Métodos Edit (sin cambios) ---
         [Authorize(Roles = "Admin,Veterinario")]
         public async Task<IActionResult> Edit(int? id)
         {
@@ -208,21 +253,33 @@ namespace ProyectoFinal_G8.Controllers
                     TempData["SuccessMessage"] = "Registro actualizado exitosamente.";
                     return RedirectToAction(nameof(Index), new { mascotaId = historialMedico.IdMascota });
                 }
-                catch (DbUpdateConcurrencyException ex) { /*...*/ }
-                catch (Exception ex) { /*...*/ }
+                catch (DbUpdateConcurrencyException ex)
+                {
+                    _logger.LogError(ex, "Concurrency Error Edit Historial ID {HistorialId}", id);
+                    if (!HistorialMedicoExists(historialMedico.IdHistorial)) { return NotFound(); }
+                    else { ModelState.AddModelError("", "El registro fue modificado. Intente de nuevo."); }
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error Edit Historial ID {HistorialId}", id);
+                    ModelState.AddModelError("", "Ocurrió un error al guardar.");
+                }
             }
             ViewData["IdMascota"] = await GetMascotasSelectListAsync(historialMedico.IdMascota);
             return View(historialMedico);
         }
 
+        // --- Métodos Delete (sin cambios) ---
         [Authorize(Roles = "Admin,Veterinario")]
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
         {
             if (id == null) { return NotFound(); }
             var historialMedico = await _context.HistorialMedicos
-                .Include(h => h.Mascota) // Incluir para obtener IdMascota para la redirección
+                .Include(h => h.Mascota)
+                    .ThenInclude(m => m.Dueño)
                 .FirstOrDefaultAsync(m => m.IdHistorial == id);
             if (historialMedico == null) { return NotFound(); }
+            if (saveChangesError.GetValueOrDefault()) { ViewData["ErrorMessage"] = "Error al eliminar. Inténtelo de nuevo."; }
             return View(historialMedico);
         }
 
@@ -233,32 +290,59 @@ namespace ProyectoFinal_G8.Controllers
         {
             var historialMedico = await _context.HistorialMedicos.FindAsync(id);
             int? mascotaIdRedir = historialMedico?.IdMascota;
-
             if (historialMedico != null)
             {
-                try { _context.HistorialMedicos.Remove(historialMedico); await _context.SaveChangesAsync(); TempData["SuccessMessage"] = "Registro eliminado."; }
-                catch (Exception ex) { TempData["ErrorMessage"] = "Error al eliminar."; return RedirectToAction(nameof(Delete), new { id = id }); }
+                try
+                {
+                    _context.HistorialMedicos.Remove(historialMedico);
+                    await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Registro eliminado exitosamente.";
+                }
+                catch (DbUpdateException ex)
+                {
+                    _logger.LogError(ex, "DB Error Deleting Historial ID {HistorialId}", id);
+                    TempData["ErrorMessage"] = "No se pudo eliminar. Puede tener datos asociados.";
+                    return RedirectToAction(nameof(Delete), new { id = id, saveChangesError = true });
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error Deleting Historial ID {HistorialId}", id);
+                    TempData["ErrorMessage"] = "Ocurrió un error inesperado al eliminar.";
+                    return RedirectToAction(nameof(Delete), new { id = id, saveChangesError = true });
+                }
             }
             else { TempData["ErrorMessage"] = "Registro no encontrado."; }
-
             return RedirectToAction(nameof(Index), new { mascotaId = mascotaIdRedir });
         }
 
-        // --- Métodos privados existentes (sin cambios) ---
-        private bool HistorialMedicoExists(int id) { /*...*/ return _context.HistorialMedicos.Any(e => e.IdHistorial == id); }
+        // --- Métodos privados (sin cambios) ---
+        private bool HistorialMedicoExists(int id)
+        {
+            return _context.HistorialMedicos.Any(e => e.IdHistorial == id);
+        }
+
         private async Task<SelectList> GetMascotasSelectListAsync(object? selectedValue = null)
-        { /*...*/
-            // Este método ya incluye el Dueño.Nombre, está bien.
+        {
             var mascotasData = await _context.Mascotas
-                                          .Include(m => m.Dueño)
-                                          .OrderBy(m => m.Nombre)
-                                          .Select(m => new {
-                                              Id = m.IdMascota,
-                                              DisplayText = $"{m.Nombre} (Dueño: {m.Dueño.Nombre ?? "N/A"})"
-                                          })
-                                          .ToListAsync();
+                                        .Include(m => m.Dueño)
+                                        .OrderBy(m => m.Nombre)
+                                        .Select(m => new {
+                                            Id = m.IdMascota,
+                                            DisplayText = $"{m.Nombre} (Dueño: {m.Dueño.Nombre ?? m.Dueño.UserName ?? "N/A"})"
+                                        })
+                                        .ToListAsync();
             string? currentSelection = selectedValue?.ToString();
             return new SelectList(mascotasData, "Id", "DisplayText", currentSelection);
+        }
+
+        private async Task LoadMascotasClienteForViewAsync(int clienteId, int? selectedMascotaId = null)
+        {
+            var misMascotas = await _context.Mascotas
+               .Where(m => m.IdUsuarioDueño == clienteId)
+               .OrderBy(m => m.Nombre)
+               .Select(m => new { m.IdMascota, m.Nombre })
+               .ToListAsync();
+            ViewData["MisMascotasList"] = new SelectList(misMascotas, "IdMascota", "Nombre", selectedMascotaId);
         }
     }
 }
