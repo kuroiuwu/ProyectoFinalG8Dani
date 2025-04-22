@@ -1,43 +1,146 @@
 ﻿@model IEnumerable<ProyectoFinal_G8.Models.Cita>
+ @using Microsoft.AspNetCore.Identity
+ @using ProyectoFinal_G8.Models // Para EstadoCita
+ @inject UserManager<Usuario> UserManager // Para obtener ID de usuario actual
 
 @{
-    ViewData["Title"] = "Citas";
+    ViewData["Title"] = ViewData["VistaTitulo"] ?? "Citas";
+    // Layout = ...;
+    var currentUserID = ViewData["CurrentUserID"] != null ? (int)ViewData["CurrentUserID"] : 0; // Recuperar ID pasado desde el controller
+    // var currentUserIdString = UserManager.GetUserId(User); // Alternativa: obtenerlo directamente aquí si no se pasó
 }
 
 <div class="container mt-4">
-    <h1>Citas</h1>
+    <h1>@ViewData["Title"]</h1>
+    <hr />
+
+    @* Mostrar mensajes TempData (ya estaban bien) *@
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> @* Botón cierre Bootstrap 5 *@
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
 
     <p>
-        <a asp-action="Create" class="btn btn-primary">Crear Nueva Cita</a>
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-plus mr-1"></i> @(User.IsInRole("Cliente") ? "Solicitar Nueva Cita" : "Crear Nueva Cita")
+        </a>
     </p>
 
-    <table class="table table-striped table-bordered">
-        <thead>
-            <tr>
-                <th>@Html.DisplayNameFor(model => model.FechaHora)</th>
-                <th>@Html.DisplayNameFor(model => model.Mascota)</th>
-                <th>@Html.DisplayNameFor(model => model.Veterinario)</th>
-                <th>@Html.DisplayNameFor(model => model.Motivo)</th>
-                <th>@Html.DisplayNameFor(model => model.Estado)</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+    <div class="table-responsive">
+        @* Añadido para mejor visualización en móviles *@
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="thead-light">
                 <tr>
-                    <td>@Html.DisplayFor(modelItem => item.FechaHora)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Mascota.Nombre)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Veterinario.Nombre)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Motivo)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Estado)</td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.IdCita" class="btn btn-sm btn-warning">Editar</a>
-                        <a asp-action="Details" asp-route-id="@item.IdCita" class="btn btn-sm btn-info">Detalles</a>
-                        <a asp-action="Delete" asp-route-id="@item.IdCita" class="btn btn-sm btn-danger">Eliminar</a>
-                    </td>
+                    <th>@Html.DisplayNameFor(model => model.FirstOrDefault().FechaHora)</th>
+                    <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Mascota)</th>
+                    @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+                    {
+                        <th>Dueño</th>
+                    }
+                    <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Veterinario)</th>
+                    <th>Tipo Cita</th>
+                    <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Estado)</th> @* El estado se muestra a todos *@
+                    <th>Acciones</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="@(User.IsInRole("Admin") || User.IsInRole("Veterinario") ? "7" : "6")" class="text-center">
+                            @(User.IsInRole("Cliente") ? "No tienes citas programadas." : "No hay citas para mostrar.")
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.FechaHora.ToString("g")</td> @* Formato corto fecha/hora *@
+                            <td>@(item.Mascota?.Nombre ?? "N/A")</td>
+                            @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+                            {
+                                <td>@(item.Mascota?.Dueño?.Nombre ?? "N/A")</td> @* Asume que Dueño es Usuario y tiene Nombre *@
+                            }
+                            <td>@(item.Veterinario?.Nombre ?? "N/A")</td> @* Asume que Veterinario es Usuario y tiene Nombre *@
+                            <td>@(item.TipoCita?.Nombre ?? "N/A")</td>
+                            <td>
+                                @* Podríamos añadir estilo al estado *@
+                                <span class="badge @GetEstadoBadgeClass(item.Estado)">
+                                    @Html.DisplayFor(modelItem => item.Estado)
+                                </span>
+                            </td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Acciones Cita">
+                                    <a asp-action="Details" asp-route-id="@item.IdCita" class="btn btn-sm btn-info" title="Detalles"><i class="fas fa-info-circle"></i></a>
+
+                                    @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+                                    {
+                                        <a asp-action="Edit" asp-route-id="@item.IdCita" class="btn btn-sm btn-warning" title="Editar (Admin/Vet)"><i class="fas fa-pencil-alt"></i></a>
+                                        <a asp-action="Delete" asp-route-id="@item.IdCita" class="btn btn-sm btn-danger" title="Eliminar (Admin/Vet)"><i class="fas fa-trash-alt"></i></a>
+                                    }
+                                    else if (User.IsInRole("Cliente") && item.Mascota?.IdUsuarioDueño == currentUserID)
+                                    {
+                                        // Cliente puede editar/cancelar SOLO si está Programada y es futura
+                                        bool canModify = item.Estado == EstadoCita.Programada && item.FechaHora > DateTime.Now;
+                                        if (canModify)
+                                        {
+                                            <a asp-action="EditCliente" asp-route-id="@item.IdCita" class="btn btn-sm btn-secondary" title="Modificar Mi Cita"><i class="fas fa-edit"></i></a>
+                                            <a asp-action="CancelCliente" asp-route-id="@item.IdCita" class="btn btn-sm btn-outline-danger" title="Cancelar Mi Cita"><i class="fas fa-times-circle"></i></a>
+                                        }
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
+
+@* Helper function para los badges de estado (Opcional, mejora visual) *@
+@functions {
+    string GetEstadoBadgeClass(string? estado)
+    {
+        if (string.IsNullOrEmpty(estado)) return "bg-secondary";
+        switch (estado)
+        {
+            case EstadoCita.Programada:
+                return "bg-info text-dark";
+            case EstadoCita.Confirmada:
+                return "bg-primary";
+            case EstadoCita.Realizada:
+                return "bg-success";
+            case EstadoCita.CanceladaCliente:
+            case EstadoCita.CanceladaStaff:
+                return "bg-danger";
+            case EstadoCita.NoAsistio:
+                return "bg-warning text-dark";
+            default:
+                return "bg-secondary";
+        }
+    }
+ }
+
+ @section Scripts {
+         @* Scripts adicionales si los necesitas *@
+    <script>
+        // Script para que los alerts se cierren (si usas Bootstrap 5)
+        var alertList = document.querySelectorAll('.alert');
+        alertList.forEach(function (alert) {
+          new bootstrap.Alert(alert);
+        });
+    </script>
+ }

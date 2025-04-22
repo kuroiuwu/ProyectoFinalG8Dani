@@ -134,7 +134,6 @@ namespace ProyectoFinal_G8.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCita"));
 
                     b.Property<string>("Estado")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -144,13 +143,11 @@ namespace ProyectoFinal_G8.Migrations
                     b.Property<int>("IdMascota")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdUsuarioVeterinario")
+                    b.Property<int>("IdTipoCita")
                         .HasColumnType("int");
 
-                    b.Property<string>("Motivo")
-                        .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
+                    b.Property<int>("IdUsuarioVeterinario")
+                        .HasColumnType("int");
 
                     b.Property<string>("Notas")
                         .HasMaxLength(500)
@@ -162,6 +159,8 @@ namespace ProyectoFinal_G8.Migrations
                     b.HasKey("IdCita");
 
                     b.HasIndex("IdMascota");
+
+                    b.HasIndex("IdTipoCita");
 
                     b.HasIndex("IdUsuarioVeterinario");
 
@@ -380,6 +379,27 @@ namespace ProyectoFinal_G8.Migrations
                     b.ToTable("Roles", (string)null);
                 });
 
+            modelBuilder.Entity("ProyectoFinal_G8.Models.TipoCita", b =>
+                {
+                    b.Property<int>("IdTipoCita")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdTipoCita"));
+
+                    b.Property<int>("DuracionMinutos")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdTipoCita");
+
+                    b.ToTable("TiposCita");
+                });
+
             modelBuilder.Entity("ProyectoFinal_G8.Models.Tratamiento", b =>
                 {
                     b.Property<int>("IdTratamiento")
@@ -546,6 +566,12 @@ namespace ProyectoFinal_G8.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ProyectoFinal_G8.Models.TipoCita", "TipoCita")
+                        .WithMany("Citas")
+                        .HasForeignKey("IdTipoCita")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("ProyectoFinal_G8.Models.Usuario", "Veterinario")
                         .WithMany("CitasComoVeterinario")
                         .HasForeignKey("IdUsuarioVeterinario")
@@ -557,6 +583,8 @@ namespace ProyectoFinal_G8.Migrations
                         .HasForeignKey("UsuarioId");
 
                     b.Navigation("Mascota");
+
+                    b.Navigation("TipoCita");
 
                     b.Navigation("Veterinario");
                 });
@@ -650,6 +678,11 @@ namespace ProyectoFinal_G8.Migrations
             modelBuilder.Entity("ProyectoFinal_G8.Models.Rol", b =>
                 {
                     b.Navigation("Usuarios");
+                });
+
+            modelBuilder.Entity("ProyectoFinal_G8.Models.TipoCita", b =>
+                {
+                    b.Navigation("Citas");
                 });
 
             modelBuilder.Entity("ProyectoFinal_G8.Models.Tratamiento", b =>

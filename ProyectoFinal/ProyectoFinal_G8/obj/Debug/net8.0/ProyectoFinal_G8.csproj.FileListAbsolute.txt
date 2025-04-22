@@ -1093,6 +1093,15 @@ C:\Users\danie\source\repos\Avanzada en web\RepositorioProyectoFinal\ProyectoFin
 C:\Users\danie\source\repos\Avanzada en web\RepositorioProyectoFinal\ProyectoFinalG8Dani\ProyectoFinal\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.pdb
 C:\Users\danie\source\repos\Avanzada en web\RepositorioProyectoFinal\ProyectoFinalG8Dani\ProyectoFinal\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.genruntimeconfig.cache
 C:\Users\danie\source\repos\Avanzada en web\RepositorioProyectoFinal\ProyectoFinalG8Dani\ProyectoFinal\ProyectoFinal_G8\obj\Debug\net8.0\ref\ProyectoFinal_G8.dll
+C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.csproj.AssemblyReference.cache
+C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.AssemblyInfoInputs.cache
+C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.AssemblyInfo.cs
+C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.csproj.CoreCompileInputs.cache
+C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.RazorAssemblyInfo.cache
+C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.RazorAssemblyInfo.cs
 C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\bin\Debug\net8.0\appsettings.json
 C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\bin\Debug\net8.0\ProyectoFinal_G8.staticwebassets.runtime.json
@@ -1363,15 +1372,6 @@ C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFi
 C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
-C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.csproj.AssemblyReference.cache
-C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.AssemblyInfoInputs.cache
-C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.AssemblyInfo.cs
-C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.csproj.CoreCompileInputs.cache
-C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.RazorAssemblyInfo.cache
-C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\ProyectoFinal_G8.RazorAssemblyInfo.cs
 C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\scopedcss\Views\Shared\_LayoutClientes.cshtml.rz.scp.css
 C:\Users\danie\source\repos\Avanzada en web\Copia proyecto final dani\ProyectoFinal_G8\obj\Debug\net8.0\scopedcss\Views\Shared\_LayoutUsuarios.cshtml.rz.scp.css

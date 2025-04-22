@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ProyectoFinal_G8.Migrations
 {
     /// <inheritdoc />
-    public partial class IniciarBD : Migration
+    public partial class ReiniciarBD : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -44,6 +44,20 @@ namespace ProyectoFinal_G8.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roles", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TiposCita",
+                columns: table => new
+                {
+                    IdTipoCita = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    DuracionMinutos = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TiposCita", x => x.IdTipoCita);
                 });
 
             migrationBuilder.CreateTable(
@@ -293,8 +307,8 @@ namespace ProyectoFinal_G8.Migrations
                     FechaHora = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IdMascota = table.Column<int>(type: "int", nullable: false),
                     IdUsuarioVeterinario = table.Column<int>(type: "int", nullable: false),
-                    Motivo = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
-                    Estado = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    IdTipoCita = table.Column<int>(type: "int", nullable: false),
+                    Estado = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Notas = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     UsuarioId = table.Column<int>(type: "int", nullable: true)
                 },
@@ -307,6 +321,12 @@ namespace ProyectoFinal_G8.Migrations
                         principalTable: "Mascotas",
                         principalColumn: "IdMascota",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Citas_TiposCita_IdTipoCita",
+                        column: x => x.IdTipoCita,
+                        principalTable: "TiposCita",
+                        principalColumn: "IdTipoCita",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Citas_Usuarios_IdUsuarioVeterinario",
                         column: x => x.IdUsuarioVeterinario,
@@ -347,6 +367,11 @@ namespace ProyectoFinal_G8.Migrations
                 name: "IX_Citas_IdMascota",
                 table: "Citas",
                 column: "IdMascota");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Citas_IdTipoCita",
+                table: "Citas",
+                column: "IdTipoCita");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Citas_IdUsuarioVeterinario",
@@ -459,6 +484,9 @@ namespace ProyectoFinal_G8.Migrations
 
             migrationBuilder.DropTable(
                 name: "UsuarioTokens");
+
+            migrationBuilder.DropTable(
+                name: "TiposCita");
 
             migrationBuilder.DropTable(
                 name: "Facturas");

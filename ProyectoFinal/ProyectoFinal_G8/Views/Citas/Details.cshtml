@@ -1,30 +1,88 @@
 ﻿@model ProyectoFinal_G8.Models.Cita
+@using Microsoft.AspNetCore.Identity
+ @using ProyectoFinal_G8.Models // Para EstadoCita
+ @inject UserManager<Usuario> UserManager // Para obtener ID
 
 @{
-    ViewData["Title"] = "Detalles Cita";
+    ViewData["Title"] = "Detalles de Cita";
+    // Layout = ...;
+    var currentUserID = ViewData["CurrentUserID"] != null ? (int)ViewData["CurrentUserID"] : 0;
 }
 
 <div class="container mt-4">
-    <h1>Detalles Cita</h1>
-
+    <h1>@ViewData["Title"] #@Model.IdCita</h1>
+    <hr />
     <div>
+        <h4>Información de la Cita</h4>
+        <hr />
         <dl class="row">
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.FechaHora)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.FechaHora)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Mascota)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Mascota.Nombre)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Veterinario)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Veterinario.Nombre)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Motivo)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Motivo)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Estado)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Estado)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Notas)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Notas)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FechaHora)</dt>
+            <dd class="col-sm-9">@Model.FechaHora.ToString("F")</dd> @* Formato largo fecha/hora *@
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Mascota)</dt>
+            <dd class="col-sm-9">@(Model.Mascota?.Nombre ?? "N/A")</dd>
+
+            @* Mostrar Dueño solo si es relevante (Admin/Vet lo ven siempre, Cliente si es su cita) *@
+            @if (User.IsInRole("Admin") || User.IsInRole("Veterinario") || Model.Mascota?.IdUsuarioDueño == currentUserID)
+            {
+                @if (Model.Mascota?.Dueño != null)
+                {
+                    <dt class="col-sm-3">Dueño Mascota</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.Mascota.Dueño.Nombre)</dd>
+                }
+            }
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Veterinario)</dt>
+            <dd class="col-sm-9">@(Model.Veterinario?.Nombre ?? "N/A")</dd>
+
+            <dt class="col-sm-3">Tipo de Cita</dt>
+            <dd class="col-sm-9">@(Model.TipoCita?.Nombre ?? "N/A")</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Estado)</dt>
+            <dd class="col-sm-9">
+                <span class="badge @GetEstadoBadgeClass(Model.Estado)">
+                    @* Usar helper de Index si lo copiaste *@
+                    @Html.DisplayFor(model => model.Estado)
+                </span>
+            </dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Notas)</dt>
+            <dd class="col-sm-9">@(Model.Notas ?? "Ninguna")</dd>
         </dl>
     </div>
-    <div>
-        <a asp-action="Edit" asp-route-id="@Model.IdCita" class="btn btn-primary">Editar</a>
-        <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+    <div class="mt-3">
+        @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+        {
+            <a asp-action="Edit" asp-route-id="@Model.IdCita" class="btn btn-warning"><i class="fas fa-pencil-alt mr-1"></i> Editar (Admin/Vet)</a>
+            <a asp-action="Delete" asp-route-id="@Model.IdCita" class="btn btn-danger"><i class="fas fa-trash-alt mr-1"></i> Eliminar (Admin/Vet)</a>
+        }
+        else if (User.IsInRole("Cliente") && Model.Mascota?.IdUsuarioDueño == currentUserID)
+        {
+            // Cliente puede editar/cancelar SOLO si está Programada y es futura
+            bool canModify = Model.Estado == EstadoCita.Programada && Model.FechaHora > DateTime.Now;
+            if (canModify)
+            {
+                <a asp-action="EditCliente" asp-route-id="@Model.IdCita" class="btn btn-secondary"><i class="fas fa-edit mr-1"></i> Modificar Mi Cita</a>
+                <a asp-action="CancelCliente" asp-route-id="@Model.IdCita" class="btn btn-outline-danger"><i class="fas fa-times-circle mr-1"></i> Cancelar Mi Cita</a>
+            }
+        }
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left mr-1"></i> Volver a la Lista</a>
     </div>
 </div>
+
+@* Copiar el helper GetEstadoBadgeClass de Index.cshtml aquí si quieres los badges *@
+@functions {
+    string GetEstadoBadgeClass(string? estado)
+    {
+        if (string.IsNullOrEmpty(estado)) return "bg-secondary";
+        switch (estado)
+        {
+            case EstadoCita.Programada: return "bg-info text-dark";
+            case EstadoCita.Confirmada: return "bg-primary";
+            case EstadoCita.Realizada: return "bg-success";
+            case EstadoCita.CanceladaCliente: case EstadoCita.CanceladaStaff: return "bg-danger";
+            case EstadoCita.NoAsistio: return "bg-warning text-dark";
+            default: return "bg-secondary";
+        }
+    }
+ }

@@ -1,18 +1,20 @@
 ﻿@model ProyectoFinal_G8.Models.Cita
- @using ProyectoFinal_G8.Models // Para EstadoCita
 
 @{
-    ViewData["Title"] = "Editar Cita (Admin/Vet)";
-    // Layout = "~/Views/Shared/_LayoutUsuarios.cshtml";
+    ViewData["Title"] = "Modificar Mi Cita";
+    // Layout = "~/Views/Shared/_LayoutUsuarios.cshtml"; // O el layout que corresponda
 }
 
 <div class="container mt-4">
     <h1>@ViewData["Title"] - Cita #@Model.IdCita</h1>
+    <p>Puedes modificar los detalles de tu cita programada.</p>
     <hr />
     <div class="row">
         <div class="col-md-8 col-lg-6">
-            <form asp-action="Edit">
+            @* El form apunta a la acción EditCliente *@
+            <form asp-action="EditCliente" asp-route-id="@Model.IdCita" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                @* Importante pasar el IdCita, aunque sea hidden *@
                 <input type="hidden" asp-for="IdCita" />
 
                 <div class="mb-3">
@@ -22,16 +24,16 @@
                 </div>
 
                 <div class="mb-3">
-                    <label asp-for="IdMascota" class="form-label"></label>
-                    @* Admin/Vet ven todas las mascotas, mostrando el dueño *@
+                    <label asp-for="IdMascota" class="form-label">Mascota</label>
+                    @* Cliente solo ve sus mascotas *@
                     <select asp-for="IdMascota" class="form-select" asp-items="ViewBag.IdMascota">
-                        <option value="">-- Seleccione Mascota --</option>
+                        <option value="">-- Seleccione su Mascota --</option>
                     </select>
                     <span asp-validation-for="IdMascota" class="text-danger"></span>
                 </div>
 
                 <div class="mb-3">
-                    <label asp-for="IdUsuarioVeterinario" class="form-label"></label>
+                    <label asp-for="IdUsuarioVeterinario" class="form-label">Veterinario</label>
                     <select asp-for="IdUsuarioVeterinario" class="form-select" asp-items="ViewBag.IdUsuarioVeterinario">
                         <option value="">-- Seleccione Veterinario --</option>
                     </select>
@@ -39,32 +41,24 @@
                 </div>
 
                 <div class="mb-3">
-                    <label asp-for="IdTipoCita" class="form-label"></label>
+                    <label asp-for="IdTipoCita" class="form-label">Tipo de Cita</label>
                     <select asp-for="IdTipoCita" class="form-select" asp-items="ViewBag.IdTipoCita">
                         <option value="">-- Seleccione Tipo Cita --</option>
                     </select>
                     <span asp-validation-for="IdTipoCita" class="text-danger"></span>
                 </div>
 
-                @* Dropdown para editar el Estado (Solo Admin/Vet) *@
-                <div class="mb-3">
-                    <label asp-for="Estado" class="form-label"></label>
-                    <select asp-for="Estado" class="form-select" asp-items="ViewBag.EstadosCita">
-                        @* Usar el ViewBag poblado en el controller *@
-                        <option value="">-- Seleccione Estado --</option>
-                    </select>
-                    <span asp-validation-for="Estado" class="text-danger"></span>
-                </div>
+                @* El campo Estado NO se muestra ni se edita por el cliente *@
 
                 <div class="mb-3">
-                    <label asp-for="Notas" class="form-label"></label>
+                    <label asp-for="Notas" class="form-label">Notas Adicionales (Opcional)</label>
                     <textarea asp-for="Notas" class="form-control" rows="3"></textarea>
                     <span asp-validation-for="Notas" class="text-danger"></span>
                 </div>
 
                 <div class="mb-3">
-                    <input type="submit" value="Guardar Cambios" class="btn btn-primary" />
-                    <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+                    <input type="submit" value="Guardar Cambios en mi Cita" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary">Volver a Mis Citas</a>
                 </div>
             </form>
         </div>

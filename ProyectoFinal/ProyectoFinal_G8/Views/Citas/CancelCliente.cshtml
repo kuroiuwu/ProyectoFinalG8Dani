@@ -1,33 +1,27 @@
 ﻿@model ProyectoFinal_G8.Models.Cita
 
 @{
-    ViewData["Title"] = "Eliminar Cita (Admin/Vet)";
+    ViewData["Title"] = "Cancelar Mi Cita";
     // Layout = ...;
 }
 
 <div class="container mt-4">
     <h1>@ViewData["Title"]</h1>
     <hr />
-    <h3 class="text-danger">¿Está seguro de que desea ELIMINAR PERMANENTEMENTE esta Cita?</h3>
-    <p class="text-danger fw-bold">¡Esta acción no se puede deshacer!</p>
+    <h3 class="text-danger">¿Estás seguro de que deseas cancelar esta cita?</h3>
+    <p class="text-warning">Esta acción no se puede deshacer. El estado de la cita cambiará a 'Cancelada por Cliente'.</p>
     <div>
-        <h4>Detalles de la Cita a Eliminar</h4>
+        <h4>Detalles de la Cita a Cancelar</h4>
         <hr />
         <dl class="row">
             <dt class="col-sm-3">Número Cita</dt>
             <dd class="col-sm-9">@Html.DisplayFor(model => model.IdCita)</dd>
 
             <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FechaHora)</dt>
-            <dd class="col-sm-9">@Model.FechaHora.ToString("F")</dd>
+            <dd class="col-sm-9">@Model.FechaHora.ToString("g")</dd> @* Formato corto fecha/hora *@
 
             <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Mascota)</dt>
             <dd class="col-sm-9">@(Model.Mascota?.Nombre ?? "N/A")</dd>
-
-            @if (Model.Mascota?.Dueño != null)
-            {
-                <dt class="col-sm-3">Dueño Mascota</dt>
-                <dd class="col-sm-9">@Html.DisplayFor(model => model.Mascota.Dueño.Nombre)</dd>
-            }
 
             <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Veterinario)</dt>
             <dd class="col-sm-9">@(Model.Veterinario?.Nombre ?? "N/A")</dd>
@@ -36,16 +30,22 @@
             <dd class="col-sm-9">@(Model.TipoCita?.Nombre ?? "N/A")</dd>
 
             <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Estado)</dt>
-            <dd class="col-sm-9">@Html.DisplayFor(model => model.Estado)</dd>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Estado)</dd> @* Mostrar estado actual *@
 
             <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Notas)</dt>
             <dd class="col-sm-9">@(Model.Notas ?? "Ninguna")</dd>
         </dl>
 
-        <form asp-action="Delete">
+        @* El form apunta a la acción POST de cancelación *@
+        <form asp-action="CancelCliente" asp-route-id="@Model.IdCita" method="post">
+            @Html.AntiForgeryToken() @* Incluir token anti-falsificación *@
             <input type="hidden" asp-for="IdCita" />
-            <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt mr-1"></i> Sí, Eliminar Permanentemente</button>
-            <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-times mr-1"></i> Cancelar</a>
+            <button type="submit" class="btn btn-danger">
+                <i class="fas fa-times-circle mr-1"></i> Sí, Cancelar esta Cita
+            </button>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="fas fa-arrow-left mr-1"></i> No, Volver a Mis Citas
+            </a>
         </form>
     </div>
 </div>

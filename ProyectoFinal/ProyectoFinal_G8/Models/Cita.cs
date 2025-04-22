@@ -2,9 +2,37 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic; // Necesario para ICollection
 
 namespace ProyectoFinal_G8.Models
 {
+    // Clase estática para centralizar los nombres de los estados
+    public static class EstadoCita
+    {
+        public const string Programada = "Programada";
+        public const string Confirmada = "Confirmada";
+        public const string Realizada = "Realizada";
+        public const string CanceladaCliente = "Cancelada por Cliente";
+        public const string CanceladaStaff = "Cancelada por Staff"; // O solo "Cancelada" si el staff la cancela/elimina
+        public const string NoAsistio = "No Asistió";
+
+        // Puedes añadir más estados si es necesario
+
+        // Helper para obtener una lista de estados para dropdowns (útil para Admins/Vets)
+        public static List<string> GetEstadosEditables()
+        {
+            return new List<string>
+             {
+                 Programada,
+                 Confirmada,
+                 Realizada,
+                 CanceladaStaff, // El cliente usa su propia acción para cancelar
+                 NoAsistio
+             };
+        }
+    }
+
+
     public class Cita
     {
         [Key]
@@ -13,6 +41,8 @@ namespace ProyectoFinal_G8.Models
         [Required(ErrorMessage = "La fecha y hora de la cita son obligatorias.")]
         [DisplayName("Fecha y Hora")]
         [DataType(DataType.DateTime)]
+        // Podrías añadir validación para que la fecha sea futura si es necesario en el modelo
+        // [FutureDate(ErrorMessage = "La fecha de la cita debe ser en el futuro.")] // Requeriría un ValidationAttribute personalizado
         public DateTime FechaHora { get; set; }
 
         [Required(ErrorMessage = "Debe seleccionar una mascota.")]
@@ -24,28 +54,32 @@ namespace ProyectoFinal_G8.Models
 
         [Required(ErrorMessage = "Debe seleccionar un veterinario.")]
         [DisplayName("Veterinario")]
-        public int IdUsuarioVeterinario { get; set; } // Asumiendo que los veterinarios son Usuarios
+        public int IdUsuarioVeterinario { get; set; }
 
         [ForeignKey("IdUsuarioVeterinario")]
         public virtual Usuario? Veterinario { get; set; }
 
-        // Podríamos tener una FK a Usuario Cliente también si es diferente al dueño de la mascota
-        // [DisplayName("Cliente (si es diferente al dueño)")]
-        // public int? IdUsuarioCliente { get; set; }
-        // [ForeignKey("IdUsuarioCliente")]
-        // public virtual Usuario Cliente { get; set; }
+        [Required(ErrorMessage = "Debe seleccionar el tipo de cita.")]
+        [Display(Name = "Tipo de Cita")]
+        public int IdTipoCita { get; set; }
 
-        [Required(ErrorMessage = "El motivo de la cita es obligatorio.")]
-        [StringLength(250)]
-        [DisplayName("Motivo")]
-        public string Motivo { get; set; } = null!;
+        [ForeignKey("IdTipoCita")]
+        public virtual TipoCita? TipoCita { get; set; }
 
         [StringLength(50)]
-        [DisplayName("Estado")] // Ej: Programada, Completada, Cancelada
-        public string Estado { get; set; } = "Programada";
+        [DisplayName("Estado")]
+        // Estado por defecto asignado en el constructor o en el controller al crear
+        public string? Estado { get; set; } = EstadoCita.Programada; // Establecer estado inicial
 
         [StringLength(500)]
-        [DisplayName("Notas")]
-        public string? Notas { get; set; } // Notas adicionales del veterinario o admin
+        [DisplayName("Notas Adicionales")] // Cambiado para claridad
+        [DataType(DataType.MultilineText)]
+        public string? Notas { get; set; }
+
+        // Constructor para asegurar estado inicial si no se setea explícitamente
+        public Cita()
+        {
+            Estado ??= EstadoCita.Programada;
+        }
     }
 }

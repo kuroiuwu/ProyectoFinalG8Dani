@@ -1,13 +1,14 @@
-using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore; // <-- AÑADIDO para AnyAsync, etc.
 using ProyectoFinal_G8.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
-using ProyectoFinal_G8.Services;
+using ProyectoFinal_G8.Services;         // <-- AÑADIDO para DummyEmailSender
 // --- Añadir estos usings para Seeding y Logging ---
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging; // Necesario para ILogger en el bloque de seeding
-using System.Linq; // Necesario para Select en logging de errores
+using Microsoft.Extensions.Logging;
+using System.Linq;
+// using ProyectoFinal_G8.Repositories; // <-- COMENTADO/ELIMINADO HASTA QUE SE CREE
 // -------------------------------------------------
 
 var builder = WebApplication.CreateBuilder(args);
@@ -47,7 +48,7 @@ builder.Services.AddControllersWithViews();
 // --- Configure the HTTP request pipeline ---
 var app = builder.Build();
 
-// --- SEED DATA: Crear Roles y Usuarios Esenciales ---
+// --- SEED DATA: Crear Roles, Usuarios Esenciales y Tipos de Cita ---
 // Se ejecuta después de construir la app, pero antes de que empiece a escuchar peticiones
 using (var scope = app.Services.CreateScope())
 {
@@ -55,15 +56,19 @@ using (var scope = app.Services.CreateScope())
     var logger = services.GetRequiredService<ILogger<Program>>();
     try
     {
-        logger.LogInformation("Iniciando seeding de roles y usuarios...");
+        logger.LogInformation("Iniciando seeding de roles, usuarios y tipos de cita...");
         var userManager = services.GetRequiredService<UserManager<Usuario>>(); // Obtener UserManager
-        var roleManager = services.GetRequiredService<RoleManager<Rol>>();     // Obtener RoleManager
+        var roleManager = services.GetRequiredService<RoleManager<Rol>>();      // Obtener RoleManager
+        var dbContext = services.GetRequiredService<ProyectoFinal_G8Context>(); // Obtener DbContext
 
         // 1. Crear Roles primero
         await SeedRolesAsync(roleManager, logger);
 
         // 2. Crear Usuarios después
         await SeedUsersAsync(userManager, roleManager, logger);
+
+        // 3. Crear Tipos de Cita
+        await SeedTiposCitaAsync(dbContext, logger); // Ahora AnyAsync funcionará
 
         logger.LogInformation("Seeding completado.");
     }
@@ -164,8 +169,30 @@ async Task SeedUsersAsync(UserManager<Usuario> userManager, RoleManager<Rol> rol
     }
     // else { logger.LogDebug($"Usuario Veterinario '{vetEmail}' ya existe."); } // Log Debug opcional
 }
-// --- FIN SEED DATA ---
 
+// Función SeedTiposCitaAsync (sin cambios, pero ahora AnyAsync funciona)
+async Task SeedTiposCitaAsync(ProyectoFinal_G8Context context, ILogger<Program> logger)
+{
+    logger.LogInformation("Verificando/creando Tipos de Cita...");
+    // AnyAsync ahora funciona gracias a 'using Microsoft.EntityFrameworkCore;'
+    if (!await context.TiposCita.AnyAsync())
+    {
+        logger.LogInformation("Creando Tipos de Cita iniciales...");
+        var tipos = new List<TipoCita>
+        {
+            new TipoCita { Nombre = "Consulta Médica", DuracionMinutos = 60 },
+            new TipoCita { Nombre = "Vacunación Cachorro", DuracionMinutos = 60 },
+            new TipoCita { Nombre = "Vacunación Adulto", DuracionMinutos = 30 },
+            new TipoCita { Nombre = "Desparasitación", DuracionMinutos = 30 },
+            new TipoCita { Nombre = "Revisión Post-Operatoria", DuracionMinutos = 45 },
+            new TipoCita { Nombre = "Emergencia", DuracionMinutos = 90 },
+            new TipoCita { Nombre = "Cirugía Menor", DuracionMinutos = 120 }
+        };
+        await context.TiposCita.AddRangeAsync(tipos);
+        await context.SaveChangesAsync();
+        logger.LogInformation("Tipos de Cita iniciales creados.");
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

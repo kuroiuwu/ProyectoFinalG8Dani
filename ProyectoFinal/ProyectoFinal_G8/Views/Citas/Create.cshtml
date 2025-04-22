@@ -1,46 +1,79 @@
 ﻿@model ProyectoFinal_G8.Models.Cita
+ @using ProyectoFinal_G8.Models // Necesario para EstadoCita
 
 @{
-    ViewData["Title"] = "Crear Cita";
+    ViewData["Title"] = User.IsInRole("Cliente") ? "Solicitar Nueva Cita" : "Crear Nueva Cita";
+    // Layout = "~/Views/Shared/_LayoutUsuarios.cshtml"; // O el layout que corresponda
 }
 
 <div class="container mt-4">
-    <h1>Crear Cita</h1>
-
+    <h1>@ViewData["Title"]</h1>
+    <hr />
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8 col-lg-6">
             <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
                 <div class="mb-3">
                     <label asp-for="FechaHora" class="form-label"></label>
-                    <input asp-for="FechaHora" class="form-control" />
+                    @* Usar datetime-local para mejor UI, asegúrate que el formato sea compatible con el servidor *@
+                    <input asp-for="FechaHora" class="form-control" type="datetime-local" />
                     <span asp-validation-for="FechaHora" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
                     <label asp-for="IdMascota" class="form-label"></label>
-                    <select asp-for="IdMascota" class="form-select" asp-items="ViewBag.IdMascota"></select>
-                </div>
+                    <select asp-for="IdMascota" class="form-select" asp-items="ViewBag.IdMascota">
+                        <option value="">-- Seleccione Mascota --</option>
+                    </select>
+                    <span asp-validation-for="IdMascota" class="text-danger"></span>
+                    @* Mensaje para cliente si no tiene mascotas *@
+                    @* ANTES: @if (User.IsInRole("Cliente") && !(ViewBag.IdMascota as SelectList)?.Any()) *@
+                    @if (User.IsInRole("Cliente") && (ViewBag.IdMascota as SelectList)?.Any() != true) // <-- CORRECCIÓN: Compara con != true
+                    {
+                        <div class="mt-2">
+                            <a asp-controller="Mascotas" asp-action="Create" class="btn btn-sm btn-outline-success">Registrar una Mascota</a>
+                        </div>
+                    }
+
                 <div class="mb-3">
                     <label asp-for="IdUsuarioVeterinario" class="form-label"></label>
-                    <select asp-for="IdUsuarioVeterinario" class="form-select" asp-items="ViewBag.IdUsuarioVeterinario"></select>
+                    <select asp-for="IdUsuarioVeterinario" class="form-select" asp-items="ViewBag.IdUsuarioVeterinario">
+                        <option value="">-- Seleccione Veterinario --</option>
+                    </select>
+                    <span asp-validation-for="IdUsuarioVeterinario" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
-                    <label asp-for="Motivo" class="form-label"></label>
-                    <input asp-for="Motivo" class="form-control" />
-                    <span asp-validation-for="Motivo" class="text-danger"></span>
+                    <label asp-for="IdTipoCita" class="form-label"></label>
+                    <select asp-for="IdTipoCita" class="form-select" asp-items="ViewBag.IdTipoCita">
+                        <option value="">-- Seleccione Tipo Cita --</option>
+                    </select>
+                    <span asp-validation-for="IdTipoCita" class="text-danger"></span>
                 </div>
-                <div class="mb-3">
-                    <label asp-for="Estado" class="form-label"></label>
-                    <input asp-for="Estado" class="form-control" />
-                    <span asp-validation-for="Estado" class="text-danger"></span>
-                </div>
+
+                @* El campo Estado SOLO se muestra a Admin/Vet. Para Clientes, se asigna automáticamente en el Controller *@
+                @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+                {
+                    <div class="mb-3">
+                        <label asp-for="Estado" class="form-label"></label>
+                        @* Admin/Vet podrían tener un input simple o un select si quisieran definirlo al crear *@
+                        @* Dejándolo como input simple, el controller usará el default "Programada" si no se envía valor *@
+                        <input asp-for="Estado" class="form-control" placeholder="Ej: Confirmada (Opcional, defecto: @EstadoCita.Programada)" />
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+                }
+                @* Para cliente, el estado no se muestra ni se envía explícitamente *@
+
+
                 <div class="mb-3">
                     <label asp-for="Notas" class="form-label"></label>
-                    <textarea asp-for="Notas" class="form-control"></textarea>
+                    <textarea asp-for="Notas" class="form-control" rows="3" placeholder="Añada aquí cualquier nota relevante para la cita (opcional)"></textarea>
                     <span asp-validation-for="Notas" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
-                    <input type="submit" value="Crear" class="btn btn-primary" />
+                    <input type="submit" value="@(User.IsInRole("Cliente") ? "Solicitar Cita" : "Crear Cita")" class="btn btn-primary" />
                     <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
                 </div>
             </form>
@@ -52,4 +85,5 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-}
+    @* Scripts adicionales si son necesarios *@
+ }
