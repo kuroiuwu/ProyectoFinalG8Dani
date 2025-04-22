@@ -1,28 +1,59 @@
 ﻿@model ProyectoFinal_G8.Models.HistorialMedico
+@using Microsoft.AspNetCore.Identity
+@using ProyectoFinal_G8.Models // Necesario para Usuario
+@inject UserManager<Usuario> UserManager // Cambiado a Usuario
 
 @{
     ViewData["Title"] = "Detalles Registro Historial Médico";
+    var currentUserID = ViewData["CurrentUserID"] != null ? (int)ViewData["CurrentUserID"] : 0;
 }
 
 <div class="container mt-4">
-    <h1>Detalles Registro Historial Médico</h1>
+    <h1>@ViewData["Title"]</h1>
+    <h4>Mascota: @(Model.Mascota?.Nombre ?? "N/A")</h4>
 
+    <hr />
     <div>
         <dl class="row">
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.FechaRegistro)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.FechaRegistro)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Mascota)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Mascota.Nombre)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Descripcion)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Descripcion)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Tratamiento)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Tratamiento)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Notas)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Notas)</dd>
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FechaRegistro)</dt>
+            <dd class="col-sm-9">@Model.FechaRegistro.ToString("g")</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Mascota)</dt>
+            <dd class="col-sm-9">@(Model.Mascota?.Nombre ?? "N/A")</dd>
+
+            @* Mostrar Dueño solo si es Admin/Vet *@
+            @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+            {
+                <dt class="col-sm-3">Dueño</dt>
+                @* Asume navegación Mascota.Dueño existe y Dueño es tipo Usuario con Nombre/Email *@
+                <dd class="col-sm-9">@(Model.Mascota?.Dueño?.Nombre ?? "N/A") (@(Model.Mascota?.Dueño?.Email ?? "N/A"))</dd>
+            }
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Descripcion)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Descripcion)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Tratamiento)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Tratamiento)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Notas)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Notas)</dd>
         </dl>
     </div>
+    <hr />
     <div>
-        <a asp-action="Edit" asp-route-id="@Model.IdHistorial" class="btn btn-primary">Editar</a>
-        <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+        @* Botón Editar: Solo Admin/Vet *@
+        @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+        {
+            <a asp-action="Edit" asp-route-id="@Model.IdHistorial" class="btn btn-warning"><i class="fas fa-pencil-alt mr-1"></i> Editar</a>
+        }
+
+        @* Botón Volver a la Lista (filtrada por la mascota de este historial) *@
+        @{
+            var indexRouteValues = new Dictionary<string, string> { { "mascotaId", Model.IdMascota.ToString() } };
+        }
+        <a asp-action="Index" asp-all-route-data="indexRouteValues" class="btn btn-secondary"><i class="fas fa-list mr-1"></i> Volver a la Lista</a>
+
+        @* Enlace opcional para ir a Detalles de la Mascota *@
+        <a asp-controller="Mascotas" asp-action="Details" asp-route-id="@Model.IdMascota" class="btn btn-outline-info"><i class="fas fa-paw mr-1"></i> Ver Mascota</a>
     </div>
 </div>

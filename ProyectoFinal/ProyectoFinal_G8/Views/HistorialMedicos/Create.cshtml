@@ -1,46 +1,70 @@
 ﻿@model ProyectoFinal_G8.Models.HistorialMedico
 
 @{
-    ViewData["Title"] = "Crear Registro Historial Médico";
+    ViewData["Title"] = "Crear Registro Historial";
+    // Determinar si los campos deben ser de solo lectura basado en el ViewData
+    bool isReadOnly = (bool?)ViewData["IsMascotaPreselected"] == true;
 }
 
-<div class="container mt-4">
-    <h1>Crear Registro Historial Médico</h1>
+<h1>Crear Registro en Historial Médico</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="mb-3">
-                    <label asp-for="IdMascota" class="form-label"></label>
-                    <select asp-for="IdMascota" class="form-select" asp-items="ViewBag.IdMascota"></select>
-                </div>
-                <div class="mb-3">
-                    <label asp-for="FechaRegistro" class="form-label"></label>
-                    <input asp-for="FechaRegistro" class="form-control" />
-                    <span asp-validation-for="FechaRegistro" class="text-danger"></span>
-                </div>
-                <div class="mb-3">
-                    <label asp-for="Descripcion" class="form-label"></label>
-                    <input asp-for="Descripcion" class="form-control" />
-                    <span asp-validation-for="Descripcion" class="text-danger"></span>
-                </div>
-                <div class="mb-3">
-                    <label asp-for="Tratamiento" class="form-label"></label>
-                    <input asp-for="Tratamiento" class="form-control" />
-                    <span asp-validation-for="Tratamiento" class="text-danger"></span>
-                </div>
-                <div class="mb-3">
-                    <label asp-for="Notas" class="form-label"></label>
-                    <input asp-for="Notas" class="form-control" />
-                    <span asp-validation-for="Notas" class="text-danger"></span>
-                </div>
-                <div class="mb-3">
-                    <input type="submit" value="Crear" class="btn btn-primary" />
-                    <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
-                </div>
-            </form>
-        </div>
+            @* --- Campo Mascota --- *@
+            <div class="form-group mb-3">
+                <label asp-for="IdMascota" class="control-label"></label>
+                @* Añadir 'disabled' si isReadOnly es true *@
+                <select asp-for="IdMascota" class="form-control form-select" asp-items='(SelectList)ViewData["IdMascota"]' disabled="@isReadOnly">
+                    <option value="">-- Seleccione Mascota --</option>
+                </select>
+                <span asp-validation-for="IdMascota" class="text-danger"></span>
+                @* --- Campo Oculto para Mascota --- *@
+                @* Si el dropdown está deshabilitado, su valor no se envía. *@
+                @* Añadimos un campo oculto para enviar el IdMascota si viene preseleccionado. *@
+                @if (isReadOnly && Model.IdMascota > 0)
+                {
+                    <input type="hidden" asp-for="IdMascota" value="@Model.IdMascota" />
+                }
+            </div>
+
+            @* --- Campo Fecha Registro --- *@
+            <div class="form-group mb-3">
+                <label asp-for="FechaRegistro" class="control-label"></label>
+                @* Añadir 'readonly' si isReadOnly es true *@
+                <input asp-for="FechaRegistro" class="form-control" type="datetime-local" readonly="@isReadOnly" />
+                <span asp-validation-for="FechaRegistro" class="text-danger"></span>
+            </div>
+
+            @* --- Otros Campos (Editables) --- *@
+            <div class="form-group mb-3">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <textarea asp-for="Descripcion" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Tratamiento" class="control-label"></label>
+                <textarea asp-for="Tratamiento" class="form-control" rows="2"></textarea>
+                <span asp-validation-for="Tratamiento" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Notas" class="control-label"></label>
+                <textarea asp-for="Notas" class="form-control" rows="2"></textarea>
+                <span asp-validation-for="Notas" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Crear Registro" class="btn btn-primary" />
+                @* Decidir a dónde volver: al índice de historiales o a la lista de citas? Opcional. *@
+                <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+                @* O podrías añadir un botón para volver a las citas si sabes de dónde vienes *@
+                @* <a asp-controller="Citas" asp-action="Index" class="btn btn-info">Volver a Citas</a> *@
+            </div>
+        </form>
     </div>
 </div>
 
@@ -48,4 +72,4 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-}
+ }

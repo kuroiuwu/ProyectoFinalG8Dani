@@ -1,4 +1,7 @@
 ﻿@model ProyectoFinal_G8.Models.Mascota
+@* Necesitamos acceso al usuario para verificar roles *@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Usuario> SignInManager 
 
 @{
     ViewData["Title"] = "Editar Mascota";
@@ -6,12 +9,13 @@
 
 <div class="container mt-4">
     <h1>Editar Mascota</h1>
-
+    <hr />
     <div class="row">
         <div class="col-md-6">
             <form asp-action="Edit">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="IdMascota" />
+
                 <div class="mb-3">
                     <label asp-for="Nombre" class="form-label"></label>
                     <input asp-for="Nombre" class="form-control" />
@@ -29,15 +33,29 @@
                 </div>
                 <div class="mb-3">
                     <label asp-for="FechaNacimiento" class="form-label"></label>
-                    <input asp-for="FechaNacimiento" class="form-control" />
+                    <input asp-for="FechaNacimiento" class="form-control" type="date" /> @* Mejor usar type="date" para el input *@
                     <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
                 </div>
+
+                @* --- INICIO SECCIÓN CONDICIONAL DUEÑO --- *@
+                @* Mostrar campo de selección de dueño SOLO si el usuario NO es Cliente (es Admin/Vet) *@
+                @if (!User.IsInRole("Cliente"))
+                {
+                    <div class="mb-3">
+                        <label asp-for="IdUsuarioDueño" class="form-label">Dueño</label> @* Puedes usar DisplayName si lo tienes en el modelo *@
+                        <select asp-for="IdUsuarioDueño" class="form-select" asp-items="ViewBag.IdUsuarioDueño"></select>
+                        <span asp-validation-for="IdUsuarioDueño" class="text-danger"></span> @* Mostrar validación solo si el campo es visible *@
+                    </div>
+                }
+                else
+                {
+                    @* Si el usuario ES Cliente, enviar el IdUsuarioDueño actual de forma oculta para que no se pierda al guardar *@
+                    <input type="hidden" asp-for="IdUsuarioDueño" />
+                }
+                @* --- FIN SECCIÓN CONDICIONAL DUEÑO --- *@
+
                 <div class="mb-3">
-                    <label asp-for="IdUsuarioDueño" class="form-label"></label>
-                    <select asp-for="IdUsuarioDueño" class="form-select" asp-items="ViewBag.IdUsuarioDueño"></select>
-                </div>
-                <div class="mb-3">
-                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                    <input type="submit" value="Guardar Cambios" class="btn btn-primary" />
                     <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
                 </div>
             </form>

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ProyectoFinal_G8.Models.Cita>
  @using Microsoft.AspNetCore.Identity
- @using ProyectoFinal_G8.Models
- @inject UserManager<Usuario> UserManager
+ @using ProyectoFinal_G8.Models 
+ @inject UserManager<Usuario> UserManager 
 
 @{
     ViewData["Title"] = ViewData["VistaTitulo"] ?? "Citas";
@@ -87,13 +87,21 @@
 
                                     @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
                                     {
-                                        <a asp-action="Edit" asp-route-id="@item.IdCita" class="btn btn-sm btn-warning" title="Editar (Admin/Vet)"><i class="fas fa-pencil-alt"></i></a>
-                                        <a asp-action="Delete" asp-route-id="@item.IdCita" class="btn btn-sm btn-danger" title="Eliminar (Admin/Vet)"><i class="fas fa-trash-alt"></i></a>
+                                        <a asp-action="Edit" asp-route-id="@item.IdCita" class="btn btn-sm btn-warning" title="Editar Cita (Admin/Vet)"><i class="fas fa-pencil-alt"></i></a>
+                                        <a asp-action="Delete" asp-route-id="@item.IdCita" class="btn btn-sm btn-danger" title="Eliminar Cita (Admin/Vet)"><i class="fas fa-trash-alt"></i></a>
+
+                                        @* --- NUEVO BOTÓN/ENLACE PARA HISTORIAL --- *@
+                                        @if (item.IdMascota > 0) // Solo mostrar si la cita tiene una mascota válida asociada
+                                        {
+                                            <a asp-controller="HistorialMedicos" asp-action="Create" asp-route-mascotaId="@item.IdMascota" class="btn btn-sm btn-success" title="Crear Historial Médico">
+                                                <i class="fas fa-notes-medical"></i> @* Icono de historial médico *@
+                                            </a>
+                                        }
+                                        @* --- FIN NUEVO BOTÓN --- *@
                                     }
                                     else if (User.IsInRole("Cliente") && item.Mascota?.IdUsuarioDueño == currentUserID)
                                     {
-                                        // Cliente puede editar/cancelar SOLO si está Programada y es futura
-                                        bool canModify = item.Estado == EstadoCita.Programada && item.FechaHora > DateTime.Now;
+                                        bool canModify = item.Estado == EstadoCita.Programada && item.FechaHora > DateTime.UtcNow; // Usando UtcNow como antes
                                         if (canModify)
                                         {
                                             <a asp-action="EditCliente" asp-route-id="@item.IdCita" class="btn btn-sm btn-secondary" title="Modificar Mi Cita"><i class="fas fa-edit"></i></a>
@@ -132,10 +140,10 @@
                 return "bg-secondary";
         }
     }
-}
+ }
 
  @section Scripts {
-             @* Scripts adicionales si los necesitas *@
+         @* Scripts adicionales si los necesitas *@
     <script>
         // Script para que los alerts se cierren (si usas Bootstrap 5)
         var alertList = document.querySelectorAll('.alert');

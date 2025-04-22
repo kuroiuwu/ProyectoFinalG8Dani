@@ -1,14 +1,13 @@
-﻿@* --- Añade estas líneas al principio si no están --- *@
-@using Microsoft.AspNetCore.Identity
-@inject SignInManager<Usuario> SignInManager
-@inject UserManager<Usuario> UserManager
+﻿@using Microsoft.AspNetCore.Identity
+ @inject SignInManager<Usuario> SignInManager
+ @inject UserManager<Usuario> UserManager
 
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8" />
-    <title>Gestión Veterinaria - Mi Clínica</title>
+    <title>@ViewData["Title"] - Veterinaria Patitas CR</title> @* Título dinámico *@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <link href="@Url.Content("~/assets/img/favicon.ico")" rel="icon">
@@ -25,8 +24,13 @@
     @* Hoja de estilos principal de tu plantilla *@
     <link href="@Url.Content("~/assets/css/style.css")" rel="stylesheet">
 
+    @* Referencia a CSS de Bootstrap (si no está ya en style.css) - Asegúrate de que la ruta sea correcta *@
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+
     @* Estilos adicionales específicos del sitio (opcional) *@
     @* <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /> *@
+    @* Estilos específicos del layout si los hubiera *@
+    @* <link rel="stylesheet" href="~/ProyectoFinal_G8.styles.css" asp-append-version="true" /> *@
 
 </head>
 <body>
@@ -37,10 +41,9 @@
                 <div class="d-inline-flex align-items-center text-white">
                     <small><i class="fa fa-phone-alt mr-2"></i>+506 2222 3333</small>
                     <small class="px-3">|</small>
-                    <small><i class="fa fa-envelope mr-2"></i>info@miclinica.com</small>
+                    <small><i class="fa fa-envelope mr-2"></i>info@patitascr.com</small>
                 </div>
             </div>
-            @* Puedes añadir iconos de redes sociales u otra info aquí si quieres *@
         </div>
     </div>
     <div class="container-fluid p-0">
@@ -48,7 +51,7 @@
 
             <a class="navbar-brand d-flex align-items-center ml-lg-3" asp-area="" asp-controller="Home" asp-action="Index">
                 <img src="@Url.Content("~/assets/img/icono_clinica.png")" alt="Icono Clínica" class="mr-3" style="height: 60px;" />
-                <h1 class="m-0 display-5 text-uppercase" style="color:#1F1F2E;">Clínica Veterinaria Patitas CR</h1>
+                <h1 class="m-0 display-5 text-uppercase" style="color:#1F1F2E;">Veterinaria Patitas CR</h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -58,13 +61,14 @@
 
                 @* --- Enlaces de navegación (se ajustan según rol) --- *@
                 <div class="navbar-nav m-auto py-0">
-                    @* m-auto centra los elementos restantes *@
+                    @* Inicio siempre visible *@
                     <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-item nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")">Inicio</a>
 
-                    @if (SignInManager.IsSignedIn(User))
+                    @if (SignInManager.IsSignedIn(User)) // Solo mostrar menús específicos si está logueado
                     {
                         @if (User.IsInRole("Admin"))
                         {
+                            @* Menú Admin (usando <li> para Bootstrap 4/5 dropdown dentro de nav) *@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Administración
@@ -75,27 +79,57 @@
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" asp-area="" asp-controller="Citas" asp-action="Index">Gestionar Citas</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Mascotas" asp-action="Index">Gestionar Mascotas</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="HistorialMedicos" asp-action="Index">Gestionar Historiales</a> @* Añadido Historial *@
                                     <a class="dropdown-item" asp-area="" asp-controller="Facturas" asp-action="Index">Gestionar Facturas</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" asp-area="" asp-controller="Insumos" asp-action="Index">Insumos</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Tratamientos" asp-action="Index">Tratamientos</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="TiposCita" asp-action="Index">Tipos de Cita</a> @* Añadido Tipos Cita *@
                                 </div>
                             </li>
                         }
                         @if (User.IsInRole("Veterinario") && !User.IsInRole("Admin")) // Si es Vet pero NO Admin
                         {
+                            @* Menú Veterinario *@
                             <a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Citas" ? "active" : "")" asp-area="" asp-controller="Citas" asp-action="Index">Citas</a>
                             <a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Mascotas" ? "active" : "")" asp-area="" asp-controller="Mascotas" asp-action="Index">Mascotas</a>
+                            <a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "HistorialMedicos" ? "active" : "")" asp-area="" asp-controller="HistorialMedicos" asp-action="Index">Historiales</a> @* Añadido Historial *@
                             <a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Facturas" ? "active" : "")" asp-area="" asp-controller="Facturas" asp-action="Index">Facturas</a>
                         }
                         @if (User.IsInRole("Cliente"))
                         {
-                            @* El action "Index" mostrará sus citas filtradas *@
-                            <a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Citas" ? "active" : "")" asp-area="" asp-controller="Citas" asp-action="Index">Mis Citas</a>
-                            <a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Citas" && ViewContext.RouteData.Values["action"]?.ToString() == "Create" ? "active" : "")" asp-area="" asp-controller="Citas" asp-action="Create">Solicitar Cita</a>
-                            @* Podrías añadir enlace a MisMascotas similarmente *@
-                            @* <a class="nav-item nav-link" asp-area="" asp-controller="Mascotas" asp-action="Index">Mis Mascotas</a> *@
+                            @* --- Menú Cliente MODIFICADO --- *@
+
+                            @* Enlace Mis Mascotas *@
+                            <a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Mascotas" ? "active" : "")"
+                               asp-area="" asp-controller="Mascotas" asp-action="Index">Mis Mascotas</a>
+
+                            @* Dropdown Citas *@
+                            <li class="nav-item dropdown @(ViewContext.RouteData.Values["controller"]?.ToString() == "Citas" ? "active" : "")">
+                                <a class="nav-link dropdown-toggle" href="#" id="citasClienteDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Citas
+                                </a>
+                                <div class="dropdown-menu rounded-0 m-0" aria-labelledby="citasClienteDropdown">
+                                    <a class="dropdown-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Citas" && ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")"
+                                       asp-area="" asp-controller="Citas" asp-action="Index">Ver Mis Citas</a>
+                                    <a class="dropdown-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Citas" && ViewContext.RouteData.Values["action"]?.ToString() == "Create" ? "active" : "")"
+                                       asp-area="" asp-controller="Citas" asp-action="Create">Solicitar Nueva Cita</a>
+                                </div>
+                            </li>
+                            @* --- Fin Menú Cliente MODIFICADO --- *@
+
+                            @* Otros enlaces de cliente si los tienes (Pagos, Notificaciones, Configuración) *@
+                            @* <a class="nav-item nav-link" asp-area="" asp-controller="Propietario" asp-action="Pagos">Mis Pagos</a> *@
+                            @* <a class="nav-item nav-link" asp-area="" asp-controller="Notificacion" asp-action="Notificaciones">Notificaciones</a> *@
+                            @* <a class="nav-item nav-link" asp-area="" asp-controller="Account" asp-action="Manage">Configuración</a> <- Ejemplo si usas Identity UI *@
+
                         }
+                    }
+                    else // Si no está logueado
+                    {
+                        @* Puedes mostrar enlaces públicos como 'Servicios', 'Contacto', etc. aquí *@
+                        @* <a class="nav-item nav-link" asp-area="" asp-controller="Home" asp-action="Servicios">Servicios</a> *@
+                        @* <a class="nav-item nav-link" asp-area="" asp-controller="Home" asp-action="Contacto">Contacto</a> *@
                     }
 
                 </div> @* Fin navbar-nav m-auto *@
@@ -111,13 +145,14 @@
     </div>
 
     <main role="main" class="pb-3">
-        @* Contenedor para el cuerpo principal con padding *@
         <div class="container-fluid pt-4 px-4">
+            @* Padding general para el contenido *@
             @* Mostrar mensajes TempData si existen *@
             @if (TempData["SuccessMessage"] != null)
             {
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     @TempData["SuccessMessage"]
+                    @* Usa btn-close para Bootstrap 5 o 'close' y data-dismiss para BS4 *@
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -132,25 +167,33 @@
                     </button>
                 </div>
             }
-            @RenderBody()
+            @RenderBody() @* Aquí se renderiza el contenido de cada vista específica *@
         </div>
     </main>
 
 
+    @* Footer - Sin cambios funcionales, solo ajustar enlaces si es necesario *@
     <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
         <div class="row pt-5">
             <div class="col-lg-7 col-md-6">
                 <div class="row">
                     <div class="col-md-6 mb-5">
                         <h3 class="text-primary mb-4">Contacto</h3>
-                        <p><i class="fa fa-map-marker-alt mr-2"></i>Dirección de Mi Clínica, Ciudad, CR</p>
+                        <p><i class="fa fa-map-marker-alt mr-2"></i>Dirección de Veterinaria Patitas CR, Ciudad, CR</p>
                         <p><i class="fa fa-phone-alt mr-2"></i>+506 2222 3333</p>
-                        <p><i class="fa fa-envelope mr-2"></i>info@miclinica.com</p>
+                        <p><i class="fa fa-envelope mr-2"></i>info@patitascr.com</p>
                     </div>
                     <div class="col-md-6 mb-5">
                         <h3 class="text-primary mb-4">Accesos Rápidos</h3>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-white mb-2" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+                            @* Añadir enlaces rápidos relevantes para el usuario actual *@
+                            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Cliente"))
+                            {
+                                <a class="text-white mb-2" asp-area="" asp-controller="Mascotas" asp-action="Index"><i class="fa fa-angle-right mr-2"></i>Mis Mascotas</a>
+                                <a class="text-white mb-2" asp-area="" asp-controller="Citas" asp-action="Index"><i class="fa fa-angle-right mr-2"></i>Mis Citas</a>
+                            }
+                            @* Puedes añadir más enlaces aquí *@
                         </div>
                     </div>
                 </div>
@@ -167,7 +210,7 @@
         <div class="row">
             <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
                 <p class="m-0 text-white">
-                    &copy; <a href="#">Clínica Veterinaria Patitas CR</a>. Todos los derechos reservados.
+                    &copy; <a href="#">Veterinaria Patitas CR</a>. Todos los derechos reservados.
                 </p>
             </div>
             <div class="col-lg-6 text-center text-md-right">
@@ -181,7 +224,6 @@
     </div>
     <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
-
     @* --- SCRIPTS --- *@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -193,6 +235,7 @@
     <script src="@Url.Content("~/assets/js/main.js")"></script>
 
     @* Scripts necesarios para validación de ASP.NET Core *@
+    @* Asegúrate que estas rutas sean correctas según tu estructura de proyecto *@
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
