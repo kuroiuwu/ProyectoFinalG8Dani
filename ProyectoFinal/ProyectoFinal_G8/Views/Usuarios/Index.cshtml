@@ -4,49 +4,118 @@
     ViewData["Title"] = "Administración de Usuarios";
 }
 
+@* Iconos (ejemplo con Font Awesome, puedes usar Bootstrap Icons) *@
+@* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> *@
+@* O usa Bootstrap Icons: *@
+@* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> *@
+
+
 <div class="container mt-4">
-    <h1>@ViewData["Title"]</h1>
-    <hr />
+    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+        <h1><i class="fas fa-users-cog me-2"></i>@ViewData["Title"]</h1>
+        <div>
+            <a asp-action="Create" class="btn btn-primary">
+                <i class="fas fa-user-plus me-1"></i> Crear Nuevo Usuario
+            </a>
+        </div>
+    </div>
+
+    @* Mensajes TempData *@
     @if (TempData["SuccessMessage"] != null)
     {
-        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     }
     @if (TempData["ErrorMessage"] != null)
     {
-        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     }
 
-    <p>
-        <a asp-action="Create" class="btn btn-primary">Crear Nuevo Usuario</a>
-    </p>
+    @* ***** NUEVO: Formulario de Búsqueda ***** *@
+    <div class="card card-body bg-light mb-3 p-3">
+        <form asp-action="Index" method="get" class="row g-2 align-items-end">
+            <div class="col-md">
+                <label for="searchStringInputUsuario" class="form-label small mb-1">Buscar por Nombre:</label>
+                <div class="input-group">
+                    <input type="text" id="searchStringInputUsuario" name="SearchString" value="@ViewData["CurrentFilter"]" class="form-control form-control-sm" placeholder="Ingrese nombre...">
+                    <button class="btn btn-sm btn-outline-secondary" type="submit" title="Buscar"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="col-auto">
+                <a asp-action="Index" class="btn btn-sm btn-outline-secondary" title="Limpiar Búsqueda"><i class="fas fa-eraser"></i> Limpiar</a>
+            </div>
+        </form>
+    </div>
+    @* ***** FIN: Formulario de Búsqueda ***** *@
 
-    <table class="table table-striped table-bordered">
-        <thead>
-            <tr>
-                <th>@Html.DisplayNameFor(model => model.Nombre)</th>
-                <th>@Html.DisplayNameFor(model => model.Email)</th>
-                <th>Rol Principal</th>
-                <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
-                <th>@Html.DisplayNameFor(model => model.Direccion)</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+
+    <div class="table-responsive shadow-sm rounded">
+        <table class="table table-striped table-bordered table-hover mb-0">
+            <thead class="table-light">
                 <tr>
-                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
-                    <td>@(item.Rol != null ? Html.DisplayFor(modelItem => item.Rol.Name) : "N/A")</td>
-                    <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Direccion)</td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning" title="Editar"><i class="fas fa-pencil-alt"></i></a>
-                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info" title="Detalles"><i class="fas fa-info-circle"></i></a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
-                    </td>
+                    <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                    <th>@Html.DisplayNameFor(model => model.Email)</th>
+                    <th>Rol Principal</th>
+                    <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+                    <th>@Html.DisplayNameFor(model => model.Direccion)</th>
+                    <th class="text-center">Acciones</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="6" class="text-center">
+                            @if (!string.IsNullOrEmpty(ViewData["CurrentFilter"] as string))
+                            {
+                                @:No se encontraron usuarios que coincidan con la búsqueda.
+                            }
+                            else
+                            {
+                                @:No hay usuarios registrados.
+                            }
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                            <td>@(item.Rol?.Name ?? "N/A")</td> @* Mostrar Nombre del Rol si existe *@
+                            <td>@(item.PhoneNumber ?? "N/A")</td>
+                            <td>@(item.Direccion ?? "N/A")</td>
+                            <td class="text-center">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Acciones Usuario">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning" title="Editar"><i class="fas fa-pencil-alt"></i></a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info" title="Detalles"><i class="fas fa-info-circle"></i></a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        // Script para cerrar alerts de Bootstrap 5
+        var alertList = document.querySelectorAll('.alert');
+        alertList.forEach(function (alert) {
+          new bootstrap.Alert(alert);
+        });
+    </script>
+}
