@@ -16,24 +16,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+    @* Font Awesome desde CDN *@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
+    @* Owl Carousel (Parte de tu plantilla) *@
     <link href="@Url.Content("~/assets/lib/owlcarousel/assets/owl.carousel.min.css")" rel="stylesheet">
 
     @* Hoja de estilos principal de tu plantilla *@
     <link href="@Url.Content("~/assets/css/style.css")" rel="stylesheet">
 
-    @* Hoja de estilos general de ASP.NET Core (si la usas) *@
+    @* Estilos adicionales específicos del sitio (opcional) *@
     @* <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /> *@
-
-    @* Estilos específicos del Layout (si existen) *@
-    @* <link rel="stylesheet" href="~/ProyectoFinal_G8.styles.css" asp-append-version="true" /> *@
 
 </head>
 <body>
 
     <div class="container-fluid bg-dark">
-        @* ... (Tu Topbar sin cambios) ... *@
         <div class="row py-2 px-lg-5">
             <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center text-white">
@@ -42,6 +40,7 @@
                     <small><i class="fa fa-envelope mr-2"></i>info@miclinica.com</small>
                 </div>
             </div>
+            @* Puedes añadir iconos de redes sociales u otra info aquí si quieres *@
         </div>
     </div>
     <div class="container-fluid p-0">
@@ -57,15 +56,11 @@
 
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
 
-                @* --- Tus enlaces de navegación principales --- *@
+                @* --- Enlaces de navegación (se ajustan según rol) --- *@
                 <div class="navbar-nav m-auto py-0">
-                    <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-item nav-link active">Inicio</a>
-                    @* --- Aquí estaban tus enlaces de Acceso Propietario/Personal --- *@
-                    @* --- ¡Los hemos quitado! --- *@
+                    @* m-auto centra los elementos restantes *@
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-item nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")">Inicio</a>
 
-                    @* --- Puedes añadir aquí tus enlaces condicionales si quieres, --- *@
-                    @* --- pero asegúrate que las clases CSS coincidan con tu plantilla --- *@
-                    @* --- para que no rompan el estilo (nav-item nav-link, etc.) --- *@
                     @if (SignInManager.IsSignedIn(User))
                     {
                         @if (User.IsInRole("Admin"))
@@ -78,41 +73,71 @@
                                     <a class="dropdown-item" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Rols" asp-action="Index">Roles</a>
                                     <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Citas" asp-action="Index">Gestionar Citas</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Mascotas" asp-action="Index">Gestionar Mascotas</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Facturas" asp-action="Index">Gestionar Facturas</a>
+                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" asp-area="" asp-controller="Insumos" asp-action="Index">Insumos</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Tratamientos" asp-action="Index">Tratamientos</a>
                                 </div>
                             </li>
                         }
-                        @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+                        @if (User.IsInRole("Veterinario") && !User.IsInRole("Admin")) // Si es Vet pero NO Admin
                         {
-                            <a class="nav-item nav-link" asp-area="" asp-controller="Citas" asp-action="Index">Citas</a>
-                            <a class="nav-item nav-link" asp-area="" asp-controller="Mascotas" asp-action="Index">Mascotas</a>
-                            <a class="nav-item nav-link" asp-area="" asp-controller="Facturas" asp-action="Index">Facturas</a>
+                            <a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Citas" ? "active" : "")" asp-area="" asp-controller="Citas" asp-action="Index">Citas</a>
+                            <a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Mascotas" ? "active" : "")" asp-area="" asp-controller="Mascotas" asp-action="Index">Mascotas</a>
+                            <a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Facturas" ? "active" : "")" asp-area="" asp-controller="Facturas" asp-action="Index">Facturas</a>
                         }
-                        @* Añade más enlaces condicionales si es necesario *@
+                        @if (User.IsInRole("Cliente"))
+                        {
+                            @* El action "Index" mostrará sus citas filtradas *@
+                            <a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Citas" ? "active" : "")" asp-area="" asp-controller="Citas" asp-action="Index">Mis Citas</a>
+                            <a class="nav-item nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Citas" && ViewContext.RouteData.Values["action"]?.ToString() == "Create" ? "active" : "")" asp-area="" asp-controller="Citas" asp-action="Create">Solicitar Cita</a>
+                            @* Podrías añadir enlace a MisMascotas similarmente *@
+                            @* <a class="nav-item nav-link" asp-area="" asp-controller="Mascotas" asp-action="Index">Mis Mascotas</a> *@
+                        }
                     }
 
+                </div> @* Fin navbar-nav m-auto *@
+
+                @* --- Componente de Login/Logout de Identity --- *@
+                <div class="navbar-nav ml-auto">
+                    @* ml-auto para alinear a la derecha *@
+                    <partial name="_LoginPartial" />
                 </div>
 
-                @* --- Inserta el LoginPartial aquí, después de tus enlaces principales --- *@
-                @* --- Puede que necesites ajustar clases CSS en _LoginPartial.cshtml si no se alinea bien --- *@
-                <partial name="_LoginPartial" />
-
-            </div>
+            </div> @* Fin navbar-collapse *@
         </nav>
     </div>
 
     <main role="main" class="pb-3">
-        @* Recomiendo añadir un contenedor aquí para que el contenido no ocupe todo el ancho por defecto *@
-        <div class="container-fluid py-5">
-            @* Ajusta padding (py-5) como necesites *@
+        @* Contenedor para el cuerpo principal con padding *@
+        <div class="container-fluid pt-4 px-4">
+            @* Mostrar mensajes TempData si existen *@
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @TempData["SuccessMessage"]
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            }
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["ErrorMessage"]
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            }
             @RenderBody()
         </div>
     </main>
 
 
     <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
-        @* ... (Tu Footer sin cambios) ... *@
         <div class="row pt-5">
             <div class="col-lg-7 col-md-6">
                 <div class="row">
@@ -126,9 +151,6 @@
                         <h3 class="text-primary mb-4">Accesos Rápidos</h3>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-white mb-2" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
-                            @* QUITAR este enlace si ya usas _LoginPartial
-                             <a class="text-white mb-2" asp-area="" asp-controller="Acceso" asp-action="InicioSesionUsuario"><i class="fa fa-angle-right mr-2"></i>Acceso Personal</a>
-                             *@
                         </div>
                     </div>
                 </div>
@@ -142,7 +164,6 @@
         </div>
     </div>
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: #3E3E4E !important;">
-        @* ... (Tu Copyright/Footer links sin cambios) ... *@
         <div class="row">
             <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
                 <p class="m-0 text-white">
@@ -161,6 +182,7 @@
     <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
+    @* --- SCRIPTS --- *@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     @* Scripts de tu plantilla *@
@@ -168,16 +190,11 @@
     <script src="@Url.Content("~/assets/lib/waypoints/waypoints.min.js")"></script>
     <script src="@Url.Content("~/assets/lib/counterup/counterup.min.js")"></script>
     <script src="@Url.Content("~/assets/lib/owlcarousel/owl.carousel.min.js")"></script>
-    @* <script src="@Url.Content("~/assets/mail/jqBootstrapValidation.min.js")"></script> *@ @* Probablemente no lo necesites si usas validación de .NET *@
-    @* <script src="@Url.Content("~/assets/mail/contact.js")"></script> *@ @* Probablemente no lo necesites *@
     <script src="@Url.Content("~/assets/js/main.js")"></script>
 
     @* Scripts necesarios para validación de ASP.NET Core *@
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-
-    @* Scripts generales de tu sitio (si tienes uno) *@
-    @* <script src="~/js/site.js" asp-append-version="true"></script> *@
 
     @* Sección para scripts específicos de cada página *@
     @await RenderSectionAsync("Scripts", required: false)
