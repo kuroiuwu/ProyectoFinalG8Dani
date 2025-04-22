@@ -12,8 +12,8 @@ using ProyectoFinal_G8.Models;
 namespace ProyectoFinal_G8.Migrations
 {
     [DbContext(typeof(ProyectoFinal_G8Context))]
-    [Migration("20250422023929_ReiniciarBD")]
-    partial class ReiniciarBD
+    [Migration("20250422030856_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

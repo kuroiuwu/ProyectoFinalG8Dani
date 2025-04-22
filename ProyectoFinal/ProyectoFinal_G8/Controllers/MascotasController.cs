@@ -23,13 +23,28 @@ namespace ProyectoFinal_G8.Controllers
         }
 
         // GET: Mascotas
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            // Incluir Dueño (Usuario) usando la navegación definida
-            var mascotas = _context.Mascotas
-                                 .Include(m => m.Dueño); // Asume que 'Dueño' es la prop. de navegación para IdUsuarioDueño
-            return View(await mascotas.ToListAsync());
+            ViewData["CurrentFilter"] = searchString;
+
+            var mascotas = from m in _context.Mascotas
+                           select m;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                mascotas = mascotas.Where(s => s.Nombre.Contains(searchString));
+            }
+
+            var mascotaList = await mascotas.ToListAsync();
+
+            if (!mascotaList.Any())
+            {
+                ViewData["NoResultsMessage"] = "No se encontró ninguna mascota con ese nombre.";
+            }
+
+            return View(mascotaList);
         }
+
 
         // GET: Mascotas/Details/5
         public async Task<IActionResult> Details(int? id)

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj": {}
+    "C:\\Users\\Sebastian\\Source\\Repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj": {}
   },
   "projects": {
-    "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj": {
+    "C:\\Users\\Sebastian\\Source\\Repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj",
+        "projectUniqueName": "C:\\Users\\Sebastian\\Source\\Repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj",
         "projectName": "ProyectoFinal_G8",
-        "projectPath": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj",
-        "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\obj\\",
+        "projectPath": "C:\\Users\\Sebastian\\Source\\Repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj",
+        "packagesPath": "C:\\Users\\Sebastian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sebastian\\Source\\Repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sebastian\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
