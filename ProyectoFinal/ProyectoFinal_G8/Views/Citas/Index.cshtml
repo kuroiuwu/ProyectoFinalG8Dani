@@ -1,64 +1,110 @@
 ﻿@model IEnumerable<ProyectoFinal_G8.Models.Cita>
- @using Microsoft.AspNetCore.Identity
- @using ProyectoFinal_G8.Models 
- @inject UserManager<Usuario> UserManager 
+@using Microsoft.AspNetCore.Identity
+@using ProyectoFinal_G8.Models
+@inject UserManager<Usuario> UserManager
 
 @{
     ViewData["Title"] = ViewData["VistaTitulo"] ?? "Citas";
-    // Layout = ...;
-    var currentUserID = ViewData["CurrentUserID"] != null ? (int)ViewData["CurrentUserID"] : 0; // Recuperar ID pasado desde el controller
-    // var currentUserIdString = UserManager.GetUserId(User); // Alternativa: obtenerlo directamente aquí si no se pasó
+    // Layout = ...; // Especifica tu layout si es necesario
+    var currentUserID = ViewData["CurrentUserID"] != null ? (int)ViewData["CurrentUserID"] : 0;
+    var isClient = User.IsInRole("Cliente");
+    var isAdminOrVet = User.IsInRole("Admin") || User.IsInRole("Veterinario");
+    var now = DateTime.UtcNow; // Usado en la lógica de botones
 }
 
 <div class="container mt-4">
     <h1>@ViewData["Title"]</h1>
     <hr />
 
-    @* Mostrar mensajes TempData (ya estaban bien) *@
+    @* Mostrar mensajes TempData *@
     @if (TempData["SuccessMessage"] != null)
     {
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            @TempData["SuccessMessage"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> @* Botón cierre Bootstrap 5 *@
-        </div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">@TempData["SuccessMessage"]<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
     }
     @if (TempData["ErrorMessage"] != null)
     {
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            @TempData["ErrorMessage"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">@TempData["ErrorMessage"]<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
     }
 
     <p>
-        <a asp-action="Create" class="btn btn-primary">
-            <i class="fas fa-plus mr-1"></i> @(User.IsInRole("Cliente") ? "Solicitar Nueva Cita" : "Crear Nueva Cita")
+        <a asp-action="Create" class="btn btn-primary mb-3">
+            <i class="fas fa-plus me-1"></i> @(isClient ? "Solicitar Nueva Cita" : "Crear Nueva Cita")
         </a>
     </p>
 
+    @* Formulario de Filtros (Solo para Admin/Vet) *@
+    @if (isAdminOrVet)
+    {
+        <div class="card mb-4 shadow-sm">
+            @* Añadido shadow-sm para estética *@
+            <div class="card-header bg-light">
+                @* Fondo ligero para header *@
+                <i class="fas fa-filter me-1"></i>
+                Filtrar Citas
+            </div>
+            <div class="card-body">
+                <form asp-action="Index" method="get">
+                    <div class="row g-3 mb-3 align-items-end">
+                        @* Alineación vertical al final *@
+                        <div class="col-md-3">
+                            <label for="filterDate" class="form-label fw-bold small">Por Fecha</label> @* Texto más pequeño y negrita *@
+                            <input type="date" id="filterDate" name="filterDate" value="@ViewData["CurrentFilterDate"]" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="filterStatus" class="form-label fw-bold small">Por Estado</label>
+                            <select id="filterStatus" name="filterStatus" asp-items='(SelectList)ViewData["StatusList"]' class="form-select form-select-sm"></select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="filterMascotaId" class="form-label fw-bold small">Por Mascota</label>
+                            <select id="filterMascotaId" name="filterMascotaId" asp-items='(SelectList)ViewData["MascotaList"]' class="form-select form-select-sm"></select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="filterDuenoId" class="form-label fw-bold small">Por Dueño</label>
+                            <select id="filterDuenoId" name="filterDuenoId" asp-items='(SelectList)ViewData["DuenoList"]' class="form-select form-select-sm"></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @* Fila separada para botones *@
+                        <div class="col-12 text-end">
+                            @* Alinear botones a la derecha *@
+                            <button type="submit" class="btn btn-sm btn-primary me-2">
+                                <i class="fas fa-search me-1"></i> Filtrar
+                            </button>
+                            <a asp-action="Index" class="btn btn-sm btn-secondary">
+                                <i class="fas fa-times me-1"></i> Limpiar Filtros
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    }
+
     <div class="table-responsive">
-        @* Añadido para mejor visualización en móviles *@
-        <table class="table table-striped table-bordered table-hover">
-            <thead class="thead-light">
+        <table class="table table-striped table-bordered table-hover align-middle caption-top">
+            @* Añadido caption-top para accesibilidad *@
+            <caption>Lista de Citas @(ViewData["CurrentFilterDate"] != null ? $"para {ViewData["CurrentFilterDate"]}" : "") @(ViewData["CurrentFilterStatus"] != null ? $"con estado '{ViewData["CurrentFilterStatus"]}'" : "")</caption>
+            <thead class="table-light">
                 <tr>
-                    <th>@Html.DisplayNameFor(model => model.FirstOrDefault().FechaHora)</th>
-                    <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Mascota)</th>
-                    @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+                    <th>@Html.DisplayNameFor(model => model.FirstOrDefault()!.FechaHora)</th> @* Usar ! si sabes que Model no será null aquí *@
+                    <th>@Html.DisplayNameFor(model => model.FirstOrDefault()!.Mascota)</th>
+                    @if (isAdminOrVet)
                     {
                         <th>Dueño</th>
                     }
-                    <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Veterinario)</th>
+                    <th>@Html.DisplayNameFor(model => model.FirstOrDefault()!.Veterinario)</th>
                     <th>Tipo Cita</th>
-                    <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Estado)</th> @* El estado se muestra a todos *@
-                    <th>Acciones</th>
+                    <th>@Html.DisplayNameFor(model => model.FirstOrDefault()!.Estado)</th>
+                    <th style="min-width: 130px;">Acciones</th> @* Ancho mínimo para botones *@
                 </tr>
             </thead>
             <tbody>
                 @if (!Model.Any())
                 {
                     <tr>
-                        <td colspan="@(User.IsInRole("Admin") || User.IsInRole("Veterinario") ? "7" : "6")" class="text-center">
-                            @(User.IsInRole("Cliente") ? "No tienes citas programadas." : "No hay citas para mostrar.")
+                        <td colspan="@(isAdminOrVet ? "7" : "6")" class="text-center fst-italic text-muted py-4">
+                            @* Estilo para mensaje vacío *@
+                            @(ViewData["CurrentFilterDate"] != null || ViewData["CurrentFilterStatus"] != null || ViewData["CurrentFilterMascotaId"] != null || ViewData["CurrentFilterDuenoId"] != null ? "No se encontraron citas que coincidan con los filtros aplicados." : (isClient ? "Aún no tienes citas programadas." : "No hay citas registradas en el sistema."))
                         </td>
                     </tr>
                 }
@@ -67,45 +113,42 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>@item.FechaHora.ToString("g")</td> @* Formato corto fecha/hora *@
+                            <td>@item.FechaHora.ToString("g")</td> @* Formato fecha/hora corta local *@
                             <td>@(item.Mascota?.Nombre ?? "N/A")</td>
-                            @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+                            @if (isAdminOrVet)
                             {
-                                <td>@(item.Mascota?.Dueño?.Nombre ?? "N/A")</td> @* Asume que Dueño es Usuario y tiene Nombre *@
+                                <td>@(item.Mascota?.Dueño?.Nombre ?? item.Mascota?.Dueño?.UserName ?? "N/A")</td>
                             }
-                            <td>@(item.Veterinario?.Nombre ?? "N/A")</td> @* Asume que Veterinario es Usuario y tiene Nombre *@
+                            <td>@(item.Veterinario?.Nombre ?? item.Veterinario?.UserName ?? "N/A")</td>
                             <td>@(item.TipoCita?.Nombre ?? "N/A")</td>
                             <td>
-                                @* Podríamos añadir estilo al estado *@
                                 <span class="badge @GetEstadoBadgeClass(item.Estado)">
                                     @Html.DisplayFor(modelItem => item.Estado)
                                 </span>
                             </td>
                             <td>
-                                <div class="btn-group" role="group" aria-label="Acciones Cita">
-                                    <a asp-action="Details" asp-route-id="@item.IdCita" class="btn btn-sm btn-info" title="Detalles"><i class="fas fa-info-circle"></i></a>
-
-                                    @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Acciones para Cita @item.IdCita">
+                                    @* btn-group-sm para botones más pequeños *@
+                                    <a asp-action="Details" asp-route-id="@item.IdCita" class="btn btn-outline-info" title="Ver Detalles"><i class="fas fa-info-circle"></i></a>
+                                    @if (isAdminOrVet)
                                     {
-                                        <a asp-action="Edit" asp-route-id="@item.IdCita" class="btn btn-sm btn-warning" title="Editar Cita (Admin/Vet)"><i class="fas fa-pencil-alt"></i></a>
-                                        <a asp-action="Delete" asp-route-id="@item.IdCita" class="btn btn-sm btn-danger" title="Eliminar Cita (Admin/Vet)"><i class="fas fa-trash-alt"></i></a>
-
-                                        @* --- NUEVO BOTÓN/ENLACE PARA HISTORIAL --- *@
-                                        @if (item.IdMascota > 0) // Solo mostrar si la cita tiene una mascota válida asociada
-                                        {
-                                            <a asp-controller="HistorialMedicos" asp-action="Create" asp-route-mascotaId="@item.IdMascota" class="btn btn-sm btn-success" title="Crear Historial Médico">
-                                                <i class="fas fa-notes-medical"></i> @* Icono de historial médico *@
-                                            </a>
+                                        <a asp-action="Edit" asp-route-id="@item.IdCita" class="btn btn-outline-warning" title="Editar Cita"><i class="fas fa-pencil-alt"></i></a>
+                                        @if (item.Estado != EstadoCita.Realizada && item.Estado != EstadoCita.CanceladaCliente && item.Estado != EstadoCita.CanceladaStaff)
+                                        { @* No eliminar si ya está realizada/cancelada *@
+                                            <a asp-action="Delete" asp-route-id="@item.IdCita" class="btn btn-outline-danger" title="Eliminar Cita"><i class="fas fa-trash-alt"></i></a>
                                         }
-                                        @* --- FIN NUEVO BOTÓN --- *@
+                                        @if (item.IdMascota > 0 && item.Estado == EstadoCita.Realizada)
+                                        { @* Historial solo si está realizada *@
+                                            <a asp-controller="HistorialMedicos" asp-action="Create" asp-route-mascotaId="@item.IdMascota" asp-route-citaId="@item.IdCita" class="btn btn-outline-success" title="Crear/Ver Historial"><i class="fas fa-notes-medical"></i></a>
+                                        }
                                     }
-                                    else if (User.IsInRole("Cliente") && item.Mascota?.IdUsuarioDueño == currentUserID)
+                                    else if (isClient && item.Mascota?.IdUsuarioDueño == currentUserID)
                                     {
-                                        bool canModify = item.Estado == EstadoCita.Programada && item.FechaHora > DateTime.UtcNow; // Usando UtcNow como antes
-                                        if (canModify)
+                                        bool canModifyOrCancel = (item.Estado == EstadoCita.Programada || item.Estado == EstadoCita.Confirmada) && item.FechaHora > DateTime.Now; // Comparar con Now local para UI
+                                        if (canModifyOrCancel)
                                         {
-                                            <a asp-action="EditCliente" asp-route-id="@item.IdCita" class="btn btn-sm btn-secondary" title="Modificar Mi Cita"><i class="fas fa-edit"></i></a>
-                                            <a asp-action="CancelCliente" asp-route-id="@item.IdCita" class="btn btn-sm btn-outline-danger" title="Cancelar Mi Cita"><i class="fas fa-times-circle"></i></a>
+                                            <a asp-action="EditCliente" asp-route-id="@item.IdCita" class="btn btn-outline-secondary" title="Modificar Mi Cita"><i class="fas fa-edit"></i></a>
+                                            <a asp-action="CancelCliente" asp-route-id="@item.IdCita" class="btn btn-outline-danger" title="Cancelar Mi Cita"><i class="fas fa-times-circle"></i></a>
                                         }
                                     }
                                 </div>
@@ -118,37 +161,39 @@
     </div>
 </div>
 
-@* Helper function para los badges de estado (Opcional, mejora visual) *@
+@* Helper function para los badges de estado (sin cambios) *@
 @functions {
     string GetEstadoBadgeClass(string? estado)
     {
         if (string.IsNullOrEmpty(estado)) return "bg-secondary";
         switch (estado)
         {
-            case EstadoCita.Programada:
-                return "bg-info text-dark";
-            case EstadoCita.Confirmada:
-                return "bg-primary";
-            case EstadoCita.Realizada:
-                return "bg-success";
-            case EstadoCita.CanceladaCliente:
-            case EstadoCita.CanceladaStaff:
-                return "bg-danger";
-            case EstadoCita.NoAsistio:
-                return "bg-warning text-dark";
-            default:
-                return "bg-secondary";
+            case EstadoCita.Programada: return "bg-info text-dark";
+            case EstadoCita.Confirmada: return "bg-primary";
+            case EstadoCita.Realizada: return "bg-success";
+            case EstadoCita.CanceladaCliente: case EstadoCita.CanceladaStaff: return "bg-danger text-white"; // Texto blanco en rojo
+            case EstadoCita.NoAsistio: return "bg-warning text-dark";
+            default: return "bg-secondary";
         }
     }
- }
+}
 
- @section Scripts {
-         @* Scripts adicionales si los necesitas *@
+@section Scripts {
+        @* Scripts adicionales si los necesitas *@
     <script>
-        // Script para que los alerts se cierren (si usas Bootstrap 5)
-        var alertList = document.querySelectorAll('.alert');
-        alertList.forEach(function (alert) {
-          new bootstrap.Alert(alert);
-        });
+        // Script para que los alerts se cierren automáticamente (si usas Bootstrap 5)
+         var alertList = document.querySelectorAll('.alert');
+         alertList.forEach(function (alert) { new bootstrap.Alert(alert); });
+
+         // Opcional: Si usas Select2 para mejorar los dropdowns de filtro (requiere librería Select2)
+         /*
+         $(document).ready(function() {
+             $('#filterMascotaId, #filterDuenoId, #filterStatus').select2({
+                 theme: "bootstrap-5", // O el tema que uses
+                 placeholder: $(this).find('option[value=""]').text(), // Usar texto de opción vacía como placeholder
+                 allowClear: true // Permite deseleccionar
+             });
+         });
+         */
     </script>
- }
+}

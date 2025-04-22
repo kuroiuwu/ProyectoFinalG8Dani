@@ -1,9 +1,11 @@
 ﻿@model ProyectoFinal_G8.Models.ViewModels.CitaCreateViewModel
- @using ProyectoFinal_G8.Models // Para EstadoCita
+@using ProyectoFinal_G8.Models
 
 @{
-    ViewData["Title"] = "Solicitar Nueva Cita"; // Título para todos los roles ahora
-    // Layout = "~/Views/Shared/_LayoutUsuarios.cshtml"; // O el layout que corresponda
+    ViewData["Title"] = "Solicitar Nueva Cita";
+    // Layout = "~/Views/Shared/_LayoutUsuarios.cshtml";
+    // Pasar el día mínimo (mañana) a JavaScript
+    var minDate = DateTime.Today.AddDays(1).ToString("yyyy-MM-dd");
 }
 
 <div class="container mt-4">
@@ -11,17 +13,31 @@
     <hr />
     <div class="row">
         <div class="col-md-8 col-lg-7">
-            @* Un poco más ancho para acomodar ambas secciones de mascota *@
             <form asp-action="Create" id="formCrearCita">
-                @* Muestra errores generales del modelo, útil para errores de IValidatableObject *@
                 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-                @* --- Campos Comunes de la Cita --- *@
-                <div class="mb-3">
-                    <label asp-for="FechaHora" class="form-label"></label>
-                    <input asp-for="FechaHora" class="form-control" type="datetime-local" />
-                    <span asp-validation-for="FechaHora" class="text-danger"></span>
+                @* --- NUEVOS Campos de Fecha y Hora --- *@
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="SelectedDate" class="form-label"></label>
+                        @* Input solo para fecha, con mínimo mañana *@
+                        <input asp-for="SelectedDate" class="form-control" type="date" id="appointmentDate" min="@minDate" />
+                        <span asp-validation-for="SelectedDate" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="SelectedTime" class="form-label"></label>
+                        @* Dropdown para horas, se llena con AJAX *@
+                        <select asp-for="SelectedTime" class="form-select" id="appointmentTime" disabled>
+                            <option value="">-- Seleccione una fecha primero --</option>
+                        </select>
+                        <span asp-validation-for="SelectedTime" class="text-danger"></span>
+                        <div id="timeSpinner" style="display: none;" class="spinner-border spinner-border-sm text-primary mt-1" role="status">
+                            <span class="visually-hidden">Cargando horas...</span>
+                        </div>
+                    </div>
                 </div>
+                @* --- FIN NUEVOS Campos --- *@
+
 
                 <div class="mb-3">
                     <label asp-for="IdUsuarioVeterinario" class="form-label"></label>
@@ -39,19 +55,15 @@
                     <span asp-validation-for="IdTipoCita" class="text-danger"></span>
                 </div>
 
-                @* --- Sección Mascota (Condicional) --- *@
-                @if (User.IsInRole("Cliente")) // Solo los clientes seleccionan/registran mascota aquí
+                @* --- Sección Mascota (SIN CAMBIOS) --- *@
+                @if (User.IsInRole("Cliente"))
                 {
                     <fieldset class="border p-3 mb-3">
                         <legend class="w-auto px-2 h6">Información de la Mascota</legend>
-
-                        @* Opción para Nueva Mascota *@
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" asp-for="RegistrarNuevaMascota" id="chkRegistrarNueva">
                             <label class="form-check-label" asp-for="RegistrarNuevaMascota"></label>
                         </div>
-
-                        @* Sección Mascota Existente (se muestra por defecto) *@
                         <div id="seccionMascotaExistente">
                             <label asp-for="IdMascotaSeleccionada" class="form-label"></label>
                             <select asp-for="IdMascotaSeleccionada" class="form-select" asp-items="ViewBag.MascotasExistentesList">
@@ -59,8 +71,6 @@
                             </select>
                             <span asp-validation-for="IdMascotaSeleccionada" class="text-danger"></span>
                         </div>
-
-                        @* Sección Nueva Mascota (oculta por defecto) *@
                         <div id="seccionMascotaNueva" style="display: none;">
                             <hr />
                             <p class="text-info small">Por favor, completa los datos de la nueva mascota.</p>
@@ -87,16 +97,14 @@
                         </div>
                     </fieldset>
                 }
-                else // Si es Admin/Vet, no mostramos selección/registro de mascota en este formulario
+                else
                 {
                     <input type="hidden" asp-for="IdMascotaSeleccionada" />
                     <input type="hidden" asp-for="RegistrarNuevaMascota" value="false" />
-                    @* Podrían tener otro flujo si necesitan crear citas para mascotas inexistentes *@
-                    <p class="text-muted small">Nota: La asignación de mascota se realiza desde la gestión de mascotas o citas.</p>
+                    <p class="text-muted small">Nota: La asignación de mascota se realiza desde la gestión de citas o edición.</p>
                 }
 
-
-                @* --- Notas Adicionales y Botones --- *@
+                @* --- Notas y Botones (SIN CAMBIOS) --- *@
                 <div class="mb-3">
                     <label asp-for="Notas" class="form-label"></label>
                     <textarea asp-for="Notas" class="form-control" rows="3" placeholder="Añada aquí cualquier nota relevante para la cita (opcional)"></textarea>
@@ -116,40 +124,105 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-
-    @* Script para mostrar/ocultar la sección de nueva mascota *@
     <script>
         $(document).ready(function () {
-            // Elementos
+            const dateInput = $('#appointmentDate');
+            const timeSelect = $('#appointmentTime');
+            const timeSpinner = $('#timeSpinner');
+            const getTimesUrl = '@Url.Action("GetAvailableTimes", "Citas")'; // URL al endpoint
+
+            // --- Lógica para cargar horas disponibles ---
+            function loadAvailableTimes() {
+                const selectedDate = dateInput.val();
+                timeSelect.prop('disabled', true); // Deshabilitar mientras carga
+                timeSelect.html('<option value="">Cargando...</option>'); // Mensaje de carga
+                timeSpinner.show(); // Mostrar spinner
+
+                if (!selectedDate) {
+                    timeSelect.html('<option value="">-- Seleccione una fecha primero --</option>');
+                    timeSpinner.hide();
+                    return;
+                }
+
+                // Petición AJAX
+                $.ajax({
+                    url: getTimesUrl,
+                    type: 'GET',
+                    data: { date: selectedDate }, // Enviar fecha como YYYY-MM-DD
+                    success: function (response) {
+                        timeSelect.empty(); // Limpiar opciones anteriores
+                        if (response.success && response.availableTimes && response.availableTimes.length > 0) {
+                            timeSelect.append($('<option>', { value: '', text: '-- Seleccione Hora --' }));
+                            $.each(response.availableTimes, function (i, time) {
+                                timeSelect.append($('<option>', {
+                                    value: time, // Valor HH:mm
+                                    text: time   // Texto HH:mm
+                                }));
+                            });
+                            timeSelect.prop('disabled', false); // Habilitar selección
+                        } else if (response.success) {
+                             timeSelect.html('<option value="">-- No hay horas disponibles --</option>');
+                        }
+                         else {
+                            // Mostrar error si la petición falló en el servidor
+                            timeSelect.html('<option value="">-- Error al cargar horas --</option>');
+                            console.error("Error del servidor:", response.message);
+                             // Podrías mostrar el response.message en algún lugar visible
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error AJAX:", error);
+                        timeSelect.empty();
+                        timeSelect.html('<option value="">-- Error de conexión --</option>');
+                         // Podrías mostrar un mensaje de error más genérico
+                    },
+                     complete: function() {
+                         timeSpinner.hide(); // Ocultar spinner al finalizar
+                     }
+                });
+            }
+
+            // Evento: Cambiar fecha
+            dateInput.on('change', function () {
+                loadAvailableTimes();
+            });
+
+            // Cargar horas si ya hay una fecha seleccionada al cargar (ej. al volver con error)
+            if (dateInput.val()) {
+                 loadAvailableTimes();
+                 // Preseleccionar hora si venía en el modelo (útil si falla la validación POST)
+                 const initialTime = '@Model.SelectedTime';
+                 if(initialTime) {
+                     // Esperar un poco a que termine el AJAX antes de intentar seleccionar
+                     setTimeout(() => { timeSelect.val(initialTime); }, 500);
+                 }
+            }
+
+
+            // --- Lógica para Mascota (SIN CAMBIOS) ---
             var chkNueva = $('#chkRegistrarNueva');
             var seccionExistente = $('#seccionMascotaExistente');
             var seccionNueva = $('#seccionMascotaNueva');
             var dropdownExistente = $('#IdMascotaSeleccionada');
-            var inputsNuevos = $('#seccionMascotaNueva input, #seccionMascotaNueva select, #seccionMascotaNueva textarea'); // Ajusta selectores si usas otros controles
+            var inputsNuevos = $('#seccionMascotaNueva input, #seccionMascotaNueva select, #seccionMascotaNueva textarea');
 
-            // Función para actualizar visibilidad
             function actualizarVisibilidadMascota() {
-                if (chkNueva.is(':checked')) {
-                    seccionExistente.hide();
-                    seccionNueva.show();
-                    // Limpiar selección existente para evitar enviar ambos
-                    dropdownExistente.val('');
-                } else {
-                    seccionExistente.show();
-                    seccionNueva.hide();
-                    // Opcional: Limpiar campos nuevos al desmarcar
-                    // inputsNuevos.val(''); // Cuidado si quieres preservar datos si el usuario cambia de opinión
-                }
-            }
+                 if (chkNueva.is(':checked')) {
+                     seccionExistente.hide();
+                     seccionNueva.show();
+                     dropdownExistente.val('');
+                     dropdownExistente.prop('disabled', true);
+                     inputsNuevos.prop('disabled', false);
+                 } else {
+                     seccionExistente.show();
+                     seccionNueva.hide();
+                     dropdownExistente.prop('disabled', false);
+                     inputsNuevos.prop('disabled', true);
+                 }
+             }
+            chkNueva.on('change', actualizarVisibilidadMascota);
+            actualizarVisibilidadMascota(); // Ejecutar al cargar
 
-            // Evento al cambiar el checkbox
-            chkNueva.on('change', function() {
-                actualizarVisibilidadMascota();
-            });
-
-            // Ejecutar al cargar la página por si se retorna la vista con errores
-            // y el checkbox ya venía marcado
-            actualizarVisibilidadMascota();
         });
     </script>
- }
+   }

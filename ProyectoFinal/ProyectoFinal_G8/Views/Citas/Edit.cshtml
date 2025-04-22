@@ -1,29 +1,51 @@
-﻿@model ProyectoFinal_G8.Models.Cita
- @using ProyectoFinal_G8.Models // Para EstadoCita
+﻿@model ProyectoFinal_G8.Models.ViewModels.CitaEditViewModel
+@* Cambiado el modelo a CitaEditViewModel *@
+@using ProyectoFinal_G8.Models
 
 @{
     ViewData["Title"] = "Editar Cita (Admin/Vet)";
-    // Layout = "~/Views/Shared/_LayoutUsuarios.cshtml";
+    var minDate = DateTime.Today.AddDays(1).ToString("yyyy-MM-dd"); // Para futuras fechas
 }
 
 <div class="container mt-4">
     <h1>@ViewData["Title"] - Cita #@Model.IdCita</h1>
+    @if (!string.IsNullOrEmpty(Model.MascotaNombre))
+    {
+        <h5 class="text-muted">Mascota: @Model.MascotaNombre (@(Model.DuenoNombre ?? "N/A"))</h5>
+    }
     <hr />
     <div class="row">
-        <div class="col-md-8 col-lg-6">
+        <div class="col-md-8 col-lg-7">
+            @* Un poco más ancho *@
             <form asp-action="Edit">
                 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
                 <input type="hidden" asp-for="IdCita" />
 
-                <div class="mb-3">
-                    <label asp-for="FechaHora" class="form-label"></label>
-                    <input asp-for="FechaHora" class="form-control" type="datetime-local" />
-                    <span asp-validation-for="FechaHora" class="text-danger"></span>
+                @* --- Campos de Fecha y Hora Separados --- *@
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="SelectedDate" class="form-label"></label>
+                        <input asp-for="SelectedDate" class="form-control" type="date" id="appointmentDate" />
+                        <span asp-validation-for="SelectedDate" class="text-danger"></span>
+                        <div class="form-text">Seleccione la nueva fecha.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="SelectedTime" class="form-label"></label>
+                        <select asp-for="SelectedTime" class="form-select" id="appointmentTime" disabled>
+                            <option value="">-- Seleccione fecha --</option>
+                        </select>
+                        <span asp-validation-for="SelectedTime" class="text-danger"></span>
+                        <div id="timeSpinner" style="display: none;" class="spinner-border spinner-border-sm text-primary mt-1" role="status">
+                            <span class="visually-hidden">Cargando horas...</span>
+                        </div>
+                        <div class="form-text">Horas disponibles para la fecha seleccionada.</div>
+                    </div>
                 </div>
+                @* --- Fin Campos Fecha/Hora --- *@
 
                 <div class="mb-3">
                     <label asp-for="IdMascota" class="form-label"></label>
-                    @* Admin/Vet ven todas las mascotas, mostrando el dueño *@
+                    @* Admins ven todas las mascotas *@
                     <select asp-for="IdMascota" class="form-select" asp-items="ViewBag.IdMascota">
                         <option value="">-- Seleccione Mascota --</option>
                     </select>
@@ -46,11 +68,9 @@
                     <span asp-validation-for="IdTipoCita" class="text-danger"></span>
                 </div>
 
-                @* Dropdown para editar el Estado (Solo Admin/Vet) *@
                 <div class="mb-3">
                     <label asp-for="Estado" class="form-label"></label>
                     <select asp-for="Estado" class="form-select" asp-items="ViewBag.EstadosCita">
-                        @* Usar el ViewBag poblado en el controller *@
                         <option value="">-- Seleccione Estado --</option>
                     </select>
                     <span asp-validation-for="Estado" class="text-danger"></span>
@@ -64,7 +84,7 @@
 
                 <div class="mb-3">
                     <input type="submit" value="Guardar Cambios" class="btn btn-primary" />
-                    <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar y Volver</a>
                 </div>
             </form>
         </div>
@@ -75,4 +95,86 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
- }
+    <script>
+        $(document).ready(function () {
+            const dateInput = $('#appointmentDate');
+            const timeSelect = $('#appointmentTime');
+            const timeSpinner = $('#timeSpinner');
+            const getTimesUrl = '@Url.Action("GetAvailableTimes", "Citas")';
+            const currentCitaId = @Model.IdCita; // Obtener ID de la cita actual
+            const initialTime = '@Model.SelectedTime'; // Hora inicial cargada
+
+            function loadAvailableTimes(selectedDate) {
+                timeSelect.prop('disabled', true);
+                timeSelect.html('<option value="">Cargando...</option>');
+                timeSpinner.show();
+
+                if (!selectedDate) {
+                    timeSelect.html('<option value="">-- Seleccione fecha --</option>');
+                    timeSpinner.hide();
+                    return;
+                }
+
+                // Petición AJAX, incluyendo la cita a excluir
+                $.ajax({
+                    url: getTimesUrl,
+                    type: 'GET',
+                    data: {
+                        date: selectedDate,
+                        excludingCitaId: currentCitaId // Enviar el ID de la cita actual
+                    },
+                    success: function (response) {
+                        timeSelect.empty();
+                        let timeFound = false;
+                        if (response.success && response.availableTimes) {
+                             timeSelect.append($('<option>', { value: '', text: '-- Seleccione Hora --' }));
+
+                            // Añadir la hora original si no está en la lista (podría ser pasada o fuera de rango ahora)
+                            // O si la fecha seleccionada es la original
+                            if (selectedDate === '@Model.SelectedDate.ToString("yyyy-MM-dd")' && !response.availableTimes.includes(initialTime)) {
+                                 timeSelect.append($('<option>', { value: initialTime, text: initialTime + ' (Hora Original)' }));
+                                 if(initialTime) timeFound = true; // Marca si la hora original es la que está seleccionada
+                            }
+
+                            // Añadir horas disponibles
+                            $.each(response.availableTimes, function (i, time) {
+                                timeSelect.append($('<option>', { value: time, text: time }));
+                                if(time === initialTime) timeFound = true;
+                            });
+
+                            if(timeSelect.children('option').length <= 1) { // Solo la opción '-- Seleccione Hora --'
+                                timeSelect.html('<option value="">-- No hay horas disponibles --</option>');
+                            } else {
+                                timeSelect.prop('disabled', false);
+                                // Intentar preseleccionar la hora original si corresponde a la fecha actual
+                                if (selectedDate === '@Model.SelectedDate.ToString("yyyy-MM-dd")' && timeFound) {
+                                     timeSelect.val(initialTime);
+                                 } else {
+                                     // Si se cambió la fecha, o la hora original ya no está disponible, no preseleccionar nada
+                                     timeSelect.val('');
+                                 }
+                            }
+
+                        } else {
+                            timeSelect.html('<option value="">-- Error al cargar horas --</option>');
+                        }
+                    },
+                    error: function () {
+                        timeSelect.html('<option value="">-- Error de conexión --</option>');
+                    },
+                    complete: function() {
+                        timeSpinner.hide();
+                    }
+                });
+            }
+
+            // Evento: Cambiar fecha
+            dateInput.on('change', function () {
+                loadAvailableTimes($(this).val());
+            });
+
+            // Carga inicial al entrar a la página
+            loadAvailableTimes(dateInput.val());
+        });
+    </script>
+}

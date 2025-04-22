@@ -1,29 +1,52 @@
-﻿@model ProyectoFinal_G8.Models.Cita
+﻿@model ProyectoFinal_G8.Models.ViewModels.CitaEditClienteViewModel
+@* Cambiado el modelo a CitaEditClienteViewModel *@
+@using ProyectoFinal_G8.Models
 
 @{
     ViewData["Title"] = "Modificar Mi Cita";
-    // Layout = "~/Views/Shared/_LayoutUsuarios.cshtml"; // O el layout que corresponda
+    var minDate = DateTime.Today.AddDays(1).ToString("yyyy-MM-dd");
 }
 
 <div class="container mt-4">
     <h1>@ViewData["Title"]</h1>
+    @if (!string.IsNullOrEmpty(Model.MascotaNombre))
+    {
+        <h5 class="text-muted">Mascota: @Model.MascotaNombre</h5>
+    }
     <p>Puedes modificar los detalles de tu cita programada.</p>
     <hr />
     <div class="row">
-        <div class="col-md-8 col-lg-6">
+        <div class="col-md-8 col-lg-7">
             <form asp-action="EditCliente" asp-route-id="@Model.IdCita" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
                 <input type="hidden" asp-for="IdCita" />
 
-                <div class="mb-3">
-                    <label asp-for="FechaHora" class="form-label"></label>
-                    <input asp-for="FechaHora" class="form-control" type="datetime-local" />
-                    <span asp-validation-for="FechaHora" class="text-danger"></span>
+                @* --- Campos de Fecha y Hora Separados --- *@
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="SelectedDate" class="form-label"></label>
+                        <input asp-for="SelectedDate" class="form-control" type="date" id="appointmentDate" min="@minDate" />
+                        <span asp-validation-for="SelectedDate" class="text-danger"></span>
+                        <div class="form-text">Seleccione la nueva fecha (debe ser futura).</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="SelectedTime" class="form-label"></label>
+                        <select asp-for="SelectedTime" class="form-select" id="appointmentTime" disabled>
+                            <option value="">-- Seleccione fecha --</option>
+                        </select>
+                        <span asp-validation-for="SelectedTime" class="text-danger"></span>
+                        <div id="timeSpinner" style="display: none;" class="spinner-border spinner-border-sm text-primary mt-1" role="status">
+                            <span class="visually-hidden">Cargando horas...</span>
+                        </div>
+                        <div class="form-text">Horas disponibles (9:00 AM - 5:00 PM).</div>
+                    </div>
                 </div>
+                @* --- Fin Campos Fecha/Hora --- *@
+
 
                 <div class="mb-3">
                     <label asp-for="IdMascota" class="form-label">Mascota</label>
-                    @* --- CORRECCIÓN AQUÍ --- *@
+                    @* Dropdown solo con las mascotas del cliente actual *@
                     <select asp-for="IdMascota" class="form-select" asp-items='(SelectList)ViewData["MascotasExistentesList"]'>
                         <option value="">-- Seleccione su Mascota --</option>
                     </select>
@@ -32,9 +55,7 @@
 
                 <div class="mb-3">
                     <label asp-for="IdUsuarioVeterinario" class="form-label">Veterinario</label>
-                    @* Asumiendo que el controller carga esto en ViewBag/ViewData similar *@
                     <select asp-for="IdUsuarioVeterinario" class="form-select" asp-items="ViewBag.IdUsuarioVeterinario">
-                        @* O ViewData["IdUsuarioVeterinario"] *@
                         <option value="">-- Seleccione Veterinario --</option>
                     </select>
                     <span asp-validation-for="IdUsuarioVeterinario" class="text-danger"></span>
@@ -42,9 +63,7 @@
 
                 <div class="mb-3">
                     <label asp-for="IdTipoCita" class="form-label">Tipo de Cita</label>
-                    @* Asumiendo que el controller carga esto en ViewBag/ViewData similar *@
                     <select asp-for="IdTipoCita" class="form-select" asp-items="ViewBag.IdTipoCita">
-                        @* O ViewData["IdTipoCita"] *@
                         <option value="">-- Seleccione Tipo Cita --</option>
                     </select>
                     <span asp-validation-for="IdTipoCita" class="text-danger"></span>
@@ -58,7 +77,7 @@
 
                 <div class="mb-3">
                     <input type="submit" value="Guardar Cambios en mi Cita" class="btn btn-primary" />
-                    <a asp-action="Index" class="btn btn-secondary">Volver a Mis Citas</a>
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar y Volver</a>
                 </div>
             </form>
         </div>
@@ -69,4 +88,45 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
- }
+    <script>
+        // Script AJAX es idéntico al de Edit.cshtml
+         $(document).ready(function () {
+            const dateInput = $('#appointmentDate');
+            const timeSelect = $('#appointmentTime');
+            const timeSpinner = $('#timeSpinner');
+            const getTimesUrl = '@Url.Action("GetAvailableTimes", "Citas")';
+            const currentCitaId = @Model.IdCita;
+            const initialTime = '@Model.SelectedTime';
+
+            function loadAvailableTimes(selectedDate) {
+                timeSelect.prop('disabled', true); timeSelect.html('<option value="">Cargando...</option>'); timeSpinner.show();
+                if (!selectedDate) { timeSelect.html('<option value="">-- Seleccione fecha --</option>'); timeSpinner.hide(); return; }
+                $.ajax({
+                    url: getTimesUrl, type: 'GET', data: { date: selectedDate, excludingCitaId: currentCitaId },
+                    success: function (response) {
+                        timeSelect.empty(); let timeFound = false;
+                        if (response.success && response.availableTimes) {
+                             timeSelect.append($('<option>', { value: '', text: '-- Seleccione Hora --' }));
+                             // Añadir hora original si es la fecha original
+                             if (selectedDate === '@Model.SelectedDate.ToString("yyyy-MM-dd")' && !response.availableTimes.includes(initialTime)) {
+                                 timeSelect.append($('<option>', { value: initialTime, text: initialTime + ' (Hora Original)' }));
+                                 if(initialTime) timeFound = true;
+                            }
+                             $.each(response.availableTimes, function (i, time) { timeSelect.append($('<option>', { value: time, text: time })); if(time === initialTime) timeFound = true; });
+                             if(timeSelect.children('option').length <= 1) { timeSelect.html('<option value="">-- No hay horas disponibles --</option>'); }
+                             else {
+                                 timeSelect.prop('disabled', false);
+                                 if (selectedDate === '@Model.SelectedDate.ToString("yyyy-MM-dd")' && timeFound) { timeSelect.val(initialTime); }
+                                 else { timeSelect.val(''); }
+                             }
+                        } else { timeSelect.html('<option value="">-- Error al cargar horas --</option>'); }
+                    },
+                    error: function () { timeSelect.html('<option value="">-- Error de conexión --</option>'); },
+                    complete: function() { timeSpinner.hide(); }
+                });
+            }
+            dateInput.on('change', function () { loadAvailableTimes($(this).val()); });
+            loadAvailableTimes(dateInput.val()); // Carga inicial
+        });
+    </script>
+}
