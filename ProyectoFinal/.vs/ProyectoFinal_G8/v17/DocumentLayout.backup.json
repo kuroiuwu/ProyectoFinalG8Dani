@@ -1,84 +1,88 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\",
+  "WorkspaceRootPath": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\mascotas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\citas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\citas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\controllers\\facturascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\controllers\\facturascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\controllers\\tratamientoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\controllers\\tratamientoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\citas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\citas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\mascotas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\mascotas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\controllers\\mascotascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\controllers\\citascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\controllers\\citascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\controllers\\mascotascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\controllers\\mascotascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\mascotas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\mascotas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\mascotas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\models\\tipocita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\models\\tipocita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\models\\tipocita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\citas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\citas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Sebastian\\source\\repos\\ProyectoFinal_G8\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\MascotasController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\citas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\citas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\citas\\cancelcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\citas\\cancelcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\citas\\cancelcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\citas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\citas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\citas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\models\\cita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\models\\cita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\models\\cita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Migrations\\20250422030856_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ProyectoFinal_G8\\Migrations\\20250422030856_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\controllers\\citascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\controllers\\citascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\citas\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\citas\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\citas\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\citas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\citas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\citas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\citas\\editcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\citas\\editcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\citas\\editcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\models\\proyectofinal_g8context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\models\\proyectofinal_g8context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\models\\proyectofinal_g8context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -88,23 +92,19 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250422013226_AgregarTipoCita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\controllers\\facturascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\controllers\\facturascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -114,116 +114,120 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250421065804_CorreccionBD.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\services\\dummyemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\services\\dummyemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\services\\dummyemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\areas\\identity\\pages\\account\\manage\\externallogins.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\areas\\identity\\pages\\account\\manage\\externallogins.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\areas\\identity\\pages\\account\\manage\\externallogins.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\areas\\identity\\pages\\account\\manage\\externallogins.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\areas\\identity\\pages\\account\\manage\\externallogins.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\areas\\identity\\pages\\account\\manage\\externallogins.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\proyectofinal_g8.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\proyectofinal_g8.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\proyectofinal_g8.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\rols\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\rols\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\rols\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\controllers\\rolscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\controllers\\rolscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\controllers\\rolscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\usuarios\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\usuarios\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\usuarios\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\usuarios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\usuarios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\usuarios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\rols\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\rols\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\rols\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\rols\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\rols\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\rols\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\rols\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\rols\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\rols\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\rols\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\rols\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\rols\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\models\\viewmodels\\roleditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\models\\viewmodels\\roleditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\models\\viewmodels\\roleditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\models\\viewmodels\\rolcreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\models\\viewmodels\\rolcreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\models\\viewmodels\\rolcreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\models\\viewmodels\\rolviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\models\\viewmodels\\rolviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\models\\viewmodels\\rolviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\usuarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\usuarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\usuarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\models\\viewmodels\\usuarioeditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\models\\viewmodels\\usuarioeditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\models\\viewmodels\\usuarioeditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\models\\viewmodels\\usuariocreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\models\\viewmodels\\usuariocreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\models\\viewmodels\\usuariocreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\models\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\models\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\models\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\controllers\\historialmedicoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\controllers\\historialmedicoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\controllers\\historialmedicoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\sebastian\\source\\repos\\proyectofinalg8daniv4\\proyectofinal\\proyectofinal_g8\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|c:\\users\\danie\\source\\repos\\avanzada en web\\repositorioproyectofinal\\proyectofinalg8dani\\proyectofinal\\proyectofinal_g8\\migrations\\20250422030856_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98FB0A75-9B3E-4C7C-8CDE-9B6829DC7C0B}|ProyectoFinal_G8\\ProyectoFinal_G8.csproj|solutionrelative:proyectofinal_g8\\migrations\\20250422030856_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -236,95 +240,25 @@
           "SelectedChildIndex": 7,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Create.cshtml",
-              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Citas\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Create.cshtml",
-              "RelativeToolTip": "ProyectoFinal_G8\\Views\\Citas\\Create.cshtml",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T01:28:09.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Cita.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\Cita.cs",
-              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Models\\Cita.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\Cita.cs",
-              "RelativeToolTip": "ProyectoFinal_G8\\Models\\Cita.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAgwAsAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T01:21:45.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TipoCita.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\TipoCita.cs",
-              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Models\\TipoCita.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\TipoCita.cs",
-              "RelativeToolTip": "ProyectoFinal_G8\\Models\\TipoCita.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAswBkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T01:14:38.675Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "CancelCliente.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\CancelCliente.cshtml",
-              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Citas\\CancelCliente.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\CancelCliente.cshtml",
-              "RelativeToolTip": "ProyectoFinal_G8\\Views\\Citas\\CancelCliente.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T02:33:45.635Z",
-              "EditorCaption": ""
+              "Title": "MascotasController.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\MascotasController.cs",
+              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Controllers\\MascotasController.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\MascotasController.cs",
+              "RelativeToolTip": "ProyectoFinal_G8\\Controllers\\MascotasController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T05:33:06.791Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Index.cshtml",
-              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Citas\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Index.cshtml",
-              "RelativeToolTip": "ProyectoFinal_G8\\Views\\Citas\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJEAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T01:28:48.661Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MascotasController.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\MascotasController.cs",
-              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Controllers\\MascotasController.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\MascotasController.cs*",
-              "RelativeToolTip": "ProyectoFinal_G8\\Controllers\\MascotasController.cs*",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBsAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T05:33:06.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Mascotas\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Mascotas\\Index.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Mascotas\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Mascotas\\Index.cshtml*",
-              "RelativeToolTip": "ProyectoFinal_G8\\Views\\Mascotas\\Index.cshtml*",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Mascotas\\Index.cshtml",
+              "RelativeToolTip": "ProyectoFinal_G8\\Views\\Mascotas\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-22T03:45:20.854Z",
@@ -332,114 +266,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Mascotas\\Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Mascotas\\Create.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Mascotas\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Mascotas\\Create.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Mascotas\\Create.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Mascotas\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T03:22:51.348Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T03:22:51.348Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MascotasController.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinal_G8\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\MascotasController.cs",
-              "RelativeDocumentMoniker": "..\\..\\ProyectoFinal_G8\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\MascotasController.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinal_G8\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\MascotasController.cs",
-              "RelativeToolTip": "..\\..\\ProyectoFinal_G8\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\MascotasController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T03:43:42.206Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "20250422030856_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Migrations\\20250422030856_InitialCreate.cs",
-              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Migrations\\20250422030856_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Migrations\\20250422030856_InitialCreate.cs",
-              "RelativeToolTip": "ProyectoFinal_G8\\Migrations\\20250422030856_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T03:08:56.556Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Edit.cshtml",
-              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Citas\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Edit.cshtml",
-              "RelativeToolTip": "ProyectoFinal_G8\\Views\\Citas\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T01:28:36.965Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "ProyectoFinal_G8\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAHIAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-19T23:51:36.951Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Program.cs",
-              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Program.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Program.cs",
-              "RelativeToolTip": "ProyectoFinal_G8\\Program.cs",
-              "ViewState": "AgIAALEAAAAAAAAAAAAcwMUAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T21:44:29.067Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CitasController.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\CitasController.cs",
-              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Controllers\\CitasController.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\CitasController.cs",
-              "RelativeToolTip": "ProyectoFinal_G8\\Controllers\\CitasController.cs",
-              "ViewState": "AgIAAGsCAAAAAAAAAAAkwHQCAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T05:32:37.582Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Details.cshtml",
-              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Citas\\Details.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Details.cshtml",
-              "RelativeToolTip": "ProyectoFinal_G8\\Views\\Citas\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T01:30:58.179Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\appsettings.json",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\appsettings.json",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\appsettings.json",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\appsettings.json",
               "RelativeToolTip": "ProyectoFinal_G8\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -448,11 +291,184 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 14,
+              "Title": "Cita.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\Cita.cs",
+              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Models\\Cita.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\Cita.cs",
+              "RelativeToolTip": "ProyectoFinal_G8\\Models\\Cita.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwAsAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T01:21:45.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FacturasController.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\FacturasController.cs",
+              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Controllers\\FacturasController.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\FacturasController.cs",
+              "RelativeToolTip": "ProyectoFinal_G8\\Controllers\\FacturasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T05:32:50.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CancelCliente.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\CancelCliente.cshtml",
+              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Citas\\CancelCliente.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\CancelCliente.cshtml",
+              "RelativeToolTip": "ProyectoFinal_G8\\Views\\Citas\\CancelCliente.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-22T02:33:45.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Create.cshtml",
+              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Citas\\Create.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Create.cshtml",
+              "RelativeToolTip": "ProyectoFinal_G8\\Views\\Citas\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-22T01:28:09.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Citas\\Index.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Index.cshtml",
+              "RelativeToolTip": "ProyectoFinal_G8\\Views\\Citas\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-22T01:28:48.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TratamientosController.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\TratamientosController.cs",
+              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Controllers\\TratamientosController.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\TratamientosController.cs",
+              "RelativeToolTip": "ProyectoFinal_G8\\Controllers\\TratamientosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T05:46:18.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CitasController.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\CitasController.cs",
+              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Controllers\\CitasController.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\CitasController.cs",
+              "RelativeToolTip": "ProyectoFinal_G8\\Controllers\\CitasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T05:32:37.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TipoCita.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\TipoCita.cs",
+              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Models\\TipoCita.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\TipoCita.cs",
+              "RelativeToolTip": "ProyectoFinal_G8\\Models\\TipoCita.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAswBkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T01:14:38.675Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MascotasController.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinal_G8\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\MascotasController.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Sebastian\\source\\repos\\ProyectoFinal_G8\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\MascotasController.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinal_G8\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\MascotasController.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Sebastian\\source\\repos\\ProyectoFinal_G8\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\MascotasController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T03:43:42.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "20250422030856_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Migrations\\20250422030856_InitialCreate.cs",
+              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Migrations\\20250422030856_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Migrations\\20250422030856_InitialCreate.cs",
+              "RelativeToolTip": "ProyectoFinal_G8\\Migrations\\20250422030856_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T03:08:56.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Edit.cshtml",
+              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Citas\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Edit.cshtml",
+              "RelativeToolTip": "ProyectoFinal_G8\\Views\\Citas\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-22T01:28:36.965Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ProyectoFinal_G8\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAHIAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-19T23:51:36.951Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Program.cs",
+              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Program.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Program.cs",
+              "RelativeToolTip": "ProyectoFinal_G8\\Program.cs",
+              "ViewState": "AgIAALEAAAAAAAAAAAAcwMUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T21:44:29.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Details.cshtml",
+              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Citas\\Details.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Details.cshtml",
+              "RelativeToolTip": "ProyectoFinal_G8\\Views\\Citas\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-22T01:30:58.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "EditCliente.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\EditCliente.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\EditCliente.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Citas\\EditCliente.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\EditCliente.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\EditCliente.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Citas\\EditCliente.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -460,11 +476,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Delete.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Citas\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Citas\\Delete.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Citas\\Delete.cshtml",
               "ViewState": "AgIAABkAAAAAAAAAAAAcwDIAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -472,11 +488,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\Usuario.cs",
               "RelativeToolTip": "ProyectoFinal_G8\\Models\\Usuario.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAQwEgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -484,11 +500,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "ProyectoFinal_G8Context.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ProyectoFinal_G8Context.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ProyectoFinal_G8Context.cs",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Models\\ProyectoFinal_G8Context.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ProyectoFinal_G8Context.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ProyectoFinal_G8Context.cs",
               "RelativeToolTip": "ProyectoFinal_G8\\Models\\ProyectoFinal_G8Context.cs",
               "ViewState": "AgIAAFMAAAAAAAAAAAAcwGwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -496,24 +512,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "20250422013226_AgregarTipoCita.cs",
               "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250422013226_AgregarTipoCita.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250422013226_AgregarTipoCita.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250422013226_AgregarTipoCita.cs",
               "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250422013226_AgregarTipoCita.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250422013226_AgregarTipoCita.cs",
+              "RelativeToolTip": "..\\..\\..\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250422013226_AgregarTipoCita.cs",
               "ViewState": "AgIAAF0AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-22T01:32:26.366Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "20250422013458_ReiniciarBD.cs",
               "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250422013458_ReiniciarBD.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250422013458_ReiniciarBD.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250422013458_ReiniciarBD.cs",
               "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250422013458_ReiniciarBD.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250422013458_ReiniciarBD.cs",
+              "RelativeToolTip": "..\\..\\..\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250422013458_ReiniciarBD.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-22T01:34:58.687Z"
@@ -523,9 +539,9 @@
               "DocumentIndex": 28,
               "Title": "20250421065804_CorreccionBD.cs",
               "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250421065804_CorreccionBD.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250421065804_CorreccionBD.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250421065804_CorreccionBD.cs",
               "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250421065804_CorreccionBD.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250421065804_CorreccionBD.cs",
+              "RelativeToolTip": "..\\..\\..\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250421065804_CorreccionBD.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T06:58:04.201Z"
@@ -534,9 +550,9 @@
               "$type": "Document",
               "DocumentIndex": 26,
               "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "ViewState": "AgIAACUAAAAAAAAAAAAqwD0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -547,32 +563,20 @@
               "DocumentIndex": 27,
               "Title": "20250421070043_CorreccionBD.cs",
               "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250421070043_CorreccionBD.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250421070043_CorreccionBD.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250421070043_CorreccionBD.cs",
               "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250421070043_CorreccionBD.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\danie\\source\\repos\\Avanzada en web\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250421070043_CorreccionBD.cs",
+              "RelativeToolTip": "..\\..\\..\\Copia proyecto final dani\\ProyectoFinal_G8\\Migrations\\20250421070043_CorreccionBD.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T07:00:43.516Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "FacturasController.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\FacturasController.cs",
-              "RelativeDocumentMoniker": "ProyectoFinal_G8\\Controllers\\FacturasController.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\FacturasController.cs",
-              "RelativeToolTip": "ProyectoFinal_G8\\Controllers\\FacturasController.cs",
-              "ViewState": "AgIAALEAAAAAAAAAAAAkwMYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T05:32:50.49Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 24,
               "Title": "_LoginPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Shared\\_LoginPartial.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Shared\\_LoginPartial.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAABtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -582,9 +586,9 @@
               "$type": "Document",
               "DocumentIndex": 23,
               "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "ViewState": "AgIAAE8AAAAAAAAAAAAqwGcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -594,9 +598,9 @@
               "$type": "Document",
               "DocumentIndex": 25,
               "Title": "Register.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeToolTip": "ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "ViewState": "AgIAAIUAAAAAAAAAAAAqwIsAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -606,9 +610,9 @@
               "$type": "Document",
               "DocumentIndex": 36,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Index.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Usuarios\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Index.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Index.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Usuarios\\Index.cshtml",
               "ViewState": "AgIAACcAAAAAAAAAAAAkwDwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -618,9 +622,9 @@
               "$type": "Document",
               "DocumentIndex": 35,
               "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Details.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Rols\\Details.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Details.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Details.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Rols\\Details.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -630,9 +634,9 @@
               "$type": "Document",
               "DocumentIndex": 30,
               "Title": "ExternalLogins.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml.cs",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml.cs",
               "RelativeToolTip": "ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml.cs",
               "ViewState": "AgIAAEMAAAAAAAAAAAAiwFkAAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -642,9 +646,9 @@
               "$type": "Document",
               "DocumentIndex": 31,
               "Title": "ExternalLogins.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -654,9 +658,9 @@
               "$type": "Document",
               "DocumentIndex": 29,
               "Title": "DummyEmailSender.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Services\\DummyEmailSender.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Services\\DummyEmailSender.cs",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Services\\DummyEmailSender.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Services\\DummyEmailSender.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Services\\DummyEmailSender.cs",
               "RelativeToolTip": "ProyectoFinal_G8\\Services\\DummyEmailSender.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -666,9 +670,9 @@
               "$type": "Document",
               "DocumentIndex": 32,
               "Title": "ScaffoldingReadMe.txt",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\ScaffoldingReadMe.txt",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\ScaffoldingReadMe.txt",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\ScaffoldingReadMe.txt",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\ScaffoldingReadMe.txt",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\ScaffoldingReadMe.txt",
               "RelativeToolTip": "ProyectoFinal_G8\\ScaffoldingReadMe.txt",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
@@ -678,9 +682,9 @@
               "$type": "Document",
               "DocumentIndex": 34,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -690,9 +694,9 @@
               "$type": "Document",
               "DocumentIndex": 38,
               "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Delete.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Usuarios\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Delete.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Usuarios\\Delete.cshtml",
               "ViewState": "AgIAABIAAAAAAAAAAAAkwCcAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -702,9 +706,9 @@
               "$type": "Document",
               "DocumentIndex": 33,
               "Title": "ProyectoFinal_G8.csproj",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Source\\Repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\ProyectoFinal_G8.csproj",
-              "ToolTip": "C:\\Users\\Sebastian\\Source\\Repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\ProyectoFinal_G8.csproj",
               "RelativeToolTip": "ProyectoFinal_G8\\ProyectoFinal_G8.csproj",
               "ViewState": "AgIAAAQAAAAAAAAAAAAwwBAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -714,9 +718,9 @@
               "$type": "Document",
               "DocumentIndex": 39,
               "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Details.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Usuarios\\Details.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Details.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Details.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Usuarios\\Details.cshtml",
               "ViewState": "AgIAABUAAAAAAAAAAAAkwCoAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -726,9 +730,9 @@
               "$type": "Document",
               "DocumentIndex": 40,
               "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Delete.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Rols\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Delete.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Rols\\Delete.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAkwBsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -738,9 +742,9 @@
               "$type": "Document",
               "DocumentIndex": 37,
               "Title": "RolsController.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\RolsController.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\RolsController.cs",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Controllers\\RolsController.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\RolsController.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\RolsController.cs",
               "RelativeToolTip": "ProyectoFinal_G8\\Controllers\\RolsController.cs",
               "ViewState": "AgIAAJUAAAAAAAAAAAAkwKoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -750,9 +754,9 @@
               "$type": "Document",
               "DocumentIndex": 41,
               "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Edit.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Rols\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Edit.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Rols\\Edit.cshtml",
               "ViewState": "AgIAABUAAAAAAAAAAAAkwCoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -762,9 +766,9 @@
               "$type": "Document",
               "DocumentIndex": 42,
               "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Create.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Rols\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Create.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Create.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Rols\\Create.cshtml",
               "ViewState": "AgIAABIAAAAAAAAAAAAkwCcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -774,9 +778,9 @@
               "$type": "Document",
               "DocumentIndex": 43,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Index.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Rols\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Index.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Rols\\Index.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Rols\\Index.cshtml",
               "ViewState": "AgIAAB0AAAAAAAAAAAAkwDIAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -786,9 +790,9 @@
               "$type": "Document",
               "DocumentIndex": 44,
               "Title": "RolEditViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\RolEditViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\RolEditViewModel.cs",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Models\\ViewModels\\RolEditViewModel.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\RolEditViewModel.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\RolEditViewModel.cs",
               "RelativeToolTip": "ProyectoFinal_G8\\Models\\ViewModels\\RolEditViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -798,9 +802,9 @@
               "$type": "Document",
               "DocumentIndex": 45,
               "Title": "RolCreateViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\RolCreateViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\RolCreateViewModel.cs",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Models\\ViewModels\\RolCreateViewModel.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\RolCreateViewModel.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\RolCreateViewModel.cs",
               "RelativeToolTip": "ProyectoFinal_G8\\Models\\ViewModels\\RolCreateViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -810,9 +814,9 @@
               "$type": "Document",
               "DocumentIndex": 46,
               "Title": "RolViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\RolViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\RolViewModel.cs",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Models\\ViewModels\\RolViewModel.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\RolViewModel.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\RolViewModel.cs",
               "RelativeToolTip": "ProyectoFinal_G8\\Models\\ViewModels\\RolViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -822,9 +826,9 @@
               "$type": "Document",
               "DocumentIndex": 47,
               "Title": "UsuariosController.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Controllers\\UsuariosController.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\UsuariosController.cs",
               "RelativeToolTip": "ProyectoFinal_G8\\Controllers\\UsuariosController.cs",
               "ViewState": "AgIAABEBAAAAAAAAAAAuwC8BAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -834,9 +838,9 @@
               "$type": "Document",
               "DocumentIndex": 50,
               "Title": "UsuarioEditViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\UsuarioEditViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\UsuarioEditViewModel.cs",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Models\\ViewModels\\UsuarioEditViewModel.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\UsuarioEditViewModel.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\UsuarioEditViewModel.cs",
               "RelativeToolTip": "ProyectoFinal_G8\\Models\\ViewModels\\UsuarioEditViewModel.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAkwCUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -846,9 +850,9 @@
               "$type": "Document",
               "DocumentIndex": 51,
               "Title": "UsuarioCreateViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\UsuarioCreateViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\UsuarioCreateViewModel.cs",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Models\\ViewModels\\UsuarioCreateViewModel.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\UsuarioCreateViewModel.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\ViewModels\\UsuarioCreateViewModel.cs",
               "RelativeToolTip": "ProyectoFinal_G8\\Models\\ViewModels\\UsuarioCreateViewModel.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAkwCoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -858,9 +862,9 @@
               "$type": "Document",
               "DocumentIndex": 52,
               "Title": "Rol.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\Rol.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\Rol.cs",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Models\\Rol.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Models\\Rol.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Models\\Rol.cs",
               "RelativeToolTip": "ProyectoFinal_G8\\Models\\Rol.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAkwCAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -870,9 +874,9 @@
               "$type": "Document",
               "DocumentIndex": 49,
               "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Create.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Usuarios\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Create.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Create.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Usuarios\\Create.cshtml",
               "ViewState": "AgIAADoAAAAAAAAAAAAkwE8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -882,9 +886,9 @@
               "$type": "Document",
               "DocumentIndex": 48,
               "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Edit.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Usuarios\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Usuarios\\Edit.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Usuarios\\Edit.cshtml",
               "ViewState": "AgIAADEAAAAAAAAAAAAkwDwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -894,9 +898,9 @@
               "$type": "Document",
               "DocumentIndex": 54,
               "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\_ViewImports.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -906,9 +910,9 @@
               "$type": "Document",
               "DocumentIndex": 53,
               "Title": "HistorialMedicosController.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\HistorialMedicosController.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\HistorialMedicosController.cs",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Controllers\\HistorialMedicosController.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\HistorialMedicosController.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Controllers\\HistorialMedicosController.cs",
               "RelativeToolTip": "ProyectoFinal_G8\\Controllers\\HistorialMedicosController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -918,9 +922,9 @@
               "$type": "Document",
               "DocumentIndex": 55,
               "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -930,9 +934,9 @@
               "$type": "Document",
               "DocumentIndex": 56,
               "Title": "Error.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "ProyectoFinal_G8\\Views\\Shared\\Error.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\source\\repos\\ProyectoFinalG8DaniV4\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\Avanzada en web\\RepositorioProyectoFinal\\ProyectoFinalG8Dani\\ProyectoFinal\\ProyectoFinal_G8\\Views\\Shared\\Error.cshtml",
               "RelativeToolTip": "ProyectoFinal_G8\\Views\\Shared\\Error.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
