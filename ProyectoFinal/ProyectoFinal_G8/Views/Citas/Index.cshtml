@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ProyectoFinal_G8.Models.Cita>
  @using Microsoft.AspNetCore.Identity
- @using ProyectoFinal_G8.Models 
- @inject UserManager<Usuario> UserManager 
+ @using ProyectoFinal_G8.Models
+ @inject UserManager<Usuario> UserManager
 
 @{
     ViewData["Title"] = ViewData["VistaTitulo"] ?? "Citas";
@@ -132,10 +132,10 @@
                 return "bg-secondary";
         }
     }
- }
+}
 
  @section Scripts {
-         @* Scripts adicionales si los necesitas *@
+             @* Scripts adicionales si los necesitas *@
     <script>
         // Script para que los alerts se cierren (si usas Bootstrap 5)
         var alertList = document.querySelectorAll('.alert');

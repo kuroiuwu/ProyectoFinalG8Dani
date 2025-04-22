@@ -9,11 +9,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ProyectoFinal_G8.Models;
-using System.Security.Claims; 
+using ProyectoFinal_G8.Models.ViewModels; // <-- ViewModel
+using System.Security.Claims;
 
 namespace ProyectoFinal_G8.Controllers
 {
-    [Authorize] // Requiere login para todo
+    [Authorize]
     public class CitasController : Controller
     {
         private readonly ProyectoFinal_G8Context _context;
@@ -30,7 +31,6 @@ namespace ProyectoFinal_G8.Controllers
             _logger = logger;
         }
 
-        // Helper para obtener el ID del usuario actual de forma segura
         private bool TryGetCurrentUserId(out int userId)
         {
             userId = 0;
@@ -48,30 +48,24 @@ namespace ProyectoFinal_G8.Controllers
         {
             if (!TryGetCurrentUserId(out int userIdAsInt))
             {
-                // Podrías redirigir a Login o mostrar una vista de error más informativa
                 return Unauthorized("No se pudo obtener el ID del usuario.");
             }
-
-            ViewData["CurrentUserID"] = userIdAsInt; // Pasar ID a la vista para comprobaciones
+            ViewData["CurrentUserID"] = userIdAsInt;
 
             IQueryable<Cita> citasQuery = _context.Citas
                                                 .Include(c => c.Mascota)
-                                                    .ThenInclude(m => m.Dueño) // Asegúrate que Dueño es la propiedad de navegación a Usuario
+                                                    .ThenInclude(m => m.Dueño)
                                                 .Include(c => c.Veterinario)
                                                 .Include(c => c.TipoCita);
-
             IList<Cita> citas;
-
 
             if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
             {
-                _logger.LogInformation($"Usuario {User.Identity?.Name} (Admin/Vet) obteniendo todas las citas.");
                 citas = await citasQuery.OrderByDescending(c => c.FechaHora).ToListAsync();
                 ViewData["VistaTitulo"] = "Gestión de Citas";
             }
             else if (User.IsInRole("Cliente"))
             {
-                _logger.LogInformation($"Usuario {User.Identity?.Name} (Cliente ID: {userIdAsInt}) obteniendo sus citas.");
                 citas = await citasQuery
                               .Where(c => c.Mascota != null && c.Mascota.IdUsuarioDueño == userIdAsInt)
                               .OrderByDescending(c => c.FechaHora)
@@ -80,39 +74,33 @@ namespace ProyectoFinal_G8.Controllers
             }
             else
             {
-                _logger.LogWarning($"Usuario {User.Identity?.Name} con rol desconocido intentó acceder a citas.");
-                citas = new List<Cita>(); // Lista vacía
+                citas = new List<Cita>();
                 ViewData["VistaTitulo"] = "Citas";
             }
-
             return View(citas);
         }
 
         // GET: Citas/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null) { _logger.LogWarning("Details: ID es null."); return NotFound(); }
+            if (id == null) { return NotFound(); }
             if (!TryGetCurrentUserId(out int userIdAsInt)) return Unauthorized("No se pudo obtener el ID del usuario.");
 
-            _logger.LogInformation($"Buscando detalles para cita ID: {id}");
             var cita = await _context.Citas
                 .Include(c => c.Mascota).ThenInclude(m => m.Dueño)
                 .Include(c => c.Veterinario)
                 .Include(c => c.TipoCita)
                 .FirstOrDefaultAsync(m => m.IdCita == id);
 
-            if (cita == null) { _logger.LogWarning($"Details: Cita con ID {id} no encontrada."); return NotFound(); }
+            if (cita == null) { return NotFound(); }
 
-            // Verificación de Permiso Cliente
             if (User.IsInRole("Cliente") && cita.Mascota?.IdUsuarioDueño != userIdAsInt)
             {
-                _logger.LogWarning($"Cliente {User.Identity?.Name} (ID: {userIdAsInt}) intentó ver detalles de cita ajena (ID: {id}).");
-                TempData["ErrorMessage"] = "No tienes permiso para ver los detalles de esta cita."; // Mensaje más amigable que Forbid
+                TempData["ErrorMessage"] = "No tienes permiso para ver los detalles de esta cita.";
                 return RedirectToAction(nameof(Index));
-                // return Forbid("No tienes permiso para ver los detalles de esta cita.");
             }
 
-            ViewData["CurrentUserID"] = userIdAsInt; // Pasar ID a la vista
+            ViewData["CurrentUserID"] = userIdAsInt;
             return View(cita);
         }
 
@@ -124,117 +112,103 @@ namespace ProyectoFinal_G8.Controllers
             await LoadVeterinariosAsync();
             await LoadTiposCitaAsync();
 
-            if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+            var viewModel = new CitaCreateViewModel
             {
-                _logger.LogInformation($"Usuario {User.Identity?.Name} (Admin/Vet) cargando vista Create (todas las mascotas).");
-                await LoadTodasMascotasAsync(); // Método auxiliar para cargar todas
+                FechaHora = DateTime.Now.Date.AddDays(1).AddHours(9)
+            };
+
+            if (User.IsInRole("Cliente"))
+            {
+                ViewData["MascotasExistentesList"] = await GetMisMascotasSelectListAsync(userIdAsInt);
             }
-            else if (User.IsInRole("Cliente"))
+            else if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
             {
-                _logger.LogInformation($"Usuario {User.Identity?.Name} (Cliente ID: {userIdAsInt}) cargando vista Create (sus mascotas).");
-                if (!await LoadMisMascotasAsync(userIdAsInt)) // Modificado para devolver bool
-                {
-                    // LoadMisMascotasAsync ya habrá loggeado y puesto TempData si no hay mascotas
-                    return RedirectToAction("Create", "Mascotas");
-                }
+                ViewData["MascotasExistentesList"] = new SelectList(Enumerable.Empty<SelectListItem>(), "Value", "Text");
             }
             else
             {
-                _logger.LogWarning($"Usuario {User.Identity?.Name} con rol desconocido intentó acceder a Create GET.");
                 return Forbid();
             }
 
-            var nuevaCita = new Cita { FechaHora = DateTime.Now.Date.AddDays(1).AddHours(9) }; // Sugerir mañana a las 9am
-            return View(nuevaCita);
+            return View(viewModel);
         }
 
         // POST: Citas/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FechaHora,IdMascota,IdUsuarioVeterinario,IdTipoCita,Notas")] Cita cita) // Quitamos IdCita del Bind
+        public async Task<IActionResult> Create(CitaCreateViewModel viewModel)
         {
             if (!TryGetCurrentUserId(out int userIdAsInt)) return Unauthorized("No se pudo obtener el ID del usuario.");
 
-            // Forzar estado programada ANTES de validar
-            cita.Estado = EstadoCita.Programada;
-
-            ModelState.Remove(nameof(Cita.Mascota));
-            ModelState.Remove(nameof(Cita.Veterinario));
-            ModelState.Remove(nameof(Cita.TipoCita));
-            ModelState.Remove(nameof(Cita.Estado)); // No se bindea ni valida
-
-            // Validar Fecha Futura (Usando UtcNow para consistencia)
-            if (cita.FechaHora <= DateTime.UtcNow) // <-- Usar UtcNow
+            if (viewModel.FechaHora <= DateTime.UtcNow)
             {
-                ModelState.AddModelError(nameof(Cita.FechaHora), "La fecha y hora de la cita deben ser en el futuro.");
+                ModelState.AddModelError(nameof(viewModel.FechaHora), "La fecha y hora de la cita deben ser en el futuro.");
             }
 
-
-            if (User.IsInRole("Cliente"))
+            if (ModelState.IsValid) // Ejecuta IValidatableObject
             {
-                // Verificar pertenencia de mascota para cliente
-                bool mascotaValida = await _context.Mascotas
-                                                .AnyAsync(m => m.IdMascota == cita.IdMascota && m.IdUsuarioDueño == userIdAsInt);
-                if (!mascotaValida)
+                var cita = new Cita
                 {
-                    _logger.LogWarning($"Create POST: Cliente {userIdAsInt} intentó crear cita con mascota inválida/ajena (ID Mascota: {cita.IdMascota}).");
-                    ModelState.AddModelError(nameof(Cita.IdMascota), "La mascota seleccionada no es válida o no te pertenece.");
-                }
-            }
-            // No necesitamos else para Admin/Vet aquí, ya que pueden seleccionar cualquiera
+                    FechaHora = viewModel.FechaHora,
+                    IdUsuarioVeterinario = viewModel.IdUsuarioVeterinario,
+                    IdTipoCita = viewModel.IdTipoCita,
+                    Notas = viewModel.Notas,
+                    Estado = EstadoCita.Programada
+                };
 
-            if (ModelState.IsValid)
-            {
-                _logger.LogInformation($"Intentando guardar nueva cita para Mascota ID: {cita.IdMascota} por Usuario: {User.Identity?.Name}");
+                if (viewModel.RegistrarNuevaMascota)
+                {
+                    var mascotaParaCita = new Mascota
+                    {
+                        Nombre = viewModel.NuevoNombreMascota!,
+                        Especie = viewModel.NuevaEspecie!,
+                        Raza = viewModel.NuevaRaza,
+                        FechaNacimiento = viewModel.NuevaFechaNacimiento,
+                        IdUsuarioDueño = userIdAsInt
+                    };
+                    cita.Mascota = mascotaParaCita;
+                }
+                else
+                {
+                    bool mascotaValida = await _context.Mascotas
+                                                   .AnyAsync(m => m.IdMascota == viewModel.IdMascotaSeleccionada!.Value && m.IdUsuarioDueño == userIdAsInt);
+                    if (!mascotaValida)
+                    {
+                        ModelState.AddModelError(nameof(viewModel.IdMascotaSeleccionada), "La mascota seleccionada no es válida o no te pertenece.");
+                        await LoadControlDataForCreateViewAsync(userIdAsInt, viewModel);
+                        return View(viewModel);
+                    }
+                    cita.IdMascota = viewModel.IdMascotaSeleccionada!.Value;
+                }
+
                 _context.Add(cita);
+
                 try
                 {
                     await _context.SaveChangesAsync();
-                    _logger.LogInformation($"Cita ID: {cita.IdCita} guardada exitosamente con estado '{cita.Estado}'.");
-                    TempData["SuccessMessage"] = User.IsInRole("Cliente") ? "Tu cita ha sido programada correctamente." : "Cita creada exitosamente.";
+                    TempData["SuccessMessage"] = "Tu cita ha sido programada correctamente" + (viewModel.RegistrarNuevaMascota ? " y la nueva mascota ha sido registrada." : ".");
                     return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateException dbEx) // Error específico BD
-                {
-                    _logger.LogError(dbEx, $"Error BD guardando nueva cita para Mascota ID: {cita.IdMascota}. InnerEx: {dbEx.InnerException?.Message}");
-                    ModelState.AddModelError(string.Empty, "Ocurrió un error al guardar en la base de datos. Verifique los datos seleccionados.");
-                }
-                catch (Exception ex) // Error general
-                {
-                    _logger.LogError(ex, $"Error general guardando nueva cita para Mascota ID: {cita.IdMascota}");
-                    ModelState.AddModelError(string.Empty, "Ocurrió un error inesperado al guardar la cita.");
-                }
-            }
-            else
-            {
-                _logger.LogWarning($"Create POST: ModelState inválido. Errores: {string.Join("; ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage))}");
-            }
+                catch (DbUpdateException dbEx) { ModelState.AddModelError(string.Empty, "Ocurrió un error al guardar en la base de datos."); _logger.LogError(dbEx, "Error BD Create Cita"); }
+                catch (Exception ex) { ModelState.AddModelError(string.Empty, "Ocurrió un error inesperado al guardar."); _logger.LogError(ex, "Error General Create Cita"); }
+            } // Fin ModelState.IsValid
 
-            // Si falla validación o guardado, recargar listas según rol
-            await LoadVeterinariosAsync(cita.IdUsuarioVeterinario);
-            await LoadTiposCitaAsync(cita.IdTipoCita);
-            if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
-            { await LoadTodasMascotasAsync(cita.IdMascota); }
-            else
-            { await LoadMisMascotasAsync(userIdAsInt, cita.IdMascota); }
-
-            return View(cita);
+            _logger.LogWarning($"Create POST (ViewModel): ModelState inválido. Errores: {string.Join("; ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage))}");
+            await LoadControlDataForCreateViewAsync(userIdAsInt, viewModel);
+            return View(viewModel);
         }
-
 
         // GET: Citas/Edit/5 (Solo Admin/Veterinario)
         [Authorize(Roles = "Admin, Veterinario")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
-            _logger.LogInformation($"Admin/Vet {User.Identity?.Name} cargando vista Edit para Cita ID: {id}");
-
             var cita = await _context.Citas.FindAsync(id);
-            if (cita == null) { _logger.LogWarning($"Edit GET (Admin/Vet): Cita ID {id} no encontrada."); return NotFound(); }
+            if (cita == null) { return NotFound(); }
 
             await LoadVeterinariosAsync(cita.IdUsuarioVeterinario);
             await LoadTiposCitaAsync(cita.IdTipoCita);
-            await LoadTodasMascotasAsync(cita.IdMascota);
+            ViewData["IdMascota"] = await GetTodasMascotasSelectListAsync(cita.IdMascota);
             await LoadEstadosCitaAsync(cita.Estado);
 
             return View(cita);
@@ -246,7 +220,7 @@ namespace ProyectoFinal_G8.Controllers
         [Authorize(Roles = "Admin, Veterinario")]
         public async Task<IActionResult> Edit(int id, [Bind("IdCita,FechaHora,IdMascota,IdUsuarioVeterinario,IdTipoCita,Estado,Notas")] Cita citaViewModel)
         {
-            if (id != citaViewModel.IdCita) { _logger.LogWarning($"Edit POST (Admin/Vet): ID de ruta ({id}) no coincide con ID de modelo ({citaViewModel.IdCita})."); return BadRequest("ID de cita no coincide."); }
+            if (id != citaViewModel.IdCita) { return BadRequest(); }
 
             ModelState.Remove(nameof(Cita.Mascota));
             ModelState.Remove(nameof(Cita.Veterinario));
@@ -261,45 +235,22 @@ namespace ProyectoFinal_G8.Controllers
             {
                 try
                 {
-                    _logger.LogInformation($"Admin/Vet {User.Identity?.Name} intentando actualizar Cita ID: {id}");
                     _context.Update(citaViewModel);
                     await _context.SaveChangesAsync();
-                    _logger.LogInformation($"Cita ID: {id} actualizada por Admin/Vet.");
                     TempData["SuccessMessage"] = "Cita actualizada correctamente.";
                     return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException ex)
                 {
-                    _logger.LogError(ex, $"Error de concurrencia actualizando Cita ID: {id}");
-                    if (!await CitaExists(citaViewModel.IdCita))
-                    {
-                        _logger.LogWarning($"Edit POST (Admin/Vet): Cita ID {id} no encontrada durante concurrencia.");
-                        return NotFound();
-                    }
-                    else
-                    {
-                        ModelState.AddModelError(string.Empty, "Los datos de esta cita fueron modificados por otro usuario. Recargue la página e intente de nuevo.");
-                    }
+                    if (!await CitaExists(citaViewModel.IdCita)) { return NotFound(); }
+                    else { ModelState.AddModelError(string.Empty, "Conflicto de concurrencia."); _logger.LogError(ex, "Concurrency Error Edit Admin"); }
                 }
-                catch (DbUpdateException dbEx) // Error específico BD
-                {
-                    _logger.LogError(dbEx, $"Error BD actualizando Cita ID: {id} por Admin/Vet. InnerEx: {dbEx.InnerException?.Message}");
-                    ModelState.AddModelError(string.Empty, "Ocurrió un error al guardar en la base de datos. Verifique los datos seleccionados.");
-                }
-                catch (Exception ex) // Error general
-                {
-                    _logger.LogError(ex, $"Error general actualizando Cita ID: {id} por Admin/Vet.");
-                    ModelState.AddModelError(string.Empty, "Ocurrió un error inesperado al actualizar la cita.");
-                }
-            }
-            else
-            {
-                _logger.LogWarning($"Edit POST (Admin/Vet): ModelState inválido para Cita ID: {id}. Errores: {string.Join("; ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage))}");
+                catch (Exception ex) { ModelState.AddModelError(string.Empty, "Error al actualizar."); _logger.LogError(ex, "General Error Edit Admin"); }
             }
 
             await LoadVeterinariosAsync(citaViewModel.IdUsuarioVeterinario);
             await LoadTiposCitaAsync(citaViewModel.IdTipoCita);
-            await LoadTodasMascotasAsync(citaViewModel.IdMascota);
+            ViewData["IdMascota"] = await GetTodasMascotasSelectListAsync(citaViewModel.IdMascota);
             await LoadEstadosCitaAsync(citaViewModel.Estado);
             return View(citaViewModel);
         }
@@ -311,48 +262,29 @@ namespace ProyectoFinal_G8.Controllers
         public async Task<IActionResult> EditCliente(int? id)
         {
             if (id == null) { return NotFound(); }
-            if (!TryGetCurrentUserId(out int userIdAsInt)) { return Unauthorized("No se pudo obtener el ID del usuario."); }
-
-            _logger.LogInformation($"Cliente {User.Identity?.Name} (ID: {userIdAsInt}) cargando vista EditCliente para Cita ID: {id}");
+            if (!TryGetCurrentUserId(out int userIdAsInt)) { return Unauthorized(); }
 
             var cita = await _context.Citas
-                             .Include(c => c.Mascota) // Incluir Mascota para verificar dueño
+                             .Include(c => c.Mascota)
                              .FirstOrDefaultAsync(c => c.IdCita == id);
 
-            if (cita == null) { _logger.LogWarning($"EditCliente GET: Cita ID {id} no encontrada."); return NotFound(); }
+            if (cita == null) { return NotFound(); }
 
-            // *** INICIO: Verificaciones de Seguridad y Lógica de Negocio para Cliente ***
             string? errorMessage = null;
-
-            if (cita.Mascota?.IdUsuarioDueño != userIdAsInt)
-            {
-                _logger.LogWarning($"EditCliente GET: Cliente {userIdAsInt} intentó editar cita ajena {id}.");
-                errorMessage = "No tienes permiso para editar esta cita.";
-            }
-            else if (cita.Estado != EstadoCita.Programada)
-            {
-                _logger.LogWarning($"EditCliente GET: Cliente {userIdAsInt} intentó editar cita {id} con estado '{cita.Estado}'. Se compara con '{EstadoCita.Programada}'");
-                errorMessage = "La cita ya no puede ser modificada porque su estado no es 'Programada'.";
-            }
-            // --- Comprobación de Fecha (Usando UtcNow) ---
-            else if (cita.FechaHora <= DateTime.UtcNow) // <-- Usando UTC
-                                                        // --- Fin Comprobación de Fecha ---
-            {
-                _logger.LogWarning($"EditCliente GET: Cliente {userIdAsInt} intentó editar cita pasada/presente {id}. Cita: {cita.FechaHora}, Comparada con UTC: {DateTime.UtcNow}");
-                errorMessage = "La cita ya no puede ser modificada porque la fecha ya pasó o es ahora mismo.";
-            }
-
+            if (cita.Mascota?.IdUsuarioDueño != userIdAsInt) { errorMessage = "No tienes permiso."; }
+            else if (cita.Estado != EstadoCita.Programada) { errorMessage = "Estado no permite modificación."; }
+            else if (cita.FechaHora <= DateTime.UtcNow) { errorMessage = "Fecha pasada."; }
 
             if (errorMessage != null)
             {
                 TempData["ErrorMessage"] = errorMessage;
                 return RedirectToAction(nameof(Index));
             }
-            // *** FIN: Verificaciones ***
 
             await LoadVeterinariosAsync(cita.IdUsuarioVeterinario);
             await LoadTiposCitaAsync(cita.IdTipoCita);
-            await LoadMisMascotasAsync(userIdAsInt, cita.IdMascota);
+            // *** Cargar datos para el dropdown de EditCliente.cshtml ***
+            ViewData["MascotasExistentesList"] = await GetMisMascotasSelectListAsync(userIdAsInt, cita.IdMascota);
 
             return View("EditCliente", cita);
         }
@@ -363,121 +295,78 @@ namespace ProyectoFinal_G8.Controllers
         [Authorize(Roles = "Cliente")]
         public async Task<IActionResult> EditCliente(int id, [Bind("IdCita,FechaHora,IdMascota,IdUsuarioVeterinario,IdTipoCita,Notas")] Cita citaViewModel)
         {
-            if (id != citaViewModel.IdCita) { return BadRequest("ID de cita no coincide."); }
-            if (!TryGetCurrentUserId(out int userIdAsInt)) { return Unauthorized("No se pudo obtener el ID del usuario."); }
+            if (id != citaViewModel.IdCita) { return BadRequest(); }
+            if (!TryGetCurrentUserId(out int userIdAsInt)) { return Unauthorized(); }
 
             var citaOriginal = await _context.Citas
                                      .Include(c => c.Mascota)
                                      .AsNoTracking()
                                      .FirstOrDefaultAsync(c => c.IdCita == id);
 
-            if (citaOriginal == null) { _logger.LogWarning($"EditCliente POST: Cita Original ID {id} no encontrada."); return NotFound(); }
+            if (citaOriginal == null) { return NotFound(); }
 
-            // *** Repetir Verificaciones contra la cita ORIGINAL ***
             string? redirectErrorMessage = null;
-            if (citaOriginal.Mascota?.IdUsuarioDueño != userIdAsInt)
-            {
-                redirectErrorMessage = "No tienes permiso para editar esta cita.";
-            }
-            else if (citaOriginal.Estado != EstadoCita.Programada)
-            {
-                redirectErrorMessage = "La cita ya no puede ser modificada porque su estado cambió mientras editabas.";
-            }
-            // --- Comprobación de Fecha Original (Usando UtcNow) ---
-            else if (citaOriginal.FechaHora <= DateTime.UtcNow) // <-- Usando UTC
-                                                                // --- Fin Comprobación ---
-            {
-                redirectErrorMessage = "La cita ya no puede ser modificada porque su fecha original ya pasó.";
-            }
+            if (citaOriginal.Mascota?.IdUsuarioDueño != userIdAsInt) { redirectErrorMessage = "No tienes permiso."; }
+            else if (citaOriginal.Estado != EstadoCita.Programada) { redirectErrorMessage = "Estado cambió."; }
+            else if (citaOriginal.FechaHora <= DateTime.UtcNow) { redirectErrorMessage = "Fecha original pasada."; }
 
             if (redirectErrorMessage != null)
             {
-                _logger.LogWarning($"EditCliente POST: Redirigiendo para cita {id} por validación fallida contra original: {redirectErrorMessage}");
                 TempData["ErrorMessage"] = redirectErrorMessage;
                 return RedirectToAction(nameof(Index));
             }
 
-            // *** Validaciones del ViewModel ***
             ModelState.Remove(nameof(Cita.Mascota));
             ModelState.Remove(nameof(Cita.Veterinario));
             ModelState.Remove(nameof(Cita.TipoCita));
             ModelState.Remove(nameof(Cita.Estado));
 
-            // Validar Fecha Futura para el nuevo valor (Usando UtcNow)
-            // --- Comprobación de Nueva Fecha ---
-            if (citaViewModel.FechaHora <= DateTime.UtcNow) // <-- Usando UTC
-                                                            // --- Fin Comprobación ---
+            if (citaViewModel.FechaHora <= DateTime.UtcNow)
             {
-                ModelState.AddModelError(nameof(Cita.FechaHora), "La nueva fecha y hora de la cita deben ser en el futuro.");
+                ModelState.AddModelError(nameof(Cita.FechaHora), "La nueva fecha debe ser futura.");
             }
 
             bool mascotaSeleccionadaValida = await _context.Mascotas
                                                      .AnyAsync(m => m.IdMascota == citaViewModel.IdMascota && m.IdUsuarioDueño == userIdAsInt);
             if (!mascotaSeleccionadaValida)
             {
-                ModelState.AddModelError(nameof(Cita.IdMascota), "La mascota seleccionada no es válida.");
+                ModelState.AddModelError(nameof(Cita.IdMascota), "La mascota no es válida.");
             }
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _logger.LogInformation($"Cliente {User.Identity?.Name} (ID: {userIdAsInt}) intentando actualizar Cita ID: {id}");
-
-                    // Cargar la entidad para actualizarla (Sin AsNoTracking)
-                    // Incluir Mascota es importante para la verificación de dueño
                     var citaParaActualizar = await _context.Citas
-                                                   .Include(c => c.Mascota) // Asegurar que Mascota se carga
+                                                   .Include(c => c.Mascota)
                                                    .FirstOrDefaultAsync(c => c.IdCita == id);
-
                     if (citaParaActualizar == null) return NotFound();
 
-                    // Re-verificar estado y dueño (concurrencia leve + seguridad)
-                    // *** ¡¡¡ LÍNEA CORREGIDA AQUÍ !!! ***
                     if (citaParaActualizar.Mascota?.IdUsuarioDueño != userIdAsInt || citaParaActualizar.Estado != EstadoCita.Programada)
                     {
-                        TempData["ErrorMessage"] = "La cita ya no cumple las condiciones para ser modificada. Inténtalo de nuevo.";
+                        TempData["ErrorMessage"] = "La cita ya no cumple las condiciones.";
                         return RedirectToAction(nameof(Index));
                     }
 
-                    // Actualizar campos permitidos
                     citaParaActualizar.FechaHora = citaViewModel.FechaHora;
                     citaParaActualizar.IdMascota = citaViewModel.IdMascota;
                     citaParaActualizar.IdUsuarioVeterinario = citaViewModel.IdUsuarioVeterinario;
                     citaParaActualizar.IdTipoCita = citaViewModel.IdTipoCita;
                     citaParaActualizar.Notas = citaViewModel.Notas;
-                    // El Estado NO SE CAMBIA
 
-                    await _context.SaveChangesAsync(); // Guardar los cambios rastreados
-
-                    _logger.LogInformation($"Cita ID: {id} actualizada por Cliente {userIdAsInt}.");
-                    TempData["SuccessMessage"] = "Tu cita ha sido modificada correctamente.";
+                    await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Tu cita ha sido modificada.";
                     return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateConcurrencyException ex)
-                {
-                    _logger.LogError(ex, $"Error de concurrencia actualizando Cita ID: {id} por cliente {userIdAsInt}");
-                    ModelState.AddModelError(string.Empty, "Hubo un conflicto al guardar los cambios (posiblemente alguien más modificó la cita). Por favor, recarga e intenta de nuevo.");
-                }
-                catch (DbUpdateException dbEx)
-                {
-                    _logger.LogError(dbEx, $"Error de BD actualizando Cita ID: {id} por cliente {userIdAsInt}. InnerEx: {dbEx.InnerException?.Message}");
-                    ModelState.AddModelError(string.Empty, "Ocurrió un error al guardar los cambios en la base de datos.");
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError(ex, $"Error general actualizando Cita ID: {id} por cliente {userIdAsInt}.");
-                    ModelState.AddModelError(string.Empty, "Ocurrió un error inesperado al modificar la cita.");
-                }
-            }
-            else
-            {
-                _logger.LogWarning($"EditCliente POST: ModelState inválido para Cita ID: {id} por cliente {userIdAsInt}. Errores: {string.Join("; ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage))}");
+                catch (DbUpdateConcurrencyException ex) { ModelState.AddModelError(string.Empty, "Conflicto concurrencia."); _logger.LogError(ex, "Concurrency Error EditCliente"); }
+                catch (Exception ex) { ModelState.AddModelError(string.Empty, "Error al modificar."); _logger.LogError(ex, "General Error EditCliente"); }
             }
 
+            // Recargar datos si falla
             await LoadVeterinariosAsync(citaViewModel.IdUsuarioVeterinario);
             await LoadTiposCitaAsync(citaViewModel.IdTipoCita);
-            await LoadMisMascotasAsync(userIdAsInt, citaViewModel.IdMascota);
+            // *** Cargar datos para el dropdown de EditCliente.cshtml ***
+            ViewData["MascotasExistentesList"] = await GetMisMascotasSelectListAsync(userIdAsInt, citaViewModel.IdMascota);
             return View("EditCliente", citaViewModel);
         }
 
@@ -489,42 +378,23 @@ namespace ProyectoFinal_G8.Controllers
         public async Task<IActionResult> CancelCliente(int? id)
         {
             if (id == null) { return NotFound(); }
-            if (!TryGetCurrentUserId(out int userIdAsInt)) { return Unauthorized("No se pudo obtener el ID del usuario."); }
-
-            _logger.LogInformation($"Cliente {User.Identity?.Name} (ID: {userIdAsInt}) cargando vista CancelCliente para Cita ID: {id}");
+            if (!TryGetCurrentUserId(out int userIdAsInt)) { return Unauthorized(); }
 
             var cita = await _context.Citas
-                             .Include(c => c.Mascota)
-                             .Include(c => c.Veterinario)
-                             .Include(c => c.TipoCita)
+                             .Include(c => c.Mascota).Include(c => c.Veterinario).Include(c => c.TipoCita)
                              .FirstOrDefaultAsync(c => c.IdCita == id);
+            if (cita == null) { return NotFound(); }
 
-            if (cita == null) { _logger.LogWarning($"CancelCliente GET: Cita ID {id} no encontrada."); return NotFound(); }
-
-            // *** Verificaciones de Seguridad y Lógica ***
             string? errorMessage = null;
-            if (cita.Mascota?.IdUsuarioDueño != userIdAsInt)
-            {
-                errorMessage = "No tienes permiso para cancelar esta cita.";
-            }
-            else if (cita.Estado != EstadoCita.Programada)
-            {
-                errorMessage = "Solo puedes cancelar citas que estén 'Programada'.";
-            }
-            // --- Comprobación de Fecha (Usando UtcNow) ---
-            else if (cita.FechaHora <= DateTime.UtcNow) // <-- Usando UTC
-                                                        // --- Fin Comprobación ---
-            {
-                errorMessage = "No puedes cancelar una cita que ya ha pasado.";
-            }
+            if (cita.Mascota?.IdUsuarioDueño != userIdAsInt) { errorMessage = "No tienes permiso."; }
+            else if (cita.Estado != EstadoCita.Programada) { errorMessage = "Solo puedes cancelar 'Programada'."; }
+            else if (cita.FechaHora <= DateTime.UtcNow) { errorMessage = "No puedes cancelar cita pasada."; }
 
             if (errorMessage != null)
             {
-                _logger.LogWarning($"CancelCliente GET: Redirigiendo para cita {id} por validación fallida: {errorMessage}");
                 TempData["ErrorMessage"] = errorMessage;
                 return RedirectToAction(nameof(Index));
             }
-
             return View("CancelCliente", cita);
         }
 
@@ -534,54 +404,28 @@ namespace ProyectoFinal_G8.Controllers
         [Authorize(Roles = "Cliente")]
         public async Task<IActionResult> CancelClienteConfirmed(int id)
         {
-            if (!TryGetCurrentUserId(out int userIdAsInt)) { return Unauthorized("No se pudo obtener el ID del usuario."); }
-
+            if (!TryGetCurrentUserId(out int userIdAsInt)) { return Unauthorized(); }
             var cita = await _context.Citas.Include(c => c.Mascota).FirstOrDefaultAsync(c => c.IdCita == id);
+            if (cita == null) { return NotFound(); }
 
-            if (cita == null) { _logger.LogWarning($"CancelCliente POST: Cita ID {id} no encontrada para confirmar cancelación."); return NotFound(); }
-
-            // *** Repetir Verificaciones ***
             string? redirectErrorMessage = null;
-            if (cita.Mascota?.IdUsuarioDueño != userIdAsInt)
-            {
-                redirectErrorMessage = "No tienes permiso para cancelar esta cita.";
-            }
-            else if (cita.Estado != EstadoCita.Programada)
-            {
-                redirectErrorMessage = "Esta cita ya no se puede cancelar porque su estado ha cambiado.";
-            }
-            // --- Comprobación de Fecha (Usando UtcNow) ---
-            else if (cita.FechaHora <= DateTime.UtcNow) // <-- Usando UTC
-                                                        // --- Fin Comprobación ---
-            {
-                redirectErrorMessage = "Esta cita ya no se puede cancelar porque la fecha ya pasó.";
-            }
+            if (cita.Mascota?.IdUsuarioDueño != userIdAsInt) { redirectErrorMessage = "No tienes permiso."; }
+            else if (cita.Estado != EstadoCita.Programada) { redirectErrorMessage = "Estado ha cambiado."; }
+            else if (cita.FechaHora <= DateTime.UtcNow) { redirectErrorMessage = "Fecha ya pasó."; }
 
             if (redirectErrorMessage != null)
             {
-                _logger.LogWarning($"CancelCliente POST: Redirigiendo para cita {id} por validación fallida contra original: {redirectErrorMessage}");
                 TempData["ErrorMessage"] = redirectErrorMessage;
                 return RedirectToAction(nameof(Index));
             }
 
             try
             {
-                _logger.LogWarning($"Cliente {User.Identity?.Name} (ID: {userIdAsInt}) confirmando cancelación para Cita ID: {id}");
                 cita.Estado = EstadoCita.CanceladaCliente;
                 await _context.SaveChangesAsync();
-                _logger.LogWarning($"Cita ID: {id} cancelada por Cliente {userIdAsInt}.");
-                TempData["SuccessMessage"] = "Tu cita ha sido cancelada correctamente.";
+                TempData["SuccessMessage"] = "Tu cita ha sido cancelada.";
             }
-            catch (DbUpdateConcurrencyException ex)
-            {
-                _logger.LogError(ex, $"Error de concurrencia cancelando Cita ID: {id} por cliente {userIdAsInt}");
-                TempData["ErrorMessage"] = "Ocurrió un conflicto al intentar cancelar la cita. Por favor, revisa el estado actual de la cita.";
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"Error cancelando Cita ID: {id} por cliente {userIdAsInt}");
-                TempData["ErrorMessage"] = "Ocurrió un error inesperado al cancelar la cita.";
-            }
+            catch (Exception ex) { TempData["ErrorMessage"] = "Error al cancelar."; _logger.LogError(ex, "Error CancelClienteConfirmed"); }
 
             return RedirectToAction(nameof(Index));
         }
@@ -594,15 +438,11 @@ namespace ProyectoFinal_G8.Controllers
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
-            _logger.LogInformation($"Admin/Vet {User.Identity?.Name} cargando vista Delete para Cita ID: {id}");
-
             var cita = await _context.Citas
                 .Include(c => c.Mascota).ThenInclude(m => m.Dueño)
-                .Include(c => c.Veterinario)
-                .Include(c => c.TipoCita)
+                .Include(c => c.Veterinario).Include(c => c.TipoCita)
                 .FirstOrDefaultAsync(m => m.IdCita == id);
-
-            if (cita == null) { _logger.LogWarning($"Delete GET: Cita ID {id} no encontrada."); return NotFound(); }
+            if (cita == null) { return NotFound(); }
             return View(cita);
         }
 
@@ -612,107 +452,89 @@ namespace ProyectoFinal_G8.Controllers
         [Authorize(Roles = "Admin, Veterinario")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            _logger.LogWarning($"Admin/Vet {User.Identity?.Name} intentando eliminar Cita ID: {id}");
             var cita = await _context.Citas.FindAsync(id);
-
             if (cita != null)
             {
                 try
                 {
                     _context.Citas.Remove(cita);
                     await _context.SaveChangesAsync();
-                    _logger.LogWarning($"Cita ID: {id} eliminada permanentemente por {User.Identity?.Name}.");
-                    TempData["SuccessMessage"] = "Cita eliminada permanentemente.";
-                }
-                catch (DbUpdateException dbEx)
-                {
-                    _logger.LogError(dbEx, $"Error de BD eliminando Cita ID: {id} por {User.Identity?.Name}. InnerEx: {dbEx.InnerException?.Message}");
-                    TempData["ErrorMessage"] = "No se pudo eliminar la cita. Puede que tenga datos relacionados que impiden su borrado (ej: historial, facturas).";
-                    return RedirectToAction(nameof(Delete), new { id = id });
+                    TempData["SuccessMessage"] = "Cita eliminada.";
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, $"Error eliminando Cita ID: {id} por {User.Identity?.Name}");
-                    TempData["ErrorMessage"] = "Ocurrió un error inesperado al eliminar la cita.";
+                    TempData["ErrorMessage"] = "Error al eliminar: " + ex.Message;
+                    _logger.LogError(ex, "Error DeleteConfirmed");
                     return RedirectToAction(nameof(Delete), new { id = id });
                 }
             }
-            else
-            {
-                _logger.LogWarning($"Delete POST: Cita ID {id} no encontrada para eliminar.");
-                TempData["ErrorMessage"] = "La cita que intentaba eliminar ya no existe.";
-            }
+            else { TempData["ErrorMessage"] = "Cita no encontrada."; }
             return RedirectToAction(nameof(Index));
         }
 
         // --- Métodos Auxiliares ---
 
+        // Helper unificado para recargar datos para la vista Create
+        private async Task LoadControlDataForCreateViewAsync(int userIdAsInt, CitaCreateViewModel viewModel)
+        {
+            await LoadVeterinariosAsync(viewModel.IdUsuarioVeterinario);
+            await LoadTiposCitaAsync(viewModel.IdTipoCita);
+            ViewData["MascotasExistentesList"] = await GetMisMascotasSelectListAsync(userIdAsInt, viewModel.IdMascotaSeleccionada);
+        }
+
         private async Task LoadVeterinariosAsync(object? selectedVeterinario = null)
         {
             var veterinarios = await _userManager.GetUsersInRoleAsync("Veterinario");
-            var veterinarioList = veterinarios.Select(u => new {
-                Id = u.Id,
-                NombreCompleto = u.Nombre // Mantenido como estaba en tu código
-            }).OrderBy(u => u.NombreCompleto).ToList();
-
+            var veterinarioList = veterinarios.Select(u => new { u.Id, NombreCompleto = u.Nombre }).OrderBy(u => u.NombreCompleto).ToList();
             ViewData["IdUsuarioVeterinario"] = new SelectList(veterinarioList, "Id", "NombreCompleto", selectedVeterinario);
-            _logger.LogDebug($"Cargados {veterinarioList.Count} veterinarios para dropdown.");
         }
 
-        private async Task<bool> LoadMisMascotasAsync(int currentUserId, object? selectedMascota = null)
+        // Retorna SelectList para mascotas del cliente
+        private async Task<SelectList> GetMisMascotasSelectListAsync(int currentUserId, object? selectedMascota = null)
         {
             var misMascotas = await _context.Mascotas
                                           .Where(m => m.IdUsuarioDueño == currentUserId)
                                           .OrderBy(m => m.Nombre)
-                                          .Select(m => new { m.IdMascota, m.Nombre }) // Seleccionar solo lo necesario
+                                          .Select(m => new { m.IdMascota, m.Nombre })
                                           .ToListAsync();
-
-            if (!misMascotas.Any())
-            {
-                _logger.LogWarning($"LoadMisMascotasAsync: Cliente ID {currentUserId} no tiene mascotas registradas.");
-                TempData["ErrorMessage"] = "No tienes mascotas registradas. Debes registrar una mascota antes de poder solicitar una cita.";
-                ViewData["IdMascota"] = new SelectList(Enumerable.Empty<SelectListItem>(), "IdMascota", "Nombre");
-                return false;
-            }
-
-            ViewData["IdMascota"] = new SelectList(misMascotas, "IdMascota", "Nombre", selectedMascota);
-            _logger.LogDebug($"LoadMisMascotasAsync: Cargadas {misMascotas.Count} mascotas para el cliente ID: {currentUserId}");
-            return true;
+            _logger.LogDebug($"GetMisMascotasSelectListAsync: Encontradas {misMascotas.Count} mascotas para cliente ID: {currentUserId}");
+            return new SelectList(misMascotas, "IdMascota", "Nombre", selectedMascota);
         }
 
-        private async Task LoadTodasMascotasAsync(object? selectedMascota = null)
+        // Retorna SelectList para todas las mascotas (Admin/Vet)
+        private async Task<SelectList> GetTodasMascotasSelectListAsync(object? selectedMascota = null)
         {
+            // 1. Traer las Mascotas (con Dueño) a memoria
             var todasMascotas = await _context.Mascotas
-                                            .Include(m => m.Dueño)
+                                            .Include(m => m.Dueño) // Incluir dueño
                                             .OrderBy(m => m.Nombre)
-                                            .ToListAsync();
+                                            .ToListAsync(); // Ejecuta la consulta SQL
 
+            // 2. Proyectar la lista en memoria para crear los SelectListItem
             var mascotaSelectListItems = todasMascotas.Select(m => new SelectListItem
             {
                 Value = m.IdMascota.ToString(),
-                Text = $"{m.Nombre} (Dueño: {m.Dueño?.Nombre ?? "N/A"})" // Mantenido como estaba en tu código
+                // El operador ?. SÍ se puede usar aquí (LINQ to Objects)
+                Text = $"{m.Nombre} (Dueño: {m.Dueño?.Nombre ?? "N/A"})"
             }).ToList();
 
-            ViewData["IdMascota"] = new SelectList(mascotaSelectListItems, "Value", "Text", selectedMascota);
-            _logger.LogDebug($"LoadTodasMascotasAsync: Cargadas {todasMascotas.Count} mascotas totales para dropdown (Admin/Vet).");
+            _logger.LogDebug($"GetTodasMascotasSelectListAsync: Cargadas {todasMascotas.Count} mascotas totales.");
+
+            // 3. Crear y devolver el SelectList final
+            string? selectedValue = selectedMascota?.ToString();
+            return new SelectList(mascotaSelectListItems, "Value", "Text", selectedValue);
         }
+
 
         private async Task LoadTiposCitaAsync(object? selectedTipo = null)
         {
-            _logger.LogDebug("Cargando tipos de cita para dropdown.");
-            var tipos = await _context.TiposCita
-                                   .OrderBy(t => t.Nombre)
-                                   .Select(t => new { t.IdTipoCita, t.Nombre })
-                                   .ToListAsync();
+            var tipos = await _context.TiposCita.OrderBy(t => t.Nombre).Select(t => new { t.IdTipoCita, t.Nombre }).ToListAsync();
             ViewData["IdTipoCita"] = new SelectList(tipos, "IdTipoCita", "Nombre", selectedTipo);
         }
 
         private Task LoadEstadosCitaAsync(object? selectedEstado = null)
         {
-            _logger.LogDebug("Cargando estados de cita para dropdown (Admin/Vet).");
-            var estadosDisponibles = EstadoCita.GetEstadosEditables()
-                                              .Select(e => new SelectListItem { Value = e, Text = e })
-                                              .ToList();
+            var estadosDisponibles = EstadoCita.GetEstadosEditables().Select(e => new SelectListItem { Value = e, Text = e }).ToList();
             ViewData["EstadosCita"] = new SelectList(estadosDisponibles, "Value", "Text", selectedEstado);
             return Task.CompletedTask;
         }
@@ -721,5 +543,6 @@ namespace ProyectoFinal_G8.Controllers
         {
             return await _context.Citas.AnyAsync(e => e.IdCita == id);
         }
+
     }
 }

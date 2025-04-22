@@ -6,15 +6,13 @@
 }
 
 <div class="container mt-4">
-    <h1>@ViewData["Title"] - Cita #@Model.IdCita</h1>
+    <h1>@ViewData["Title"]</h1>
     <p>Puedes modificar los detalles de tu cita programada.</p>
     <hr />
     <div class="row">
         <div class="col-md-8 col-lg-6">
-            @* El form apunta a la acción EditCliente *@
             <form asp-action="EditCliente" asp-route-id="@Model.IdCita" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
-                @* Importante pasar el IdCita, aunque sea hidden *@
                 <input type="hidden" asp-for="IdCita" />
 
                 <div class="mb-3">
@@ -25,8 +23,8 @@
 
                 <div class="mb-3">
                     <label asp-for="IdMascota" class="form-label">Mascota</label>
-                    @* Cliente solo ve sus mascotas *@
-                    <select asp-for="IdMascota" class="form-select" asp-items="ViewBag.IdMascota">
+                    @* --- CORRECCIÓN AQUÍ --- *@
+                    <select asp-for="IdMascota" class="form-select" asp-items='(SelectList)ViewData["MascotasExistentesList"]'>
                         <option value="">-- Seleccione su Mascota --</option>
                     </select>
                     <span asp-validation-for="IdMascota" class="text-danger"></span>
@@ -34,7 +32,9 @@
 
                 <div class="mb-3">
                     <label asp-for="IdUsuarioVeterinario" class="form-label">Veterinario</label>
+                    @* Asumiendo que el controller carga esto en ViewBag/ViewData similar *@
                     <select asp-for="IdUsuarioVeterinario" class="form-select" asp-items="ViewBag.IdUsuarioVeterinario">
+                        @* O ViewData["IdUsuarioVeterinario"] *@
                         <option value="">-- Seleccione Veterinario --</option>
                     </select>
                     <span asp-validation-for="IdUsuarioVeterinario" class="text-danger"></span>
@@ -42,13 +42,13 @@
 
                 <div class="mb-3">
                     <label asp-for="IdTipoCita" class="form-label">Tipo de Cita</label>
+                    @* Asumiendo que el controller carga esto en ViewBag/ViewData similar *@
                     <select asp-for="IdTipoCita" class="form-select" asp-items="ViewBag.IdTipoCita">
+                        @* O ViewData["IdTipoCita"] *@
                         <option value="">-- Seleccione Tipo Cita --</option>
                     </select>
                     <span asp-validation-for="IdTipoCita" class="text-danger"></span>
                 </div>
-
-                @* El campo Estado NO se muestra ni se edita por el cliente *@
 
                 <div class="mb-3">
                     <label asp-for="Notas" class="form-label">Notas Adicionales (Opcional)</label>

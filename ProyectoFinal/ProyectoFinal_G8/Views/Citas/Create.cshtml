@@ -1,8 +1,8 @@
-﻿@model ProyectoFinal_G8.Models.Cita
- @using ProyectoFinal_G8.Models 
+﻿@model ProyectoFinal_G8.Models.ViewModels.CitaCreateViewModel
+ @using ProyectoFinal_G8.Models // Para EstadoCita
 
 @{
-    ViewData["Title"] = User.IsInRole("Cliente") ? "Solicitar Nueva Cita" : "Crear Nueva Cita";
+    ViewData["Title"] = "Solicitar Nueva Cita"; // Título para todos los roles ahora
     // Layout = "~/Views/Shared/_LayoutUsuarios.cshtml"; // O el layout que corresponda
 }
 
@@ -10,31 +10,18 @@
     <h1>@ViewData["Title"]</h1>
     <hr />
     <div class="row">
-        <div class="col-md-8 col-lg-6">
-            <form asp-action="Create">
+        <div class="col-md-8 col-lg-7">
+            @* Un poco más ancho para acomodar ambas secciones de mascota *@
+            <form asp-action="Create" id="formCrearCita">
+                @* Muestra errores generales del modelo, útil para errores de IValidatableObject *@
                 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
+                @* --- Campos Comunes de la Cita --- *@
                 <div class="mb-3">
                     <label asp-for="FechaHora" class="form-label"></label>
-                    @* Usar datetime-local para mejor UI, asegúrate que el formato sea compatible con el servidor *@
                     <input asp-for="FechaHora" class="form-control" type="datetime-local" />
                     <span asp-validation-for="FechaHora" class="text-danger"></span>
                 </div>
-
-                <div class="mb-3">
-                    <label asp-for="IdMascota" class="form-label"></label>
-                    <select asp-for="IdMascota" class="form-select" asp-items="ViewBag.IdMascota">
-                        <option value="">-- Seleccione Mascota --</option>
-                    </select>
-                    <span asp-validation-for="IdMascota" class="text-danger"></span>
-                    @* Mensaje para cliente si no tiene mascotas *@
-                    @* ANTES: @if (User.IsInRole("Cliente") && !(ViewBag.IdMascota as SelectList)?.Any()) *@
-                    @if (User.IsInRole("Cliente") && (ViewBag.IdMascota as SelectList)?.Any() != true) // <-- CORRECCIÓN: Compara con != true
-                    {
-                        <div class="mt-2">
-                            <a asp-controller="Mascotas" asp-action="Create" class="btn btn-sm btn-outline-success">Registrar una Mascota</a>
-                        </div>
-                    }
 
                 <div class="mb-3">
                     <label asp-for="IdUsuarioVeterinario" class="form-label"></label>
@@ -52,20 +39,64 @@
                     <span asp-validation-for="IdTipoCita" class="text-danger"></span>
                 </div>
 
-                @* El campo Estado SOLO se muestra a Admin/Vet. Para Clientes, se asigna automáticamente en el Controller *@
-                @if (User.IsInRole("Admin") || User.IsInRole("Veterinario"))
+                @* --- Sección Mascota (Condicional) --- *@
+                @if (User.IsInRole("Cliente")) // Solo los clientes seleccionan/registran mascota aquí
                 {
-                    <div class="mb-3">
-                        <label asp-for="Estado" class="form-label"></label>
-                        @* Admin/Vet podrían tener un input simple o un select si quisieran definirlo al crear *@
-                        @* Dejándolo como input simple, el controller usará el default "Programada" si no se envía valor *@
-                        <input asp-for="Estado" class="form-control" placeholder="Ej: Confirmada (Opcional, defecto: @EstadoCita.Programada)" />
-                        <span asp-validation-for="Estado" class="text-danger"></span>
-                    </div>
+                    <fieldset class="border p-3 mb-3">
+                        <legend class="w-auto px-2 h6">Información de la Mascota</legend>
+
+                        @* Opción para Nueva Mascota *@
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" asp-for="RegistrarNuevaMascota" id="chkRegistrarNueva">
+                            <label class="form-check-label" asp-for="RegistrarNuevaMascota"></label>
+                        </div>
+
+                        @* Sección Mascota Existente (se muestra por defecto) *@
+                        <div id="seccionMascotaExistente">
+                            <label asp-for="IdMascotaSeleccionada" class="form-label"></label>
+                            <select asp-for="IdMascotaSeleccionada" class="form-select" asp-items="ViewBag.MascotasExistentesList">
+                                <option value="">-- Seleccione Mascota Existente --</option>
+                            </select>
+                            <span asp-validation-for="IdMascotaSeleccionada" class="text-danger"></span>
+                        </div>
+
+                        @* Sección Nueva Mascota (oculta por defecto) *@
+                        <div id="seccionMascotaNueva" style="display: none;">
+                            <hr />
+                            <p class="text-info small">Por favor, completa los datos de la nueva mascota.</p>
+                            <div class="mb-3">
+                                <label asp-for="NuevoNombreMascota" class="form-label"></label> <span class="text-danger">*</span>
+                                <input asp-for="NuevoNombreMascota" class="form-control" />
+                                <span asp-validation-for="NuevoNombreMascota" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="NuevaEspecie" class="form-label"></label> <span class="text-danger">*</span>
+                                <input asp-for="NuevaEspecie" class="form-control" placeholder="Ej: Perro, Gato, Conejo" />
+                                <span asp-validation-for="NuevaEspecie" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="NuevaRaza" class="form-label"></label>
+                                <input asp-for="NuevaRaza" class="form-control" />
+                                <span asp-validation-for="NuevaRaza" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="NuevaFechaNacimiento" class="form-label"></label>
+                                <input asp-for="NuevaFechaNacimiento" class="form-control" type="date" />
+                                <span asp-validation-for="NuevaFechaNacimiento" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </fieldset>
                 }
-                @* Para cliente, el estado no se muestra ni se envía explícitamente *@
+                else // Si es Admin/Vet, no mostramos selección/registro de mascota en este formulario
+                {
+                    <input type="hidden" asp-for="IdMascotaSeleccionada" />
+                    <input type="hidden" asp-for="RegistrarNuevaMascota" value="false" />
+                    @* Podrían tener otro flujo si necesitan crear citas para mascotas inexistentes *@
+                    <p class="text-muted small">Nota: La asignación de mascota se realiza desde la gestión de mascotas o citas.</p>
+                }
 
 
+                @* --- Notas Adicionales y Botones --- *@
                 <div class="mb-3">
                     <label asp-for="Notas" class="form-label"></label>
                     <textarea asp-for="Notas" class="form-control" rows="3" placeholder="Añada aquí cualquier nota relevante para la cita (opcional)"></textarea>
@@ -73,7 +104,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <input type="submit" value="@(User.IsInRole("Cliente") ? "Solicitar Cita" : "Crear Cita")" class="btn btn-primary" />
+                    <input type="submit" value="Solicitar Cita" class="btn btn-primary" />
                     <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
                 </div>
             </form>
@@ -85,5 +116,40 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-    @* Scripts adicionales si son necesarios *@
+
+    @* Script para mostrar/ocultar la sección de nueva mascota *@
+    <script>
+        $(document).ready(function () {
+            // Elementos
+            var chkNueva = $('#chkRegistrarNueva');
+            var seccionExistente = $('#seccionMascotaExistente');
+            var seccionNueva = $('#seccionMascotaNueva');
+            var dropdownExistente = $('#IdMascotaSeleccionada');
+            var inputsNuevos = $('#seccionMascotaNueva input, #seccionMascotaNueva select, #seccionMascotaNueva textarea'); // Ajusta selectores si usas otros controles
+
+            // Función para actualizar visibilidad
+            function actualizarVisibilidadMascota() {
+                if (chkNueva.is(':checked')) {
+                    seccionExistente.hide();
+                    seccionNueva.show();
+                    // Limpiar selección existente para evitar enviar ambos
+                    dropdownExistente.val('');
+                } else {
+                    seccionExistente.show();
+                    seccionNueva.hide();
+                    // Opcional: Limpiar campos nuevos al desmarcar
+                    // inputsNuevos.val(''); // Cuidado si quieres preservar datos si el usuario cambia de opinión
+                }
+            }
+
+            // Evento al cambiar el checkbox
+            chkNueva.on('change', function() {
+                actualizarVisibilidadMascota();
+            });
+
+            // Ejecutar al cargar la página por si se retorna la vista con errores
+            // y el checkbox ya venía marcado
+            actualizarVisibilidadMascota();
+        });
+    </script>
  }
