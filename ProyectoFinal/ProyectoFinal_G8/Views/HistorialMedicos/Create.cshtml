@@ -1,75 +1,149 @@
 ﻿@model ProyectoFinal_G8.Models.HistorialMedico
 
 @{
-    ViewData["Title"] = "Crear Registro Historial";
+    ViewData["Title"] = "Crear Registro de Historial Médico";
     // Determinar si los campos deben ser de solo lectura basado en el ViewData
     bool isReadOnly = (bool?)ViewData["IsMascotaPreselected"] == true;
+    string mascotaNombre = ViewData["MascotaNombre"] as string ?? "la mascota seleccionada"; // Nombre para mensaje
 }
 
-<h1>Crear Registro en Historial Médico</h1>
-<hr />
-<div class="row">
-    <div class="col-md-6">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            @* --- Campo Mascota --- *@
-            <div class="form-group mb-3">
-                <label asp-for="IdMascota" class="control-label"></label>
-                @* Añadir 'disabled' si isReadOnly es true *@
-                <select asp-for="IdMascota" class="form-control form-select" asp-items='(SelectList)ViewData["IdMascota"]' disabled="@isReadOnly">
-                    <option value="">-- Seleccione Mascota --</option>
-                </select>
-                <span asp-validation-for="IdMascota" class="text-danger"></span>
-                @* --- Campo Oculto para Mascota --- *@
-                @* Si el dropdown está deshabilitado, su valor no se envía. *@
-                @* Añadimos un campo oculto para enviar el IdMascota si viene preseleccionado. *@
-                @if (isReadOnly && Model.IdMascota > 0)
-                {
-                    <input type="hidden" asp-for="IdMascota" value="@Model.IdMascota" />
-                }
-            </div>
+<div class="container mt-4 mb-5">
 
-            @* --- Campo Fecha Registro --- *@
-            <div class="form-group mb-3">
-                <label asp-for="FechaRegistro" class="control-label"></label>
-                @* Añadir 'readonly' si isReadOnly es true *@
-                <input asp-for="FechaRegistro" class="form-control" type="datetime-local" readonly="@isReadOnly" />
-                <span asp-validation-for="FechaRegistro" class="text-danger"></span>
-            </div>
-
-            @* --- Otros Campos (Editables) --- *@
-            <div class="form-group mb-3">
-                <label asp-for="Descripcion" class="control-label"></label>
-                <textarea asp-for="Descripcion" class="form-control" rows="3"></textarea>
-                <span asp-validation-for="Descripcion" class="text-danger"></span>
-            </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="Tratamiento" class="control-label"></label>
-                <textarea asp-for="Tratamiento" class="form-control" rows="2"></textarea>
-                <span asp-validation-for="Tratamiento" class="text-danger"></span>
-            </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="Notas" class="control-label"></label>
-                <textarea asp-for="Notas" class="form-control" rows="2"></textarea>
-                <span asp-validation-for="Notas" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Crear Registro" class="btn btn-primary" />
-                @* Decidir a dónde volver: al índice de historiales o a la lista de citas? Opcional. *@
-                <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
-                
-                <a asp-controller="Citas" asp-action="Index" class="btn btn-info">Volver a Citas</a>
-            </div>
-        </form>
+    <div class="text-center mb-4">
+        <i class="bi bi-clipboard2-pulse" style="font-size: 2.5rem; color: var(--bs-primary);"></i>
+        <h1 class="display-6">@ViewData["Title"]</h1>
+        <p class="lead text-muted">Añade una nueva entrada al expediente clínico.</p>
     </div>
-</div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-9 col-lg-8 col-xl-7">
+            @* Columna un poco más ancha *@
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4><i class="bi bi-journal-plus"></i> Detalles del Registro</h4>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Create" class="needs-validation" novalidate>
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert">
+                            Por favor, corrija los errores indicados.
+                        </div>
+
+                        @if (isReadOnly)
+                        {
+                            <div class="alert alert-info small mb-3" role="alert">
+                                <i class="bi bi-info-circle-fill me-1"></i> Estás creando un registro para <strong>@mascotaNombre</strong>. La mascota y la fecha no se pueden cambiar aquí.
+                            </div>
+                        }
+
+                        @* --- Campo Mascota --- *@
+                        <div class="mb-3">
+                            <label asp-for="IdMascota" class="form-label fw-bold"><i class="bi bi-heart-pulse-fill"></i> Mascota</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-tag-fill"></i></span>
+                                <select asp-for="IdMascota" class="form-select @(isReadOnly ? "bg-light" : "")" asp-items='(SelectList)ViewData["IdMascota"]' disabled="@isReadOnly" required>
+                                    <option value="">-- Seleccione Mascota --</option>
+                                </select>
+                            </div>
+                            <span asp-validation-for="IdMascota" class="text-danger small"></span>
+                            @* Campo oculto necesario si el select está deshabilitado *@
+                            @if (isReadOnly && Model.IdMascota > 0)
+                            {
+                                <input type="hidden" asp-for="IdMascota" value="@Model.IdMascota" />
+                            }
+                        </div>
+
+                        @* --- Campo Fecha Registro --- *@
+                        <div class="mb-3">
+                            <label asp-for="FechaRegistro" class="form-label fw-bold"><i class="bi bi-calendar-event"></i> Fecha del Registro</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-clock-history"></i></span>
+                                <input asp-for="FechaRegistro" class="form-control @(isReadOnly ? "bg-light" : "")" type="datetime-local" readonly="@isReadOnly" required />
+                            </div>
+                            <span asp-validation-for="FechaRegistro" class="text-danger small"></span>
+                        </div>
+
+                        <hr class="my-4">
+
+                        @* --- Otros Campos (Editables) --- *@
+                        <div class="mb-3">
+                            <label asp-for="Descripcion" class="form-label fw-bold"><i class="bi bi-file-earmark-text"></i> Descripción / Motivo Consulta</label>
+                            <textarea asp-for="Descripcion" class="form-control" rows="4" placeholder="Detalles de la visita, síntomas observados, etc." required></textarea>
+                            <span asp-validation-for="Descripcion" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Tratamiento" class="form-label fw-bold"><i class="bi bi-capsule"></i> Tratamiento Aplicado / Recomendado</label>
+                            <textarea asp-for="Tratamiento" class="form-control" rows="3" placeholder="Medicamentos recetados, procedimientos, indicaciones..." required></textarea>
+                            <span asp-validation-for="Tratamiento" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Notas" class="form-label"><i class="bi bi-journal-text"></i> Notas Adicionales (Opcional)</label>
+                            <textarea asp-for="Notas" class="form-control" rows="2" placeholder="Observaciones extra, próxima revisión, etc."></textarea>
+                            <span asp-validation-for="Notas" class="text-danger small"></span>
+                        </div>
+
+                        @* --- Botones --- *@
+                        <div class="d-flex justify-content-between align-items-center gap-2 mt-4 pt-3 border-top">
+                            <div>
+                                @* Botón Volver a Citas solo si venimos de ahí? Podrías pasarlo en ViewData *@
+                                @if (isReadOnly)
+                                {
+                                    <a asp-controller="Citas" asp-action="Index" class="btn btn-outline-info">
+                                        <i class="bi bi-calendar-check me-1"></i> Volver a Citas
+                                    </a>
+                                }
+                            </div>
+                            <div>
+                                <a asp-action="Index" class="btn btn-outline-secondary me-2">
+                                    <i class="bi bi-list-ul me-1"></i> Ver Historial
+                                </a>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-check-circle-fill me-1"></i> Crear Registro
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div> @* Fin Card Body *@
+            </div> @* Fin Card *@
+        </div> @* Fin Col *@
+    </div> @* Fin Row *@
+</div> @* Fin Container *@
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
- }
+    <script>
+        // --- Bootstrap Custom Validation ---
+        (function () {
+          'use strict'
+          var forms = document.querySelectorAll('.needs-validation')
+          Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+              form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                  event.preventDefault()
+                  event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+              }, false)
+            })
+        })()
+
+        // Opcional: Si quieres poner la fecha actual por defecto cuando NO es readonly
+        document.addEventListener('DOMContentLoaded', function() {
+            const fechaInput = document.getElementById('FechaRegistro');
+            const isReadOnly = fechaInput.hasAttribute('readonly');
+
+            if (!isReadOnly && !fechaInput.value) {
+                 // Formato YYYY-MM-DDTHH:MM requerido por datetime-local
+                 const now = new Date();
+                 now.setMinutes(now.getMinutes() - now.getTimezoneOffset()); // Ajustar a zona horaria local
+                 fechaInput.value = now.toISOString().slice(0,16);
+            }
+        });
+    </script>
+}
